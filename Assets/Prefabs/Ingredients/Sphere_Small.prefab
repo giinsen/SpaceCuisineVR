@@ -30,7 +30,7 @@ GameObject:
   - component: {fileID: 114887181463065460}
   m_Layer: 0
   m_Name: Sphere_Small
-  m_TagString: Untagged
+  m_TagString: Ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
