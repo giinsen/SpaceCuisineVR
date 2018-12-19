@@ -27,8 +27,6 @@ GameObject:
   - component: {fileID: 54688585460853756}
   - component: {fileID: 114922020641349230}
   - component: {fileID: 114235114129450518}
-  - component: {fileID: 114535343007709900}
-  - component: {fileID: 114892882341215416}
   m_Layer: 0
   m_Name: Sphere_Large
   m_TagString: Ingredient
@@ -162,29 +160,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   snapAttachEaseInCompleted: 0
   interactable: {fileID: 0}
---- !u!114 &114535343007709900
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855821699155400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 0}
-  hideHandOnAttach: 1
-  hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 0
-  handAnimationOnPickup: 0
-  setRangeOfMotionOnPickup: -1
-  useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 0}
-  handFollowTransformPosition: 1
-  handFollowTransformRotation: 1
-  highlightOnHover: 1
-  hideHighlight: []
 --- !u!114 &114656603637859894
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,23 +174,6 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
---- !u!114 &114892882341215416
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855821699155400}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  name: Sphere
-  isCutable: 1
-  numberOfCutResult: 2
-  cutResult: {fileID: 0}
-  isPolishable: 0
-  polishResult: {fileID: 0}
 --- !u!114 &114922020641349230
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -250,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Ingredient
+  name: Sphere
   isCutable: 1
   numberOfCutResult: 5
   cutResult: {fileID: 1128952733968420, guid: f918f35e30b44004692cd0993f25ac26, type: 2}
