@@ -37,7 +37,7 @@ public class Ingredient : MonoBehaviour
         {
             for (int i = 0; i < numberOfCutResult; ++i)
             {
-                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents);
+                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
                 Instantiate(cutResult, spawnPosition, Quaternion.identity);
             }
             Destroy(this.gameObject);
