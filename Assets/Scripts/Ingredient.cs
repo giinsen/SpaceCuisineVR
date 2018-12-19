@@ -17,10 +17,12 @@ public class Ingredient : MonoBehaviour
     public GameObject polishResult;
 
     private bool hasJustSpawned = true;
+    private Collider col;
 
     private void Start()
     {
         StartCoroutine(HasJustSpawnedTimer());
+        col = GetComponent<Collider>();
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -35,7 +37,8 @@ public class Ingredient : MonoBehaviour
         {
             for (int i = 0; i < numberOfCutResult; ++i)
             {
-                Instantiate(cutResult, transform.position, Quaternion.identity);
+                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents);
+                Instantiate(cutResult, spawnPosition, Quaternion.identity);
             }
             Destroy(this.gameObject);
         }
