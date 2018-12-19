@@ -112,6 +112,7 @@ public abstract class Tool : MonoBehaviour
 
     public virtual void OnPickUp()
     {
+        transform.position = interactable.attachedToHand.transform.position;
         transform.rotation = interactable.attachedToHand.transform.rotation * Quaternion.Euler(addRot);
     }
 
