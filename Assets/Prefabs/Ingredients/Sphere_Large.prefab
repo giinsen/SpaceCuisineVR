@@ -252,8 +252,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Ingredient
   isCutable: 1
-  numberOfCutResult: 15
-  cutResult: {fileID: 1221860485561756, guid: 15fca597cd2d73d46ae1634bf170fd94, type: 2}
+  numberOfCutResult: 5
+  cutResult: {fileID: 1128952733968420, guid: f918f35e30b44004692cd0993f25ac26, type: 2}
   isPolishable: 0
   polishResult: {fileID: 0}
 --- !u!135 &135466484852510078

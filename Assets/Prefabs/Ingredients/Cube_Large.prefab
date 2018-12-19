@@ -222,7 +222,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Cube
   isCutable: 1
-  numberOfCutResult: 2
-  cutResult: {fileID: 0}
-  isPolishable: 0
-  polishResult: {fileID: 0}
+  numberOfCutResult: 5
+  cutResult: {fileID: 1939056593478642, guid: 05cf05d341e61444bbd9ee2f7f436310, type: 2}
+  isPolishable: 1
+  polishResult: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89,
+    type: 2}
