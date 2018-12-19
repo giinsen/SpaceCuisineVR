@@ -17,18 +17,5 @@ public class EvilBouncerIngredient : Ingredient
         {
             if (rb.velocity.magnitude < maximumVelocity) rb.velocity += rb.velocity.normalized * acceleration;
         }
-        else
-        {
-            //how to restore rush state
-            if (Utils.AlmostEqual(rb.velocity, Vector3.zero))
-            {
-                rush = true;
-            }
-        }
-
-        if (interactable.attachedToHand != null && rush)
-        {
-            rush = false;
-        }
     }
 }
