@@ -31,9 +31,4 @@ public class EvilBouncerIngredient : Ingredient
             rush = false;
         }
     }
-
-    private void OnCollisionEnter()
-    {
-        rush = false;
-    }
 }
