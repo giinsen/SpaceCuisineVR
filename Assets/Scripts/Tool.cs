@@ -7,12 +7,13 @@ using Valve.VR;
 [RequireComponent(typeof(Interactable))]
 public abstract class Tool : MonoBehaviour
 {
-    protected List<Ingredient> ingredients;
+    protected List<Ingredient> ingredients = new List<Ingredient>();
     public enum Type { continuous, pressable, toggle };
     public Type toolType;
 
-    protected bool active = false;
+    public bool hasBeenEnabled = false;
     protected Interactable interactable;
+    public Vector3 addRot;
 
     protected virtual void Start()
     {
@@ -21,7 +22,7 @@ public abstract class Tool : MonoBehaviour
         switch (toolType)
         {
             case Type.continuous:
-                active = true;
+                hasBeenEnabled = true;
                 break;
         }
     }
@@ -41,20 +42,20 @@ public abstract class Tool : MonoBehaviour
                     Hand hand = interactable.attachedToHand;
                     if (SteamVR_Input._default.inActions.Teleport.GetStateDown(hand.handType))
                     {
-                        active = true;
+                        hasBeenEnabled = true;
                         OnActivate();
                     }
                     else if (SteamVR_Input._default.inActions.Teleport.GetStateUp(hand.handType))
                     {
-                        active = false;
+                        hasBeenEnabled = false;
                         OnDesactivate();
                     }
                 }
                 else
                 {
-                    if (active)
+                    if (hasBeenEnabled)
                     {
-                        active = false;
+                        hasBeenEnabled = false;
                         OnDesactivate();
                     }
                 }
@@ -66,8 +67,8 @@ public abstract class Tool : MonoBehaviour
                     Hand hand = interactable.attachedToHand;
                     if (SteamVR_Input._default.inActions.Teleport.GetStateDown(hand.handType))
                     {
-                        active = !active;
-                        if (active)
+                        hasBeenEnabled = !hasBeenEnabled;
+                        if (hasBeenEnabled)
                         {
                             OnActivate();
                         }
@@ -80,7 +81,7 @@ public abstract class Tool : MonoBehaviour
                 break;
         }
 
-        if (active)
+        if (hasBeenEnabled)
         {
             ActiveAction();
         }
@@ -107,6 +108,11 @@ public abstract class Tool : MonoBehaviour
         {
             anim.SetBool("active", false);
         }
+    }
+
+    public virtual void OnPickUp()
+    {
+        transform.rotation = interactable.attachedToHand.transform.rotation * Quaternion.Euler(addRot);
     }
 
     protected virtual void OnTriggerEnter(Collider other)

@@ -36,8 +36,8 @@ public class Ingredient : MonoBehaviour
             for (int i = 0; i < numberOfCutResult; ++i)
             {
                 Instantiate(cutResult, transform.position, Quaternion.identity);
-                Destroy(this.gameObject);
             }
+            Destroy(this.gameObject);
         }
 	}
 
