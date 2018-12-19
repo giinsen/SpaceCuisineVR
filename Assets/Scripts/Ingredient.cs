@@ -65,8 +65,10 @@ public class Ingredient : MonoBehaviour
 
     protected void Split(int numberOfSplit, GameObject prefabSplitted)
     {
+        // if (gameObject == null) return;
         for (int i = 0; i < numberOfSplit; ++i)
         {
+            if (col == null) Debug.Log("here");
             Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
             Instantiate(prefabSplitted, spawnPosition, Quaternion.identity);
         }

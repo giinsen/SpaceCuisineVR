@@ -10,5 +10,6 @@ public class Cutter : Tool
         {
             ing.Cut();
         }
+		ingredients.Clear();
 	}
 }
