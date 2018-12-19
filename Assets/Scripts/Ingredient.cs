@@ -18,11 +18,13 @@ public class Ingredient : MonoBehaviour
 
     private bool hasJustSpawned = true;
     private Collider col;
+    private Rigidbody rb;
 
     private void Start()
     {
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponent<Collider>();
+        rb = GetComponent<Rigidbody>();
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -35,12 +37,15 @@ public class Ingredient : MonoBehaviour
     {
 		if (isCutable && !hasJustSpawned)
         {
+            /*
             for (int i = 0; i < numberOfCutResult; ++i)
             {
                 Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
                 Instantiate(cutResult, spawnPosition, Quaternion.identity);
             }
             Destroy(this.gameObject);
+            */
+            Split(numberOfCutResult, cutResult);
         }
 	}
 
@@ -51,5 +56,15 @@ public class Ingredient : MonoBehaviour
             Instantiate(polishResult, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+    }
+
+    protected void Split(int numberOfSplit, GameObject prefabSplitted)
+    {
+        for (int i = 0; i < numberOfSplit; ++i)
+        {
+            Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
+            Instantiate(prefabSplitted, spawnPosition, Quaternion.identity);
+        }
+        Destroy(this.gameObject);
     }
 }
