@@ -40,6 +40,8 @@ GameObject:
   - component: {fileID: 114510037355210228}
   - component: {fileID: 54755987023595350}
   - component: {fileID: 114119461655731202}
+  - component: {fileID: 95639060736561478}
+  - component: {fileID: 114680710035287260}
   m_Layer: 0
   m_Name: Lightsaber
   m_TagString: Tool
@@ -108,8 +110,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293116642351064}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.78686523, z: -0.00390625}
-  m_LocalScale: {x: 0.15184921, y: 0.5374694, z: 0.15184921}
+  m_LocalPosition: {x: -0.004, y: 0.095, z: -0.00390625}
+  m_LocalScale: {x: 0.1518492, y: 0.100560516, z: 0.1518492}
   m_Children: []
   m_Father: {fileID: 4691032381385268}
   m_RootOrder: 0
@@ -283,7 +285,7 @@ MeshRenderer:
   m_GameObject: {fileID: 1293116642351064}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -389,6 +391,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &95639060736561478
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521277810841402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9c0381d82086c3c489086aa0ce306c22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114119461655731202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -401,9 +421,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attachmentFlags: 44
-  attachmentOffset: {fileID: 4806569315173014}
+  attachmentOffset: {fileID: 0}
   catchingSpeedThreshold: -1
-  releaseVelocityStyle: 0
+  releaseVelocityStyle: 1
   releaseVelocityTimeOffset: -0.011
   scaleReleaseVelocity: 1.1
   restoreOriginalParent: 0
@@ -456,15 +476,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  activateActionSetOnAttach: {fileID: 11400000, guid: b6c4084000153fe47bc14512db847f0d,
-    type: 2}
-  hideHandOnAttach: 0
+  activateActionSetOnAttach: {fileID: 0}
+  hideHandOnAttach: 1
   hideSkeletonOnAttach: 0
-  hideControllerOnAttach: 1
+  hideControllerOnAttach: 0
   handAnimationOnPickup: 0
   setRangeOfMotionOnPickup: -1
   useHandObjectAttachmentPoint: 1
-  handFollowTransform: {fileID: 4806569315173014}
+  handFollowTransform: {fileID: 0}
   handFollowTransformPosition: 1
   handFollowTransformRotation: 1
   highlightOnHover: 1
@@ -483,3 +502,15 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!114 &114680710035287260
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1521277810841402}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a921eb889efd72148b5dbc9bb9b54509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toolType: 2

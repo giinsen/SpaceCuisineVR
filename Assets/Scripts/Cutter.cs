@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cutter : Tool {
-
-	void Start () 
+public class Cutter : Tool
+{
+	protected override void ActiveAction()
 	{
-		
-	}
-	
-	void Update () 
-	{
-		foreach (Ingredient ingredient in ingredients)
-		{
-			ingredient.cut();
-		}
+		foreach(Ingredient ing in ingredients)
+        {
+            ing.cut();
+        }
 	}
 }
