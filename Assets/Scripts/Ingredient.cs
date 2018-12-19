@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Ingredient : MonoBehaviour
 {
@@ -16,15 +18,18 @@ public class Ingredient : MonoBehaviour
     public bool isPolishable = false;
     public GameObject polishResult;
 
-    private bool hasJustSpawned = true;
-    private Collider col;
-    private Rigidbody rb;
+    protected bool hasJustSpawned = true;
+    protected Collider col;
+    protected Rigidbody rb;
+    protected Interactable interactable;
 
-    private void Start()
+    protected virtual void Start()
     {
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
+        interactable = GetComponent<Interactable>();
+
     }
 
     private IEnumerator HasJustSpawnedTimer()
