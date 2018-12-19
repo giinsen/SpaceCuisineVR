@@ -49,8 +49,9 @@ public class ChaoticFollowerIngredient : Ingredient
         return true;
     }
 
-    void OnCollisionEnter(Collision col)
+    protected override void OnCollisionEnter(Collision col)
     {
+        base.OnCollisionEnter(col);
         if (col.transform == target)
         {
             Vector3 direction = Vector3.Normalize(col.rigidbody.transform.position - transform.position);

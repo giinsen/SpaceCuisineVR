@@ -34,7 +34,7 @@ public class Ingredient : MonoBehaviour
 
     private IEnumerator HasJustSpawnedTimer()
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(0.5f);
         hasJustSpawned = false;
     }
 
@@ -53,6 +53,16 @@ public class Ingredient : MonoBehaviour
             Split(numberOfCutResult, cutResult);
         }
 	}
+
+    protected virtual void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "Ingredient")
+        {
+            Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
+            Recipe recipeToTest = new Recipe(name, otherIng.name);
+
+        }
+    }
 
     public void Polish()
     {
