@@ -8,7 +8,7 @@ public class Cutter : Tool
 	{
 		foreach(Ingredient ing in ingredients)
         {
-            ing.cut();
+            ing.Cut();
         }
 	}
 }
