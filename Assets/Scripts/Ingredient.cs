@@ -7,7 +7,7 @@ using Valve.VR;
 public class Ingredient : MonoBehaviour
 {
     [Header("Global")]
-    public string name = "Ingredient";
+    public string ingredientName = "Ingredient";
 
     [Header("Cutting options")]
 	public bool isCutable = true;
@@ -59,8 +59,12 @@ public class Ingredient : MonoBehaviour
         if (other.gameObject.tag == "Ingredient")
         {
             Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
-            Recipe recipeToTest = new Recipe(name, otherIng.name);
-
+            Recipe recipeToTest = new Recipe(ingredientName, otherIng.ingredientName);
+            Recipe result;
+            if (GameManager.instance.recipeList.Exist(recipeToTest, out result))
+            {
+                GameManager.instance.RecipeSpawn(result, gameObject, otherIng.gameObject, other.contacts[0].point);
+            }
         }
     }
 
