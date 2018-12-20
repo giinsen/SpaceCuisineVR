@@ -15,7 +15,12 @@ public class EvilBouncerIngredient : Ingredient
     {
         if (rush)
         {
-            if (rb.velocity.magnitude < maximumVelocity) rb.velocity += rb.velocity.normalized * acceleration;
+            if (rb.velocity.magnitude < maximumVelocity)
+            {
+                Vector3 velocity = rb.velocity;
+                velocity += rb.velocity.normalized * acceleration;
+                rb.velocity = velocity;
+            }
         }
         rush = interactable == null;
     }

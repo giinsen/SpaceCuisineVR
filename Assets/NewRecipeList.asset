@@ -11,4 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b5a8eb2683f1643ba6cecfb52ed268, type: 3}
   m_Name: NewRecipeList
   m_EditorClassIdentifier: 
-  recipeList: []
+  recipeList:
+  - ingredientA: Tomatoe
+    ingredientB: Salad
+    result: {fileID: 0}
