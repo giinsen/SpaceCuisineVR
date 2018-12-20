@@ -8,7 +8,7 @@ public class Staser : Tool
 	{
 		foreach(Ingredient ing in ingredients)
         {
-            ing.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            ing.Stase();
         }
 	}
 }

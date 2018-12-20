@@ -15,6 +15,15 @@ public class ChaoticFollowerIngredient : Ingredient
 
     private Transform target;
     
+    protected override void Start()
+    {
+        base.Start();
+        if (FindTarget(out target) == false)
+        {
+            StartCoroutine(Idle());
+        }
+    }
+
     private void MoveTowardTarget()
     {
         Vector3 targetDirection = Vector3.Normalize(target.position - transform.position);

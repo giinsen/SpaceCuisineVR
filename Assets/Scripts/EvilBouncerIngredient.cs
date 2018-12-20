@@ -20,8 +20,9 @@ public class EvilBouncerIngredient : Ingredient
                 Vector3 velocity = rb.velocity;
                 velocity += rb.velocity.normalized * acceleration;
                 rb.velocity = velocity;
+                Debug.Log(velocity);
             }
         }
-        rush = interactable == null;
+        rush = interactable.attachedToHand == null;
     }
 }

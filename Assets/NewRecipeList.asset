@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Name: NewRecipeList
   m_EditorClassIdentifier: 
   recipeList:
-  - ingredientA: Tomatoe
-    ingredientB: Salad
-    result: {fileID: 0}
+  - ingredientA: Red
+    ingredientB: Cube
+    result: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89, type: 2}

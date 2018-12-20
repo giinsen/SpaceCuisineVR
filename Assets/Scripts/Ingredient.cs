@@ -38,6 +38,11 @@ public class Ingredient : MonoBehaviour
         hasJustSpawned = false;
     }
 
+    public virtual void Stase()
+    {
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
 	public void Cut()
     {
 		if (isCutable && !hasJustSpawned)
