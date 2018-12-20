@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2b5a8eb2683f1643ba6cecfb52ed268, type: 3}
+  m_Name: TestingRoomRecipes
+  m_EditorClassIdentifier: 
+  recipeList:
+  - ingredientA: Red
+    ingredientB: Green
+    result: {fileID: 1846315304483866, guid: b8fc5941680134246be3f4254aa132c5, type: 2}
+  - ingredientA: Green
+    ingredientB: Yellow
+    result: {fileID: 1825054553531512, guid: 05ca261f65c319046944aaa1b01c50a7, type: 2}
+  - ingredientA: Red
+    ingredientB: Yellow
+    result: {fileID: 1351595089429494, guid: c964cc1a04366d244b62d8c94bd8ae8b, type: 2}
