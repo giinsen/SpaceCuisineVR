@@ -18,6 +18,10 @@ public class Ingredient : MonoBehaviour
     public bool isPolishable = false;
     public GameObject polishResult;
 
+    [Header("Attractable options")]
+    public bool isAttractable = true;
+    public float attractableSpeed = 8f;
+
     protected bool hasJustSpawned = true;
     protected Collider col;
     protected Rigidbody rb;
@@ -41,6 +45,19 @@ public class Ingredient : MonoBehaviour
     public virtual void Stase()
     {
         GetComponent<Rigidbody>().velocity = Vector3.zero;
+    }
+
+    public void Attract(Hand hand)
+    {
+        if (isAttractable)
+        {
+            Vector3 targetDirection = Vector3.Normalize(hand.transform.position - transform.position);
+            Vector3 velocity = rb.velocity;
+            float actualSpeed = velocity.magnitude;
+            Vector3 actualDirection = velocity.normalized;
+            velocity = Vector3.MoveTowards(actualDirection, targetDirection, attractableSpeed*Time.deltaTime);
+            rb.velocity = velocity;
+        }
     }
 
 	public void Cut()
@@ -84,7 +101,6 @@ public class Ingredient : MonoBehaviour
 
     protected void Split(int numberOfSplit, GameObject prefabSplitted)
     {
-        // if (gameObject == null) return;
         for (int i = 0; i < numberOfSplit; ++i)
         {
             if (col == null) Debug.Log("here");
