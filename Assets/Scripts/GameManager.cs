@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public RecipeList recipeList;
-
+    public float minVelocity = 10.0f;
     public static GameManager instance;
 
     private List<GameObject> blacklist = new List<GameObject>();

@@ -78,7 +78,7 @@ public class Ingredient : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ingredient")
+        if (other.gameObject.tag == "Ingredient" && other.relativeVelocity.magnitude > GameManager.instance.minVelocity)
         {
             Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
             Recipe recipeToTest = new Recipe(ingredientName, otherIng.ingredientName);
