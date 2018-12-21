@@ -209,12 +209,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Ingredient
+  ingredientName: Ingredient
   isCutable: 0
   numberOfCutResult: 2
   cutResult: {fileID: 0}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
 --- !u!114 &114887181463065460
 MonoBehaviour:
   m_ObjectHideFlags: 1

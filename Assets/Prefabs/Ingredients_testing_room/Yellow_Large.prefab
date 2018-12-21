@@ -41,7 +41,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1678643810829752}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.179, y: 1.196, z: -1.507}
+  m_LocalPosition: {x: 1.33, y: 0.394, z: 1.603}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -164,13 +164,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ingredientName: Red
+  ingredientName: Yellow
   isCutable: 1
   numberOfCutResult: 5
   cutResult: {fileID: 1272343748287864, guid: be6ffb530463a9a4db24847af6f425f1, type: 2}
   isPolishable: 0
   polishResult: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89,
     type: 2}
+  isAttractable: 1
+  attractableSpeed: 8
 --- !u!114 &114979644420017524
 MonoBehaviour:
   m_ObjectHideFlags: 1

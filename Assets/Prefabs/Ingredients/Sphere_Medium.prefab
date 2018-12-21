@@ -153,12 +153,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Sphere
+  ingredientName: Ingredient
   isCutable: 1
   numberOfCutResult: 10
   cutResult: {fileID: 1221860485561756, guid: 15fca597cd2d73d46ae1634bf170fd94, type: 2}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
 --- !u!114 &114496947252577468
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -209,13 +209,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ingredientName: Bouncer
-  isCutable: 0
-  numberOfCutResult: 2
+  isCutable: 1
+  numberOfCutResult: 0
   cutResult: {fileID: 0}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
   acceleration: 0.5
-  maximumVelocity: 15
+  maximumVelocity: 8
 --- !u!135 &135711909798124344
 SphereCollider:
   m_ObjectHideFlags: 1

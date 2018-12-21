@@ -220,10 +220,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: Cube
+  ingredientName: Ingredient
   isCutable: 1
   numberOfCutResult: 5
   cutResult: {fileID: 1939056593478642, guid: 05cf05d341e61444bbd9ee2f7f436310, type: 2}
   isPolishable: 1
   polishResult: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89,
     type: 2}
+  isAttractable: 1
+  attractableSpeed: 8

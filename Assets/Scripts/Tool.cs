@@ -24,6 +24,12 @@ public abstract class Tool : MonoBehaviour
             case Type.continuous:
                 hasBeenEnabled = true;
                 break;
+            case Type.pressable:
+                OnDesactivate();
+                break;
+            case Type.toggle:
+                OnDesactivate();
+                break;
         }
     }
 
@@ -84,14 +90,15 @@ public abstract class Tool : MonoBehaviour
         if (hasBeenEnabled)
         {
             ActiveAction();
+            
         }
-
     }
 
     protected abstract void ActiveAction();
 
     protected virtual void OnActivate()
     {
+        ActiveTrigger(true);
         Animator anim = GetComponent<Animator>();
 
         if (anim != null)
@@ -102,6 +109,7 @@ public abstract class Tool : MonoBehaviour
 
     protected virtual void OnDesactivate()
     {
+        ActiveTrigger(false);
         Animator anim = GetComponent<Animator>();
 
         if (anim != null)
@@ -110,8 +118,25 @@ public abstract class Tool : MonoBehaviour
         }
     }
 
+    protected virtual void ActiveTrigger(bool triggerActive)
+    {
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        foreach (Collider c in colliders)
+        {
+            if (c.isTrigger)
+            {
+                c.enabled = triggerActive;
+            }             
+        }
+    }
+
     public virtual void OnPickUp()
     {
+        if (interactable.attachedToHand == null)
+        {
+            Debug.Log("null ref of doom ! mission abort !");
+            return;
+        }
         transform.position = interactable.attachedToHand.transform.position;
         transform.rotation = interactable.attachedToHand.transform.rotation * Quaternion.Euler(addRot);
     }

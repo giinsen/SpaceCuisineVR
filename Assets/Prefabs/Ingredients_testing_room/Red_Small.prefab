@@ -227,3 +227,5 @@ MonoBehaviour:
   isPolishable: 0
   polishResult: {fileID: 1221860485561756, guid: 15fca597cd2d73d46ae1634bf170fd94,
     type: 2}
+  isAttractable: 1
+  attractableSpeed: 8

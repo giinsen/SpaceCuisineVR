@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,6 +22,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+
+        //SteamVR_Utils.Event.Send("hide_render_models", !visible);
     }
 
     public void RecipeSpawn(Recipe recipe, GameObject a, GameObject b, Vector3 position)

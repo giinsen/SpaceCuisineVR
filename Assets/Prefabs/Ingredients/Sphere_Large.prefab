@@ -214,6 +214,8 @@ MonoBehaviour:
   cutResult: {fileID: 1128952733968420, guid: f918f35e30b44004692cd0993f25ac26, type: 2}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
 --- !u!135 &135466484852510078
 SphereCollider:
   m_ObjectHideFlags: 1

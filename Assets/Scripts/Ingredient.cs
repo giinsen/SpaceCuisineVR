@@ -20,7 +20,12 @@ public class Ingredient : MonoBehaviour
 
     [Header("Attractable options")]
     public bool isAttractable = true;
-    public float attractableSpeed = 8f;
+    public float attractableSpeed = 40f;
+
+    [Header("Bubble options")]
+    public bool isBubbling = true;
+    public GameObject myBubble;
+    public bool inBubble = false;
 
     protected bool hasJustSpawned = true;
     protected Collider col;
@@ -29,11 +34,20 @@ public class Ingredient : MonoBehaviour
 
     protected virtual void Start()
     {
+        //Add listener ne marche po;
+        GetComponent<Throwable>().onDetachFromHand.AddListener(OnDetachFromHand);
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         interactable = GetComponent<Interactable>();
+    }
 
+    private void Update()
+    {
+        if (inBubble)
+        {
+            transform.position = myBubble.transform.position;
+        }
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -44,18 +58,18 @@ public class Ingredient : MonoBehaviour
 
     public virtual void Stase()
     {
-        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 
-    public void Attract(Hand hand)
+    public void Attract(GameObject attractPoint)
     {
         if (isAttractable)
         {
-            Vector3 targetDirection = Vector3.Normalize(hand.transform.position - transform.position);
+            Vector3 targetDirection = Vector3.Normalize(attractPoint.transform.position - transform.position);
             Vector3 velocity = rb.velocity;
             float actualSpeed = velocity.magnitude;
             Vector3 actualDirection = velocity.normalized;
-            velocity = Vector3.MoveTowards(actualDirection, targetDirection, attractableSpeed*Time.deltaTime);
+            velocity += targetDirection * attractableSpeed * Time.deltaTime;
             rb.velocity = velocity;
         }
     }
@@ -64,17 +78,22 @@ public class Ingredient : MonoBehaviour
     {
 		if (isCutable && !hasJustSpawned)
         {
-            /*
-            for (int i = 0; i < numberOfCutResult; ++i)
-            {
-                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
-                Instantiate(cutResult, spawnPosition, Quaternion.identity);
-            }
-            Destroy(this.gameObject);
-            */
             Split(numberOfCutResult, cutResult);
         }
 	}
+
+    public void OnDetachFromHand()
+    {
+        if (isBubbling && myBubble != null)
+        {
+            //GetComponent<Collider>().enabled = false;
+            transform.position = myBubble.transform.position;
+            transform.parent = myBubble.transform;
+            myBubble.GetComponent<Bubble>().ingredients.Add(GetComponent<Ingredient>());
+            inBubble = true;
+            gameObject.layer = 9; //IngredientInBubble
+        }
+    }
 
     protected virtual void OnCollisionEnter(Collision other)
     {

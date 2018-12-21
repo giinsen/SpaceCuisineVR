@@ -1216,9 +1216,11 @@ MonoBehaviour:
   cutResult: {fileID: 0}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
   triggerVelocity: 6
   numberOfSplitResult: 15
-  splitResult: {fileID: 1678643810829752, guid: dfd3d455297f9c5459c4ce4813407150,
+  splitResult: {fileID: 1221860485561756, guid: 15fca597cd2d73d46ae1634bf170fd94,
     type: 2}
 --- !u!114 &114410257685448204
 MonoBehaviour:

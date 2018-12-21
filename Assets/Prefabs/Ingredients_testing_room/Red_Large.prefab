@@ -171,6 +171,8 @@ MonoBehaviour:
   isPolishable: 0
   polishResult: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89,
     type: 2}
+  isAttractable: 1
+  attractableSpeed: 8
 --- !u!114 &114979644420017524
 MonoBehaviour:
   m_ObjectHideFlags: 1

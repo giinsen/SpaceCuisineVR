@@ -177,6 +177,8 @@ MonoBehaviour:
   cutResult: {fileID: 0}
   isPolishable: 0
   polishResult: {fileID: 0}
+  isAttractable: 1
+  attractableSpeed: 8
   maxSpeed: 15
   pitchAcceleration: 3
   speedAcceleration: 0.5

@@ -10,5 +10,6 @@ public class Staser : Tool
         {
             ing.Stase();
         }
+		ingredients.Clear();
 	}
 }
