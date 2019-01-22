@@ -4,19 +4,20 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
 
-public class Bubble : MonoBehaviour
+public class Bubble : Item
 {
-	public List<Ingredient> ingredients;
+	public List<Ingredient> ingredientsInBubble;
 	private Ingredient ingredient;
 
 	private Interactable interactable;
 
-	private void Start()
+	protected override void Start()
 	{
+        base.Start();
 		interactable = GetComponent<Interactable>();
 	}
 
-	public virtual void OnPickUp()
+	public void OnPickUp()
     {
         if (interactable.attachedToHand == null)
         {

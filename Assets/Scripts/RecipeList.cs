@@ -28,6 +28,7 @@ public class Recipe
     public string ingredientA;
     public string ingredientB;
     public GameObject result;
+    public bool velocityOnSpawn = true;
 
     public Recipe(string ingredientA, string ingredientB)
     {

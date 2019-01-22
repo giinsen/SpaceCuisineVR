@@ -15,3 +15,4 @@ MonoBehaviour:
   - ingredientA: Red
     ingredientB: Cube
     result: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89, type: 2}
+    velocityOnSpawn: 1

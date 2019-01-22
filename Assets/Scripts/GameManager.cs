@@ -12,6 +12,27 @@ public class GameManager : MonoBehaviour
 
     private List<GameObject> blacklist = new List<GameObject>();
 
+    private List<Request> requests = new List<Request>();
+
+
+    private struct Request
+    {
+        public GameObject other;
+        public GameObject me;
+        public Recipe recipe;
+        public Vector3 velocity;
+        public Vector3 position;
+
+        public Request(GameObject me, GameObject other, Recipe recipe, Vector3 velocity, Vector3 position)
+        {
+            this.me = me;
+            this.other = other;
+            this.recipe = recipe;
+            this.velocity = velocity;
+            this.position = position;
+        }
+    }
+
     private void Awake()
     {
         if (instance == null)
@@ -26,18 +47,41 @@ public class GameManager : MonoBehaviour
         //SteamVR_Utils.Event.Send("hide_render_models", !visible);
     }
 
-    public void RecipeSpawn(Recipe recipe, GameObject a, GameObject b, Vector3 position)
-    {
-        if (a == null || b == null) return;
-        if (blacklist.Contains(a) && blacklist.Contains(b)) return;
 
-        blacklist.Add(a);
-        blacklist.Add(b);
-        Instantiate(recipe.result, position, Quaternion.identity);
-        Destroy(a);
-        Destroy(b);
-        blacklist.Remove(a);
-        blacklist.Remove(b);
+    private void Update()
+    {
+        if (requests.Count > 1)
+        {
+            if (requests[0].me == requests[1].other && requests[1].me == requests[0].other)
+            {
+                RecipeSpawn(requests[0]);
+            }
+            else
+            {
+                Debug.LogWarning("Conflicting requests!!!");
+            }
+
+            requests.RemoveAt(0);
+            requests.RemoveAt(0);
+        }
     }
+
+    private void RecipeSpawn(Request r)
+    {
+        GameObject go = Instantiate(r.recipe.result, r.position, Quaternion.identity);
+        if (r.recipe.velocityOnSpawn)
+            go.GetComponent<Rigidbody>().AddForce(r.velocity, ForceMode.Impulse);
+
+        Destroy(r.me);
+        Destroy(r.other);
+    }
+
+    public void SendRecipeRequest(Recipe recipe, GameObject me, GameObject other, Vector3 position, Vector3 velocity)
+    {
+        Request request = new Request(me, other, recipe, velocity, position);
+        requests.Add(request);
+    }
+
+
 
 }

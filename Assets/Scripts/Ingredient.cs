@@ -4,7 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
 
-public class Ingredient : MonoBehaviour
+public class Ingredient : Item
 {
     [Header("Global")]
     public string ingredientName = "Ingredient";
@@ -18,10 +18,6 @@ public class Ingredient : MonoBehaviour
     public bool isPolishable = false;
     public GameObject polishResult;
 
-    [Header("Attractable options")]
-    public bool isAttractable = true;
-    public float attractableSpeed = 40f;
-
     [Header("Bubble options")]
     public bool isBubbling = true;
     public GameObject myBubble;
@@ -29,16 +25,14 @@ public class Ingredient : MonoBehaviour
 
     protected bool hasJustSpawned = true;
     protected Collider col;
-    protected Rigidbody rb;
     protected Interactable interactable;
 
-    protected virtual void Start()
+    protected override void Start()
     {
-        //Add listener ne marche po;
-        GetComponent<Throwable>().onDetachFromHand.AddListener(OnDetachFromHand);
+        base.Start();
+        //GetComponent<Throwable>().onDetachFromHand += OnDetachFromHand();
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponent<Collider>();
-        rb = GetComponent<Rigidbody>();
         interactable = GetComponent<Interactable>();
     }
 
@@ -56,24 +50,6 @@ public class Ingredient : MonoBehaviour
         hasJustSpawned = false;
     }
 
-    public virtual void Stase()
-    {
-        rb.velocity = Vector3.zero;
-    }
-
-    public void Attract(GameObject attractPoint)
-    {
-        if (isAttractable)
-        {
-            Vector3 targetDirection = Vector3.Normalize(attractPoint.transform.position - transform.position);
-            Vector3 velocity = rb.velocity;
-            float actualSpeed = velocity.magnitude;
-            Vector3 actualDirection = velocity.normalized;
-            velocity += targetDirection * attractableSpeed * Time.deltaTime;
-            rb.velocity = velocity;
-        }
-    }
-
 	public void Cut()
     {
 		if (isCutable && !hasJustSpawned)
@@ -82,14 +58,23 @@ public class Ingredient : MonoBehaviour
         }
 	}
 
+    public void OnPickUp()
+    {
+        if (isBubbling && myBubble != null)
+        {
+            myBubble.GetComponent<Bubble>().ingredientsInBubble.Remove(GetComponent<Ingredient>());
+            inBubble = false;
+            gameObject.layer = 0;
+        }
+    }
+
     public void OnDetachFromHand()
     {
         if (isBubbling && myBubble != null)
         {
-            //GetComponent<Collider>().enabled = false;
             transform.position = myBubble.transform.position;
-            transform.parent = myBubble.transform;
-            myBubble.GetComponent<Bubble>().ingredients.Add(GetComponent<Ingredient>());
+            //transform.parent = myBubble.transform;
+            myBubble.GetComponent<Bubble>().ingredientsInBubble.Add(GetComponent<Ingredient>());
             inBubble = true;
             gameObject.layer = 9; //IngredientInBubble
         }
@@ -104,7 +89,7 @@ public class Ingredient : MonoBehaviour
             Recipe result;
             if (GameManager.instance.recipeList.Exist(recipeToTest, out result))
             {
-                GameManager.instance.RecipeSpawn(result, gameObject, otherIng.gameObject, other.contacts[0].point);
+                GameManager.instance.SendRecipeRequest(result, gameObject, otherIng.gameObject, other.contacts[0].point, other.relativeVelocity);
             }
         }
     }

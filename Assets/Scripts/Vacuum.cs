@@ -7,6 +7,8 @@ public class Vacuum : Tool
 	public ParticleSystem particleVacuum;
 
 	public GameObject attractPoint;
+
+
 	protected override void Update()
 	{
 		base.Update();
@@ -17,19 +19,33 @@ public class Vacuum : Tool
 			particleVacuum.Clear();
 		}			
 	}
-	protected void OnTriggerStay(Collider other)
+
+    protected void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Ingredient")
         {
             ingredients.Add(other.gameObject.GetComponent<Ingredient>());
         }
+
+        if (other.gameObject.tag == "Tool")
+        {
+            tools.Add(other.gameObject.GetComponent<Tool>());
+        }
     }
+
+
 	protected override void ActiveAction()
 	{
 		foreach(Ingredient ing in ingredients)
         {
             ing.Attract(attractPoint);
         }
-		ingredients.Clear();
+
+        foreach (Tool tool in tools)
+        {
+            tool.Attract(attractPoint);
+        }
+        ingredients.Clear();
+        tools.Clear();
 	}
 }

@@ -131,7 +131,7 @@ GameObject:
   - component: {fileID: 65154053719316292}
   m_Layer: 0
   m_Name: Staseur
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +248,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: a2e2c040db2e32344bd8c3af31a9fbaf, type: 2}
+  - {fileID: 2100000, guid: ecfa4ad75b641da4f94918805a318d30, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -661,6 +661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaf0156a12c3fb4c8a6e6083b972006, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttractable: 1
   toolType: 1
   hasBeenEnabled: 0
   addRot: {x: 0, y: -180, z: 0}

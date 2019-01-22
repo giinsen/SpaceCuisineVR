@@ -5,9 +5,10 @@ using Valve.VR.InteractionSystem;
 using Valve.VR;
 
 [RequireComponent(typeof(Interactable))]
-public abstract class Tool : MonoBehaviour
+public abstract class Tool : Item
 {
     protected List<Ingredient> ingredients = new List<Ingredient>();
+    protected List<Tool> tools = new List<Tool>();
     public enum Type { continuous, pressable, toggle };
     public Type toolType;
 
@@ -15,8 +16,10 @@ public abstract class Tool : MonoBehaviour
     protected Interactable interactable;
     public Vector3 addRot;
 
-    protected virtual void Start()
+    protected override void Start()
     {
+        base.Start();
+
         interactable = GetComponent<Interactable>();
 
         switch (toolType)

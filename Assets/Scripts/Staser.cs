@@ -10,6 +10,23 @@ public class Staser : Tool
         {
             ing.Stase();
         }
-		ingredients.Clear();
+        foreach (Tool tool in tools)
+        {
+            tool.Stase();
+        }
+        ingredients.Clear();
+        tools.Clear();
 	}
+
+    protected override void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Ingredient")
+        {
+            ingredients.Add(other.gameObject.GetComponent<Ingredient>());
+        }
+        if (other.gameObject.tag == "Tool")
+        {
+            tools.Add(other.gameObject.GetComponent<Tool>());
+        }
+    }
 }
