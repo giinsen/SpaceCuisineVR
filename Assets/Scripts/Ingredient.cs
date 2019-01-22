@@ -27,6 +27,8 @@ public class Ingredient : Item
     protected Collider col;
     protected Interactable interactable;
 
+    private bool canPassHoloWalls = false;
+
     protected override void Start()
     {
         base.Start();
@@ -60,6 +62,12 @@ public class Ingredient : Item
 
     public void OnPickUp()
     {
+        if (canPassHoloWalls)
+        {
+            StopAllCoroutines();
+            canPassHoloWalls = false;
+            gameObject.layer = 0;
+        }
         if (isBubbling && myBubble != null)
         {
             myBubble.GetComponent<Bubble>().ingredientsInBubble.Remove(GetComponent<Ingredient>());
@@ -78,11 +86,29 @@ public class Ingredient : Item
             inBubble = true;
             gameObject.layer = 9; //IngredientInBubble
         }
+        else
+        {
+            StartCoroutine(HolowallLayer());
+        }
+    }
+
+    private IEnumerator HolowallLayer()
+    {
+        canPassHoloWalls = true;
+        gameObject.layer = LayerMask.NameToLayer("HoloWall");
+        float timer = 0;
+        while (timer <= 3.0f)
+        {
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        gameObject.layer = 0;
+        canPassHoloWalls = false;
     }
 
     protected virtual void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ingredient" && other.relativeVelocity.magnitude > GameManager.instance.minVelocity)
+        if (other.gameObject.tag == "Ingredient" && other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
         {
             Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
             Recipe recipeToTest = new Recipe(ingredientName, otherIng.ingredientName);
@@ -91,6 +117,12 @@ public class Ingredient : Item
             {
                 GameManager.instance.SendRecipeRequest(result, gameObject, otherIng.gameObject, other.contacts[0].point, other.relativeVelocity);
             }
+        }
+        if (canPassHoloWalls)
+        {
+            StopAllCoroutines();
+            canPassHoloWalls = false;
+            gameObject.layer = 0;
         }
     }
 
