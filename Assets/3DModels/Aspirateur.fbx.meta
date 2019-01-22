@@ -1,18 +1,20 @@
 fileFormatVersion: 2
 guid: 24d04a567bbc49943814077b9a71dbf0
 ModelImporter:
-  serializedVersion: 23
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     100002: AspirateurCorps
     100004: Molette
     100006: Molette2
     100008: Tete
+    100010: AspirateurCorps.001
     400000: //RootNode
     400002: AspirateurCorps
     400004: Molette
     400006: Molette2
     400008: Tete
+    400010: AspirateurCorps.001
     2100000: PlastiqueNoir.001
     2100002: PlastiqueNoir
     2100004: CaoutchoucNoir
@@ -25,14 +27,17 @@ ModelImporter:
     2300002: Molette
     2300004: Molette2
     2300006: Tete
+    2300008: AspirateurCorps.001
     3300000: AspirateurCorps
     3300002: Molette
     3300004: Molette2
     3300006: Tete
+    3300008: AspirateurCorps.001
     4300000: Molette2
     4300002: Molette
     4300004: Tete
     4300006: AspirateurCorps
+    4300008: AspirateurCorps.001
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -72,7 +77,7 @@ ModelImporter:
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -84,8 +89,6 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 1
-    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 1
@@ -105,6 +108,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1

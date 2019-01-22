@@ -7,7 +7,7 @@ using Valve.VR;
 [RequireComponent(typeof(Interactable))]
 public abstract class Tool : Item
 {
-    protected List<Ingredient> ingredients = new List<Ingredient>();
+    public List<Ingredient> ingredients = new List<Ingredient>();
     protected List<Tool> tools = new List<Tool>();
     public enum Type { continuous, pressable, toggle };
     public Type toolType;
