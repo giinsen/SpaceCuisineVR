@@ -6,9 +6,11 @@ using Valve.VR;
 
 public class GameManager : MonoBehaviour
 {
+    [Header("Global Parameters")]
     public RecipeList recipeList;
-    public float minVelocity = 10.0f;
+    public float minVelocityToFusion = 10.0f;
     public static GameManager instance;
+    public float minSpeedToGetThroughHolowalls = 3.0f;
 
     private List<GameObject> blacklist = new List<GameObject>();
 
