@@ -14,7 +14,8 @@ public class ChaoticFollowerIngredient : Ingredient
     public float pushForce = 15.0f;
 
     private Transform target;
-    
+    private bool stased = false;
+
     protected override void Start()
     {
         base.Start();
@@ -36,7 +37,7 @@ public class ChaoticFollowerIngredient : Ingredient
 
     private void Update()
     {
-        if (target != null)
+        if (stased == false && target != null)
             MoveTowardTarget();
     }
 
@@ -61,6 +62,14 @@ public class ChaoticFollowerIngredient : Ingredient
     protected override void OnCollisionEnter(Collision col)
     {
         base.OnCollisionEnter(col);
+        if (stased)
+        {
+            stased = false;
+            if (FindTarget(out target) == false)
+            {
+                StartCoroutine(Idle());
+            }
+        }
         if (col.transform == target)
         {
             Vector3 direction = Vector3.Normalize(col.rigidbody.transform.position - transform.position);
@@ -70,6 +79,12 @@ public class ChaoticFollowerIngredient : Ingredient
                 StartCoroutine(Idle());
             }
         }
+    }
+
+    public override void Stase()
+    {
+        base.Stase();
+        stased = true;
     }
 
     private IEnumerator Idle()

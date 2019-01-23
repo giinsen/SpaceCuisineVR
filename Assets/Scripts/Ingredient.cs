@@ -13,6 +13,8 @@ public class Ingredient : Item
 	public bool isCutable = true;
     public int numberOfCutResult = 2;
     public GameObject cutResult;
+    public bool alternativeCut = true;
+    public CutableOption[] cutResults;
 
     [Header("Polishing options")]
     public bool isPolishable = false;
@@ -28,6 +30,13 @@ public class Ingredient : Item
     protected Interactable interactable;
 
     private bool canPassHoloWalls = false;
+
+    [System.Serializable]
+    public struct CutableOption
+    {
+        public int numberOfResult;
+        public GameObject result;
+    }
 
     protected override void Start()
     {
@@ -56,7 +65,14 @@ public class Ingredient : Item
     {
 		if (isCutable && !hasJustSpawned)
         {
-            Split(numberOfCutResult, cutResult);
+            if (alternativeCut)
+            {
+                Split(cutResults);
+            }
+            else
+            {
+                Split(numberOfCutResult, cutResult);
+            }
         }
 	}
 
@@ -137,7 +153,6 @@ public class Ingredient : Item
 
     protected void Split(int numberOfSplit, GameObject prefabSplitted)
     {
-        Debug.Log("boom");
         for (int i = 0; i < numberOfSplit; ++i)
         {
             if (col == null) Debug.Log("here");
@@ -145,6 +160,19 @@ public class Ingredient : Item
             Instantiate(prefabSplitted, spawnPosition, Quaternion.identity);
         }
         StartCoroutine(CutterExplosionForce());      
+    }
+
+    protected void Split(CutableOption[] options)
+    {
+        foreach(CutableOption option in options)
+        {
+            for (int i = 0; i < option.numberOfResult; ++i)
+            {
+                if (col == null) Debug.Log("here");
+                Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
+                Instantiate(option.result, spawnPosition, Quaternion.identity);
+            }
+        }
     }
 
     private IEnumerator CutterExplosionForce()
