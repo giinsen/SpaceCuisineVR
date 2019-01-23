@@ -137,12 +137,21 @@ public class Ingredient : Item
 
     protected void Split(int numberOfSplit, GameObject prefabSplitted)
     {
+        Debug.Log("boom");
         for (int i = 0; i < numberOfSplit; ++i)
         {
             if (col == null) Debug.Log("here");
             Vector3 spawnPosition = Vector3.Scale(Random.insideUnitSphere, col.bounds.extents) + transform.position;
             Instantiate(prefabSplitted, spawnPosition, Quaternion.identity);
         }
+        StartCoroutine(CutterExplosionForce());      
+    }
+
+    private IEnumerator CutterExplosionForce()
+    {
+        rb.AddExplosionForce(30f, transform.position, 50f);
+        yield return new WaitForEndOfFrame();
         Destroy(this.gameObject);
+        yield break;
     }
 }

@@ -12,34 +12,16 @@ public class Staser : Tool
 		foreach(Ingredient ing in ingredients)
         {
             ing.Stase();
-            Debug.Log("oui");
             StartCoroutine(AddDistortion(ing.gameObject));            
         }
-        foreach (Tool tool in tools)
+        foreach (Item item in otherItems)
         {
-            tool.Stase();
-            StartCoroutine(AddDistortion(tool.gameObject));
+            item.Stase();
+            StartCoroutine(AddDistortion(item.gameObject));
         }
         ingredients.Clear();
-        tools.Clear();
+        otherItems.Clear();
 	}
-
-    public void randomf()
-    {
-        foreach (Ingredient ing in ingredients)
-        {
-            //ing.Stase();
-            Debug.Log("oui");
-            StartCoroutine(AddDistortion(ing.gameObject));
-        }
-        foreach (Tool tool in tools)
-        {
-            tool.Stase();
-            StartCoroutine(AddDistortion(tool.gameObject));
-        }
-        ingredients.Clear();
-        tools.Clear();
-    }
 
     protected override void OnTriggerEnter(Collider other)
     {
@@ -49,7 +31,7 @@ public class Staser : Tool
         }
         if (other.gameObject.tag == "Tool")
         {
-            tools.Add(other.gameObject.GetComponent<Tool>());
+            otherItems.Add(other.gameObject.GetComponent<Item>());
         }
     }
 

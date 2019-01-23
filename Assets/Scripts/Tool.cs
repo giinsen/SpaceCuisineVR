@@ -8,7 +8,7 @@ using Valve.VR;
 public abstract class Tool : Item
 {
     public List<Ingredient> ingredients = new List<Ingredient>();
-    protected List<Tool> tools = new List<Tool>();
+    protected List<Item> otherItems = new List<Item>();
     public enum Type { continuous, pressable, toggle };
     public Type toolType;
 

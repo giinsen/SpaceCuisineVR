@@ -29,7 +29,7 @@ public class Vacuum : Tool
 
         if (other.gameObject.tag == "Tool")
         {
-            tools.Add(other.gameObject.GetComponent<Tool>());
+            otherItems.Add(other.gameObject.GetComponent<Item>());
         }
     }
 
@@ -41,11 +41,11 @@ public class Vacuum : Tool
             ing.Attract(attractPoint);
         }
 
-        foreach (Tool tool in tools)
+        foreach (Item item in otherItems)
         {
-            tool.Attract(attractPoint);
+            item.Attract(attractPoint);
         }
         ingredients.Clear();
-        tools.Clear();
+        otherItems.Clear();
 	}
 }
