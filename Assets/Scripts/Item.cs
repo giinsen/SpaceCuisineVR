@@ -28,7 +28,7 @@ public class Item : MonoBehaviour {
         }
     }
 
-    public void Stase()
+    public virtual void Stase()
     {
         rb.velocity = Vector3.zero;
     }
