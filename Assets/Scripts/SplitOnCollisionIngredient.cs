@@ -10,8 +10,9 @@ public class SplitOnCollisionIngredient : Ingredient
     public GameObject splitResult;
 
 
-    private void OnCollisionEnter(Collision col)
-    { 
+    protected override void OnCollisionEnter(Collision col)
+    {
+        base.OnCollisionEnter(col);
         if (col.relativeVelocity.magnitude > triggerVelocity)
         {
             Split(numberOfSplitResult, splitResult);

@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 114501700803912310}
   - component: {fileID: 114192365377120964}
   m_Layer: 0
-  m_Name: LightSaber
+  m_Name: Lightsaber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,6 +394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttractable: 1
+  ingredients: []
   toolType: 0
   hasBeenEnabled: 0
   addRot: {x: 0, y: 0, z: 0}
