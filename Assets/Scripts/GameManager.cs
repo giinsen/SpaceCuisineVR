@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     private List<Request> requests = new List<Request>();
 
+    public GameObject cutterParticle;
+
 
     private struct Request
     {
@@ -84,6 +86,9 @@ public class GameManager : MonoBehaviour
         requests.Add(request);
     }
 
-
-
+    public void LaunchCutterParticle(Vector3 t)
+    {
+        //cutterParticle.Play();
+        Instantiate(cutterParticle, t, Quaternion.identity);
+    }
 }

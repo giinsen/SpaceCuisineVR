@@ -37,14 +37,14 @@ public class Staser : Tool
 
     private IEnumerator AddDistortion(GameObject go)
     {
-        UnityEditorInternal.ComponentUtility.CopyComponent(distortObject.GetComponent<Distort>());
-        UnityEditorInternal.ComponentUtility.PasteComponentAsNew(go);
-        go.AddComponent<AnimatedDistort>();
-        yield return new WaitForSeconds(1f);
-        go.GetComponent<Distort>().distort.ToArray()[0].enabled = false;
-        yield return new WaitForEndOfFrame();
-        Destroy(go.GetComponent<AnimatedDistort>());
-        Destroy(go.GetComponent<Distort>());
+        //UnityEditorInternal.ComponentUtility.CopyComponent(distortObject.GetComponent<Distort>());
+        //UnityEditorInternal.ComponentUtility.PasteComponentAsNew(go);
+        //go.AddComponent<AnimatedDistort>();
+        //yield return new WaitForSeconds(1f);
+        //go.GetComponent<Distort>().distort.ToArray()[0].enabled = false;
+        //yield return new WaitForEndOfFrame();
+        //Destroy(go.GetComponent<AnimatedDistort>());
+        //Destroy(go.GetComponent<Distort>());
         yield break;
     }
 }
