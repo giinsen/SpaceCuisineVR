@@ -12,51 +12,11 @@ MonoBehaviour:
   m_Name: Game_Recipes
   m_EditorClassIdentifier: 
   recipeList:
-  - ingredientA: tentacles
-    ingredientB: bread
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
-  - ingredientA: 
-    ingredientB: 
-    result: {fileID: 0}
-    velocityOnSpawn: 0
+  - ingredientA: tentacle
+    ingredientB: sliced_bread
+    result: {fileID: 1566575659734792, guid: 42009f35b1b7fdb47899bda6b62de85d, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: head
+    ingredientB: sliced_bread
+    result: {fileID: 1166152412049288, guid: 85b03bb7a6ceb044eb500a7227434b22, type: 2}
+    velocityOnSpawn: 1
