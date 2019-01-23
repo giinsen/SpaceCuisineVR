@@ -43,7 +43,7 @@ public class Ingredient : Item
         base.Start();
         //GetComponent<Throwable>().onDetachFromHand += OnDetachFromHand();
         StartCoroutine(HasJustSpawnedTimer());
-        col = GetComponent<Collider>();
+        col = GetComponentInChildren<Collider>();
         interactable = GetComponent<Interactable>();
     }
 
@@ -63,10 +63,13 @@ public class Ingredient : Item
 
 	public void Cut()
     {
+        Debug.Log("enter function");
 		if (isCutable && !hasJustSpawned)
         {
             if (alternativeCut)
             {
+                Debug.Log("enter function alter :" + gameObject.name + "  " + cutResults.Length);
+
                 Split(cutResults);
             }
             else
@@ -173,6 +176,7 @@ public class Ingredient : Item
                 Instantiate(option.result, spawnPosition, Quaternion.identity);
             }
         }
+        StartCoroutine(CutterExplosionForce());
     }
 
     private IEnumerator CutterExplosionForce()

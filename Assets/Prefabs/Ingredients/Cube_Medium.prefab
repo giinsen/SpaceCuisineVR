@@ -40,9 +40,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1939056593478642}
-  m_LocalRotation: {x: 0.10122731, y: -0.24237125, z: 0.37185967, w: 0.8903536}
-  m_LocalPosition: {x: -0.307, y: 0.686, z: -1.049}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_LocalRotation: {x: 0.10122732, y: -0.24237125, z: 0.3718597, w: 0.8903536}
+  m_LocalPosition: {x: 0.577, y: 1.58, z: -0.778}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.24999997}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -220,12 +220,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttractable: 1
   ingredientName: Cube
   isCutable: 1
   numberOfCutResult: 10
   cutResult: {fileID: 1411533311904488, guid: 61f2b4faa3a33e244a46c44f4e296bac, type: 2}
+  alternativeCut: 0
+  cutResults: []
   isPolishable: 1
   polishResult: {fileID: 1128952733968420, guid: f918f35e30b44004692cd0993f25ac26,
     type: 2}
-  isAttractable: 1
-  attractableSpeed: 8
+  isBubbling: 1
+  myBubble: {fileID: 0}
+  inBubble: 0

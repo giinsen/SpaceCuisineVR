@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
 
     private List<Request> requests = new List<Request>();
 
-    public GameObject cutterParticle;
+    public GameObject cutParticle;
+    public GameObject fusionParticle;
 
 
     private struct Request
@@ -58,7 +59,8 @@ public class GameManager : MonoBehaviour
         {
             if (requests[0].me == requests[1].other && requests[1].me == requests[0].other)
             {
-                RecipeSpawn(requests[0]);
+                Vector3 greaterVelocity = requests[0].velocity.magnitude > requests[1].velocity.magnitude ? requests[0].velocity : requests[1].velocity;
+                RecipeSpawn(requests[0], greaterVelocity);
             }
             else
             {
@@ -70,12 +72,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void RecipeSpawn(Request r)
+    private void RecipeSpawn(Request r, Vector3 velocity)
     {
         GameObject go = Instantiate(r.recipe.result, r.position, Quaternion.identity);
         if (r.recipe.velocityOnSpawn)
-            go.GetComponent<Rigidbody>().AddForce(r.velocity, ForceMode.Impulse);
-
+        {
+            
+            go.GetComponent<Rigidbody>().AddForce(velocity, ForceMode.Impulse);
+        }
+        LaunchFusionParticle(r.position);
         Destroy(r.me);
         Destroy(r.other);
     }
@@ -89,6 +94,12 @@ public class GameManager : MonoBehaviour
     public void LaunchCutterParticle(Vector3 t)
     {
         //cutterParticle.Play();
-        Instantiate(cutterParticle, t, Quaternion.identity);
+        Instantiate(cutParticle, t, Quaternion.identity);
+    }
+
+    public void LaunchFusionParticle(Vector3 t)
+    {
+        //cutterParticle.Play();
+        Instantiate(fusionParticle, t, Quaternion.identity);
     }
 }

@@ -34,7 +34,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4859954183817844}
-  - component: {fileID: 135024712809493200}
   m_Layer: 0
   m_Name: Bone.004 5
   m_TagString: Untagged
@@ -65,7 +64,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4450469048163036}
-  - component: {fileID: 135545428407325528}
   m_Layer: 0
   m_Name: Bone.006_end 5
   m_TagString: Untagged
@@ -81,7 +79,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4881415654872772}
-  - component: {fileID: 135068512372924438}
   m_Layer: 0
   m_Name: Bone.001 7
   m_TagString: Untagged
@@ -97,7 +94,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4907683736607416}
-  - component: {fileID: 135622770145055724}
   m_Layer: 0
   m_Name: Bone.002 7
   m_TagString: Untagged
@@ -143,7 +139,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4371289876077582}
-  - component: {fileID: 135384222650386146}
   m_Layer: 0
   m_Name: Bone.006 5
   m_TagString: Untagged
@@ -181,6 +176,7 @@ GameObject:
   - component: {fileID: 114213936995034672}
   - component: {fileID: 114766025829885770}
   - component: {fileID: 114246507746732284}
+  - component: {fileID: 136089375735796258}
   m_Layer: 0
   m_Name: tentacle
   m_TagString: Ingredient
@@ -196,7 +192,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4512167092536882}
-  - component: {fileID: 135870031511237608}
   m_Layer: 0
   m_Name: Bone.003 5
   m_TagString: Untagged
@@ -212,7 +207,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4994273563640456}
-  - component: {fileID: 135802287766672882}
   m_Layer: 0
   m_Name: Bone.005 5
   m_TagString: Untagged
@@ -256,7 +250,7 @@ Transform:
   m_GameObject: {fileID: 1792034240844456}
   m_LocalRotation: {x: -0.7376896, y: 0.13273251, z: -0.109631434, w: 0.65282243}
   m_LocalPosition: {x: 5.411, y: -0.159, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4630166370573212}
   - {fileID: 4814510922793194}
@@ -473,6 +467,8 @@ MonoBehaviour:
   isCutable: 0
   numberOfCutResult: 2
   cutResult: {fileID: 0}
+  alternativeCut: 1
+  cutResults: []
   isPolishable: 0
   polishResult: {fileID: 0}
   isBubbling: 1
@@ -553,90 +549,19 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   snapAttachEaseInCompleted: 0
   interactable: {fileID: 0}
---- !u!135 &135024712809493200
-SphereCollider:
+--- !u!136 &136089375735796258
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1099836798836634}
+  m_GameObject: {fileID: 1792034240844456}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135068512372924438
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1303879517621050}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0035
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135384222650386146
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1632833296144812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0015
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135545428407325528
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1260360036279716}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135622770145055724
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1571621447099882}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.003
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135802287766672882
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1971366873072042}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.002
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &135870031511237608
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1942952007229544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.0025
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.31501487
+  m_Height: 2.3675385
+  m_Direction: 0
+  m_Center: {x: 0.054084737, y: 0.024459211, z: -0.07924371}
 --- !u!137 &137034252902898682
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

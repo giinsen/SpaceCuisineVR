@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 114558556187976932}
   - component: {fileID: 114036481510864314}
   - component: {fileID: 114362984120741448}
+  - component: {fileID: 135158464710640674}
   m_Layer: 0
   m_Name: head
   m_TagString: Ingredient
@@ -149,7 +150,6 @@ GameObject:
   - component: {fileID: 4984531309632038}
   - component: {fileID: 33318018295616234}
   - component: {fileID: 23172250918770852}
-  - component: {fileID: 64825505659023146}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -600,7 +600,7 @@ Transform:
   m_GameObject: {fileID: 1515858613233484}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4874517245147892}
   - {fileID: 4116349815609832}
@@ -894,20 +894,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64825505659023146
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1531109375743878}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300020, guid: 7e3a74cd28feec844b73ce6c3924bd0c, type: 3}
 --- !u!95 &95853808049617094
 Animator:
   serializedVersion: 3
@@ -998,9 +984,11 @@ MonoBehaviour:
   isCutable: 0
   numberOfCutResult: 2
   cutResult: {fileID: 0}
+  alternativeCut: 0
+  cutResults: []
   isPolishable: 0
   polishResult: {fileID: 0}
-  isBubbling: 1
+  isBubbling: 0
   myBubble: {fileID: 0}
   inBubble: 0
 --- !u!114 &114429641719046880
@@ -1040,6 +1028,18 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!135 &135158464710640674
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1515858613233484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.27
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!137 &137390458236035324
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

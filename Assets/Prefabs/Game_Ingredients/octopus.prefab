@@ -298,6 +298,7 @@ GameObject:
   - component: {fileID: 114799807879840424}
   - component: {fileID: 114686194903772424}
   - component: {fileID: 114588876359939340}
+  - component: {fileID: 135910877899621240}
   m_Layer: 0
   m_Name: octopus
   m_TagString: Ingredient
@@ -682,7 +683,6 @@ GameObject:
   - component: {fileID: 4017531075083260}
   - component: {fileID: 33595795471399038}
   - component: {fileID: 23938308565861360}
-  - component: {fileID: 64700901614837064}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -1989,9 +1989,9 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1260676272740784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10.97}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.13704827, y: 0.8447311, z: -0.07376794, w: -0.51206005}
+  m_LocalPosition: {x: -2.567, y: 0.329, z: -0.011}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4523777498894186}
   - {fileID: 4224751184080012}
@@ -2012,7 +2012,7 @@ Transform:
   - {fileID: 4302550024340080}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15.366001, y: 241.18799, z: -9.31}
 --- !u!4 &4351955280779346
 Transform:
   m_ObjectHideFlags: 1
@@ -2988,20 +2988,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64700901614837064
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1499713788972080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300020, guid: 7e3a74cd28feec844b73ce6c3924bd0c, type: 3}
 --- !u!95 &95557379598042094
 Animator:
   serializedVersion: 3
@@ -3054,11 +3040,11 @@ MonoBehaviour:
   cutResults:
   - numberOfResult: 1
     result: {fileID: 1515858613233484, guid: b3eaca23bcb2acb419b2d9db8c6f3753, type: 2}
-  - numberOfResult: 8
+  - numberOfResult: 6
     result: {fileID: 1792034240844456, guid: 8ebb0db183774124bb9cf4e6fa8709aa, type: 2}
   isPolishable: 0
   polishResult: {fileID: 0}
-  isBubbling: 1
+  isBubbling: 0
   myBubble: {fileID: 0}
   inBubble: 0
   maxSpeed: 15
@@ -3145,6 +3131,18 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!135 &135910877899621240
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1260676272740784}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.27
+  m_Center: {x: 0, y: 0.95, z: 0}
 --- !u!137 &137312216344294410
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

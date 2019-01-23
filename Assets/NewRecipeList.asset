@@ -16,3 +16,7 @@ MonoBehaviour:
     ingredientB: Cube
     result: {fileID: 1855821699155400, guid: 2f1c5cbb3fee3514d884bad9fab78a89, type: 2}
     velocityOnSpawn: 1
+  - ingredientA: head
+    ingredientB: Cube
+    result: {fileID: 1351595089429494, guid: c964cc1a04366d244b62d8c94bd8ae8b, type: 2}
+    velocityOnSpawn: 1

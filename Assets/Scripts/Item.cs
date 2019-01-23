@@ -30,6 +30,7 @@ public class Item : MonoBehaviour {
 
     public virtual void Stase()
     {
+        rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
     }
 }
