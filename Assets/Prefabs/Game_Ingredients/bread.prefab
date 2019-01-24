@@ -40,8 +40,8 @@ GameObject:
   - component: {fileID: 54896626176427334}
   - component: {fileID: 114976154591820304}
   - component: {fileID: 114490165347631310}
-  - component: {fileID: 65535403183094558}
   - component: {fileID: 114530299797454202}
+  - component: {fileID: 136851688353057660}
   m_Layer: 0
   m_Name: bread
   m_TagString: Ingredient
@@ -99,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1329908805064456}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4287243, y: 0.29, z: 2.1499243}
-  m_LocalScale: {x: 0.4214909, y: 0.4214909, z: 0.4214909}
+  m_LocalPosition: {x: -1.004, y: 0.29, z: -0.202}
+  m_LocalScale: {x: 0.42149088, y: 0.42149088, z: 0.42149088}
   m_Children:
   - {fileID: 4056885370280610}
   - {fileID: 4198746219492594}
@@ -206,18 +206,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65535403183094558
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1329908805064456}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9731829, y: 0.5545125, z: 0.6215725}
-  m_Center: {x: 0.02313435, y: 0.22274375, z: -0.040402412}
 --- !u!114 &114082559853775854
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,3 +322,16 @@ MonoBehaviour:
   handFollowTransformRotation: 1
   highlightOnHover: 1
   hideHighlight: []
+--- !u!136 &136851688353057660
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1329908805064456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.32
+  m_Height: 2.06
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.21, z: 0}

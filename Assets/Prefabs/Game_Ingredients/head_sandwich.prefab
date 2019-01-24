@@ -174,8 +174,8 @@ GameObject:
   - component: {fileID: 54616941049706004}
   - component: {fileID: 114710401856326022}
   - component: {fileID: 114509926322458938}
-  - component: {fileID: 65021008894252148}
   - component: {fileID: 114211945437815086}
+  - component: {fileID: 136547504411324190}
   m_Layer: 0
   m_Name: head_sandwich
   m_TagString: Ingredient
@@ -1251,7 +1251,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166152412049288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.51, y: 0.29, z: 0.15}
+  m_LocalPosition: {x: -0.44570348, y: 0.03, z: 0.22814234}
   m_LocalScale: {x: 0.4214909, y: 0.4214909, z: 0.4214909}
   m_Children:
   - {fileID: 4249097532644808}
@@ -2795,18 +2795,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65021008894252148
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1166152412049288}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9731829, y: 0.8878083, z: 0.6215725}
-  m_Center: {x: 0.02313435, y: 0.38939166, z: -0.040402412}
 --- !u!95 &95049309893196980
 Animator:
   serializedVersion: 3
@@ -2977,6 +2965,19 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!136 &136547504411324190
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166152412049288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.47
+  m_Height: 2.06
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.39, z: 0}
 --- !u!137 &137220321540743644
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

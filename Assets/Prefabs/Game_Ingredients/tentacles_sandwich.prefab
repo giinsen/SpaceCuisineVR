@@ -1133,8 +1133,8 @@ GameObject:
   - component: {fileID: 54828751209712602}
   - component: {fileID: 114702031983096456}
   - component: {fileID: 114832829830113104}
-  - component: {fileID: 65479873477286438}
   - component: {fileID: 114926211491940310}
+  - component: {fileID: 136779759401611288}
   m_Layer: 0
   m_Name: tentacles_sandwich
   m_TagString: Ingredient
@@ -3487,7 +3487,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1566575659734792}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4287243, y: 0.29, z: -0.95}
+  m_LocalPosition: {x: -1.1710441, y: 0.03, z: 0.6342945}
   m_LocalScale: {x: 0.4214909, y: 0.4214909, z: 0.4214909}
   m_Children:
   - {fileID: 4883956553673178}
@@ -3996,18 +3996,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65479873477286438
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1566575659734792}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9731829, y: 0.60235023, z: 0.6215725}
-  m_Center: {x: 0.02313435, y: 0.30996108, z: -0.040402412}
 --- !u!95 &95062576384264040
 Animator:
   serializedVersion: 3
@@ -4304,6 +4292,19 @@ MonoBehaviour:
   velocityAverageFrames: 5
   angularVelocityAverageFrames: 11
   estimateOnAwake: 0
+--- !u!136 &136779759401611288
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1566575659734792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.35
+  m_Height: 2.09
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.21, z: 0}
 --- !u!137 &137044896365350138
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

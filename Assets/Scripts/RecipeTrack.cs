@@ -22,26 +22,29 @@ public class RecipeTrack : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(SelectOrder());
         animator = GetComponent<Animator>();
+        StartCoroutine(SelectOrder());
     }
 
     private IEnumerator SelectOrder()
     {
         animator.SetBool("order", false);
-        yield return new WaitForSeconds(30.0f);
+        yield return new WaitForSeconds(5.0f);
         choosenOrderIdx = Random.Range(0, possibleOrders.Length);
-        orderVisualizer.material.SetTexture(0, possibleOrders[choosenOrderIdx].orderVisual);
+        //orderVisualizer.material.SetTexture(0, possibleOrders[choosenOrderIdx].orderVisual);
+        orderVisualizer.material.SetTexture("_MainTex", possibleOrders[choosenOrderIdx].orderVisual);
         waitForOrder = true;
         animator.SetBool("order", true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log("hit");
         if (waitForOrder)
         {
             if (other.tag == "Ingredient")
             {
+                Debug.Log("Ingredient");
                 //Animation ? Check ?
                 Ingredient otherIng = other.GetComponent<Ingredient>();
                 if (otherIng.ingredientName == possibleOrders[choosenOrderIdx].orderName)
