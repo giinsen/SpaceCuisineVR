@@ -28,10 +28,12 @@ public class RecipeTrack : MonoBehaviour
 
     private IEnumerator SelectOrder()
     {
+        animator.SetBool("order", false);
         yield return new WaitForSeconds(30.0f);
         choosenOrderIdx = Random.Range(0, possibleOrders.Length);
         orderVisualizer.material.SetTexture(0, possibleOrders[choosenOrderIdx].orderVisual);
         waitForOrder = true;
+        animator.SetBool("order", true);
     }
 
     private void OnTriggerEnter(Collider other)
