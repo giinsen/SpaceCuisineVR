@@ -108,7 +108,6 @@ namespace Valve.VR.InteractionSystem
             {
                 hand.TriggerHapticPulse(500);
             }
-
             renderModel.Show();
         }
 

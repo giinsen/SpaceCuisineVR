@@ -182,7 +182,7 @@ public class Ingredient : Item
     private IEnumerator CutterExplosionForce()
     {
         GameManager.instance.LaunchCutterParticle(transform.position);
-        rb.AddExplosionForce(30f, transform.position, 50f);
+        rb.AddExplosionForce(10f, transform.position, 50f);
         yield return new WaitForEndOfFrame();
         Destroy(this.gameObject);
         yield break;

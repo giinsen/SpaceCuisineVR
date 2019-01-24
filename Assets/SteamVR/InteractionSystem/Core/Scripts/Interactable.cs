@@ -97,6 +97,7 @@ namespace Valve.VR.InteractionSystem
         private void CreateHighlightRenderers()
         {
             existingSkinnedRenderers = this.GetComponentsInChildren<SkinnedMeshRenderer>(true);
+            
             highlightHolder = new GameObject("Highlighter");
             highlightSkinnedRenderers = new SkinnedMeshRenderer[existingSkinnedRenderers.Length];
 
@@ -128,10 +129,11 @@ namespace Valve.VR.InteractionSystem
             MeshFilter[] existingFilters = this.GetComponentsInChildren<MeshFilter>(true);
             existingRenderers = new MeshRenderer[existingFilters.Length];
             highlightRenderers = new MeshRenderer[existingFilters.Length];
-
+            
             for (int filterIndex = 0; filterIndex < existingFilters.Length; filterIndex++)
             {
                 MeshFilter existingFilter = existingFilters[filterIndex];
+                //existingFilter.gameObject.name
                 MeshRenderer existingRenderer = existingFilter.GetComponent<MeshRenderer>();
 
                 if (existingFilter == null || existingRenderer == null || ShouldIgnoreHighlight(existingFilter))
@@ -144,8 +146,16 @@ namespace Valve.VR.InteractionSystem
                 MeshRenderer newRenderer = newFilterHolder.AddComponent<MeshRenderer>();
 
                 Material[] materials = new Material[existingRenderer.sharedMaterials.Length];
+
                 for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
                 {
+                    if (existingFilter.gameObject.tag == "Tool" || existingFilter.gameObject.transform.parent.gameObject.tag == "Tool")
+                        highlightMat.SetColor("g_vOutlineColor", new Color32(255, 128, 0, 255)); //orange
+                    else if (existingFilter.gameObject.tag == "Ingredient")// || existingFilter.gameObject.transform.parent.gameObject.tag == "Ingredient")
+                        highlightMat.SetColor("g_vOutlineColor", new Color32(0, 200, 85, 255)); //vert
+                    else
+                        highlightMat.SetColor("g_vOutlineColor", new Color32(0, 200, 85, 255)); //vert
+
                     materials[materialIndex] = highlightMat;
                 }
                 newRenderer.sharedMaterials = materials;

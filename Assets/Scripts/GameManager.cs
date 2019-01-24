@@ -75,6 +75,7 @@ public class GameManager : MonoBehaviour
     private void RecipeSpawn(Request r, Vector3 velocity)
     {
         GameObject go = Instantiate(r.recipe.result, r.position, Quaternion.identity);
+        Destroy(GameObject.Find("Highlighter"));
         if (r.recipe.velocityOnSpawn)
         {
             

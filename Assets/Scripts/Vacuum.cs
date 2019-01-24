@@ -38,11 +38,13 @@ public class Vacuum : Tool
 	{
 		foreach(Ingredient ing in ingredients)
         {
+            if (ing == null) continue;
             ing.Attract(attractPoint);
         }
 
         foreach (Item item in otherItems)
         {
+            if (item == null) continue;
             item.Attract(attractPoint);
         }
         ingredients.Clear();
