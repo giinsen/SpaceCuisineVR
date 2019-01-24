@@ -29,7 +29,8 @@ public class Ingredient : Item
     protected Collider col;
     protected Interactable interactable;
 
-    private bool canPassHoloWalls = false;
+    private bool hasJustBeenThrown = false;
+    
 
     [System.Serializable]
     public struct CutableOption
@@ -53,6 +54,8 @@ public class Ingredient : Item
         {
             transform.position = myBubble.transform.position;
         }
+
+        Debug.Log("hasJustBeenThrown  : "+hasJustBeenThrown);
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -81,10 +84,10 @@ public class Ingredient : Item
 
     public void OnPickUp()
     {
-        if (canPassHoloWalls)
+        if (hasJustBeenThrown)
         {
             StopAllCoroutines();
-            canPassHoloWalls = false;
+            hasJustBeenThrown = false;
             gameObject.layer = 0;
         }
         if (isBubbling && myBubble != null)
@@ -113,7 +116,7 @@ public class Ingredient : Item
 
     private IEnumerator HolowallLayer()
     {
-        canPassHoloWalls = true;
+        hasJustBeenThrown = true;
         gameObject.layer = LayerMask.NameToLayer("HoloWall");
         float timer = 0;
         while (timer <= 3.0f)
@@ -122,7 +125,7 @@ public class Ingredient : Item
             yield return new WaitForEndOfFrame();
         }
         gameObject.layer = 0;
-        canPassHoloWalls = false;
+        hasJustBeenThrown = false;
     }
 
     protected virtual void OnCollisionEnter(Collision other)
@@ -137,10 +140,10 @@ public class Ingredient : Item
                 GameManager.instance.SendRecipeRequest(result, gameObject, otherIng.gameObject, other.contacts[0].point, other.relativeVelocity);
             }
         }
-        if (canPassHoloWalls)
+        if (hasJustBeenThrown)
         {
             StopAllCoroutines();
-            canPassHoloWalls = false;
+            hasJustBeenThrown = false;
             gameObject.layer = 0;
         }
     }
