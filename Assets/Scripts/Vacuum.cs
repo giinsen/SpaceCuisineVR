@@ -1,15 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Vacuum : Tool
 {
 	public ParticleSystem particleVacuum;
-
 	public GameObject attractPoint;
+    public Renderer coneRenderer;
 
+    private Throwable throwable;
 
-	protected override void Update()
+    protected override void Start()
+    {
+        base.Start();
+        throwable = GetComponent<Throwable>();
+        throwable.onPickUp.AddListener(OnPickup);
+        throwable.onDetachFromHand.AddListener(OnDrop);
+        coneRenderer.enabled = false;
+    }
+
+    private void OnPickup()
+    {
+        coneRenderer.enabled = true;
+    }
+
+    private void OnDrop()
+    {
+        coneRenderer.enabled = false;
+    }
+
+    protected override void Update()
 	{
 		base.Update();
 		if (hasBeenEnabled)
