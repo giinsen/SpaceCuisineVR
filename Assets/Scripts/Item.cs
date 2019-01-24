@@ -38,9 +38,9 @@ public class Item : MonoBehaviour {
     private IEnumerator StaseAnimation()
     {
         float timer = 0;
-        float timerDuration = 0.25f;
+        float timerDuration = 0.1f;
         Vector3 baseScale = transform.localScale;
-        Vector3 targetScale = transform.localScale * 1.15f;
+        Vector3 targetScale = transform.localScale * 0.7f;
         while (timer < timerDuration)
         {
             transform.localScale = Vector3.Lerp(baseScale, targetScale, timer / timerDuration);

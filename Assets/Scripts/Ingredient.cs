@@ -19,6 +19,7 @@ public class Ingredient : Item
     [Header("Polishing options")]
     public bool isPolishable = false;
     public GameObject polishResult;
+    public Vector3 polishScale;
 
     [Header("Bubble options")]
     public bool isBubblable = true;
@@ -29,7 +30,7 @@ public class Ingredient : Item
     protected Collider col;
     protected Interactable interactable;
 
-    private bool hasJustBeenThrown = false;
+    public bool hasJustBeenThrown = false;
     
 
     [System.Serializable]

@@ -93,13 +93,13 @@ Material:
     - _FlickerSpeed: 10
     - _Fold: 63
     - _Glitch: 1
-    - _GlitchIntensity: 0.2
+    - _GlitchIntensity: 2.06
     - _GlitchSpeed: 12
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _GlowSpeed: 10
-    - _GlowTiling: 0.15
+    - _GlowSpeed: 9.1
+    - _GlowTiling: 0.384
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
@@ -109,7 +109,7 @@ Material:
     - _RimPower: 1.88
     - _RimStrength: 2.5
     - _ScanSpeed: -1.66
-    - _ScanTiling: 5.7
+    - _ScanTiling: 31.1
     - _Scanline: 0
     - _ScanlineSize: 1
     - _ScanlineSpeed: 2

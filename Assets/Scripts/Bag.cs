@@ -58,7 +58,6 @@ public class Bag : Tool
             target.transform.localScale = Vector3.Lerp(Vector3.zero, scaleTarget, timer / timerDuration);
             yield return new WaitForEndOfFrame();
         }
-
     }
 
     private GameObject ChooseObjectToSpawn()
