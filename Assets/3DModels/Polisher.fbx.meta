@@ -1,0 +1,205 @@
+fileFormatVersion: 2
+guid: fb2c0ad222766d7439856a7d77340aeb
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Polisher
+    100004: PolisherBase
+    100006: PolisherBase.002
+    100008: Cylinder
+    100010: Cylinder.001
+    100012: Cylinder.002
+    100014: Cylinder.003
+    100016: Blade
+    100018: Buttons1
+    100020: Buttons2
+    100022: Buttons3
+    100024: Buttons1.001
+    100026: Buttons1.002
+    100028: Buttons1.BotLight
+    100030: Buttons1.BotLight.001
+    100032: Buttons1.BotLight.002
+    100034: Buttons1.MidLight
+    100036: Buttons1.MidLight.001
+    100038: Buttons1.MidLight.002
+    100040: Buttons1.TopLight
+    100042: Buttons1.TopLight.001
+    100044: Buttons1.TopLight.002
+    400000: //RootNode
+    400002: Polisher
+    400004: PolisherBase
+    400006: PolisherBase.002
+    400008: Cylinder
+    400010: Cylinder.001
+    400012: Cylinder.002
+    400014: Cylinder.003
+    400016: Blade
+    400018: Buttons1
+    400020: Buttons2
+    400022: Buttons3
+    400024: Buttons1.001
+    400026: Buttons1.002
+    400028: Buttons1.BotLight
+    400030: Buttons1.BotLight.001
+    400032: Buttons1.BotLight.002
+    400034: Buttons1.MidLight
+    400036: Buttons1.MidLight.001
+    400038: Buttons1.MidLight.002
+    400040: Buttons1.TopLight
+    400042: Buttons1.TopLight.001
+    400044: Buttons1.TopLight.002
+    2100000: Glass
+    2100002: OrangeShinyPlastic
+    2100004: GreyMetal
+    2100006: TopLight
+    2100008: BotLight
+    2100010: MidLight
+    2300000: Polisher
+    2300002: PolisherBase
+    2300004: PolisherBase.002
+    2300006: Cylinder
+    2300008: Cylinder.001
+    2300010: Cylinder.002
+    2300012: Cylinder.003
+    2300014: Blade
+    2300016: Buttons1
+    2300018: Buttons2
+    2300020: Buttons3
+    2300022: Buttons1.001
+    2300024: Buttons1.002
+    2300026: Buttons1.BotLight
+    2300028: Buttons1.BotLight.001
+    2300030: Buttons1.BotLight.002
+    2300032: Buttons1.MidLight
+    2300034: Buttons1.MidLight.001
+    2300036: Buttons1.MidLight.002
+    2300038: Buttons1.TopLight
+    2300040: Buttons1.TopLight.001
+    2300042: Buttons1.TopLight.002
+    3300000: Polisher
+    3300002: PolisherBase
+    3300004: PolisherBase.002
+    3300006: Cylinder
+    3300008: Cylinder.001
+    3300010: Cylinder.002
+    3300012: Cylinder.003
+    3300014: Blade
+    3300016: Buttons1
+    3300018: Buttons2
+    3300020: Buttons3
+    3300022: Buttons1.001
+    3300024: Buttons1.002
+    3300026: Buttons1.BotLight
+    3300028: Buttons1.BotLight.001
+    3300030: Buttons1.BotLight.002
+    3300032: Buttons1.MidLight
+    3300034: Buttons1.MidLight.001
+    3300036: Buttons1.MidLight.002
+    3300038: Buttons1.TopLight
+    3300040: Buttons1.TopLight.001
+    3300042: Buttons1.TopLight.002
+    4300000: Polisher
+    4300002: PolisherBase
+    4300004: PolisherBase.002
+    4300006: Cylinder.002
+    4300008: Cylinder.001
+    4300010: Cylinder
+    4300012: Cylinder.003
+    4300014: Buttons3
+    4300016: Buttons2
+    4300018: Buttons1
+    4300020: Blade
+    4300022: Buttons1.MidLight.002
+    4300024: Buttons1.TopLight.002
+    4300026: Buttons1.BotLight.002
+    4300028: Buttons1.002
+    4300030: Buttons1.001
+    4300032: Buttons1.BotLight.001
+    4300034: Buttons1.TopLight.001
+    4300036: Buttons1.MidLight.001
+    4300038: Buttons1.MidLight
+    4300040: Buttons1.TopLight
+    4300042: Buttons1.BotLight
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
