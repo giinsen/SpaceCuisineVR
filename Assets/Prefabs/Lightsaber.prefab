@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33206247215759620}
   - component: {fileID: 23358927329066718}
   - component: {fileID: 64986202910019554}
+  - component: {fileID: 136348315231949620}
   m_Layer: 0
   m_Name: Saber
   m_TagString: Untagged
@@ -121,8 +122,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1804837862466842}
-  m_LocalRotation: {x: -0.70710677, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.231, y: 0.275, z: -0.133}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.749939, y: 1.126, z: -0.792}
   m_LocalScale: {x: 0.12484911, y: 0.12484911, z: 0.12484911}
   m_Children:
   - {fileID: 4301222837060730}
@@ -131,7 +132,7 @@ Transform:
   - {fileID: 4781198867929776}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4301222837060730
 Transform:
   m_ObjectHideFlags: 1
@@ -338,8 +339,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5158734, y: 3.1851618, z: 0.65327746}
-  m_Center: {x: -0.010129707, y: 0.25755095, z: 0.010038718}
+  m_Size: {x: 0.6317194, y: 3.1851618, z: 0.7469799}
+  m_Center: {x: -0.010794974, y: 0.25755095, z: -0.00409667}
 --- !u!95 &95258099423444294
 Animator:
   serializedVersion: 3
@@ -526,3 +527,16 @@ Halo:
     serializedVersion: 2
     rgba: 4278231551
   m_Size: 0.2
+--- !u!136 &136348315231949620
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1094588109171206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  m_Radius: 0.0003
+  m_Height: 0.0030863825
+  m_Direction: 2
+  m_Center: {x: 0.000000026720684, y: 0.0000000019212762, z: 0.034311924}
