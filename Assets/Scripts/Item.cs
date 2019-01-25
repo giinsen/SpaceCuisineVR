@@ -26,7 +26,7 @@ public class Item : MonoBehaviour {
 
     protected virtual void OnPickup()
     {
-        throwable.interactable.attachedToHand.TriggerHapticPulse(1500);
+        throwable.interactable.attachedToHand.TriggerHapticPulse(0.15f,1/(0.15f/2),5f);
     }
 
     public void Attract(GameObject attractPoint)

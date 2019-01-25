@@ -48,14 +48,16 @@ public class Bag : Tool
 
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)
     {
+        target.GetComponent<Collider>().enabled = false;
         float timer = 0.0f;
-        float timerDuration = 0.8f;
+        float timerDuration = 1.0f;
         while (timer < timerDuration)
         {
             timer += Time.deltaTime;
             target.transform.localScale = Vector3.Lerp(Vector3.zero, scaleTarget, timer / timerDuration);
             yield return new WaitForEndOfFrame();
         }
+        target.GetComponent<Collider>().enabled = true;
     }
 
     private GameObject ChooseObjectToSpawn()

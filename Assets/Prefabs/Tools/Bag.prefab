@@ -268,7 +268,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614916131764374}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0.67, z: 0}
+  m_LocalPosition: {x: -1.081, y: 0.35, z: 1.952}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4176538263307926}
@@ -314,7 +314,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1097439327737530}
   m_LocalRotation: {x: 0.00000005960465, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.0575}
+  m_LocalPosition: {x: -0.013, y: 0, z: -0.207}
   m_LocalScale: {x: 25, y: 25, z: 25}
   m_Children: []
   m_Father: {fileID: 4467496741478060}
@@ -609,8 +609,8 @@ MonoBehaviour:
   objectsToSpawn:
   - {fileID: 1329908805064456, guid: ae81eb0623e2cac479265fd6fe29b621, type: 2}
   - {fileID: 1260676272740784, guid: 076c05be0cd5f3848a192b74ee066e1d, type: 2}
-  spawnForce: 15
-  spawnTimerDuration: 0.5
+  spawnForce: 75
+  spawnTimerDuration: 0.75
 --- !u!114 &114600047852151646
 MonoBehaviour:
   m_ObjectHideFlags: 1
