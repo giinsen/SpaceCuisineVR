@@ -12,19 +12,39 @@ MonoBehaviour:
   m_Name: Game_Recipes
   m_EditorClassIdentifier: 
   recipeList:
-  - ingredientA: tentacle
-    ingredientB: sliced_bread
-    result: {fileID: 1566575659734792, guid: 42009f35b1b7fdb47899bda6b62de85d, type: 2}
+  - ingredientA: Tentacle
+    ingredientB: SlicedBread
+    result: {fileID: 1400989920223446, guid: 76a5c543bdfee47429dd8708bea464b8, type: 2}
     velocityOnSpawn: 1
-  - ingredientA: head
-    ingredientB: sliced_bread
-    result: {fileID: 1166152412049288, guid: 85b03bb7a6ceb044eb500a7227434b22, type: 2}
+  - ingredientA: Head
+    ingredientB: SlicedBread
+    result: {fileID: 1289588037700454, guid: d4d6ee2a2781a254a99b41eaa002f165, type: 2}
     velocityOnSpawn: 1
-  - ingredientA: jelly
-    ingredientB: bread
-    result: {fileID: 1805243889130852, guid: 2cdbd3e19f63f194f90bf1357951d869, type: 2}
+  - ingredientA: Jelly
+    ingredientB: Bread
+    result: {fileID: 1898155689052542, guid: eeb9c15802cabf14285f3727a642b796, type: 2}
     velocityOnSpawn: 1
-  - ingredientA: jelly
-    ingredientB: sliced_bread
-    result: {fileID: 1432403386693418, guid: cca07cde931c29b4698e3f12cdb758e0, type: 2}
+  - ingredientA: Diamond
+    ingredientB: Octopus
+    result: {fileID: 1271243024798474, guid: 2ae00aae8432fad4c91c17d3e500215e, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: Octopus
+    ingredientB: SlicedBread
+    result: {fileID: 1286853623556296, guid: 4e9e944f9a28cc249845b98f8e447475, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: Diamond
+    ingredientB: Bread
+    result: {fileID: 1493598622077284, guid: f38edfbdde48abe4da4bcf8dbe3306a1, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: TentaculesWithDiamond
+    ingredientB: SlicedBread
+    result: {fileID: 1252808035555164, guid: 8c56527372b66c4458206e3ffd0809ec, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: HeadWithDiamond
+    ingredientB: SlicedBread
+    result: {fileID: 1113044680669026, guid: 6b8e787b19af63840882d3fd84967c29, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: Jelly
+    ingredientB: SlicedBread
+    result: {fileID: 1143884692834500, guid: 9e89888ee1cd12c478fcccb0d61ea1cc, type: 2}
     velocityOnSpawn: 1

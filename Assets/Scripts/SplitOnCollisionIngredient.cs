@@ -16,6 +16,7 @@ public class SplitOnCollisionIngredient : Ingredient
         if (col.relativeVelocity.magnitude > triggerVelocity)
         {
             Split(numberOfSplitResult, splitResult);
+            Destroy(this.gameObject);
         }
     }
 }
