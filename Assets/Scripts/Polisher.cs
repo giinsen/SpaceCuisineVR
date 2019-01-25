@@ -51,12 +51,15 @@ public class Polisher : MonoBehaviour {
         yield return RotatePrefabQuickly();
         Destroy(go1); Destroy(go2); Destroy(go3);
         GameObject polishResult = Instantiate(ingredient.polishResult, phase2.transform.position, Quaternion.identity);
-        Destroy(ingredient.gameObject);       
+        polishResult.transform.localScale = ingredient.polishResultScale;            
         Instantiate(particleFinish, phase2.transform.position, Quaternion.identity);
+
+        Destroy(ingredient.gameObject);
 
         polishResult.GetComponent<Rigidbody>().isKinematic = true;
         polishResult.GetComponent<Collider>().enabled = false;    
         yield return new WaitForSeconds(8f);
+        polishResult.GetComponent<Rigidbody>().AddForce(new Vector3(0, 25, 0));
         polishResult.GetComponent<Rigidbody>().isKinematic = false;
         polishResult.GetComponent<Collider>().enabled = true;
     }

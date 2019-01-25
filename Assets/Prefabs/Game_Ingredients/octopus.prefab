@@ -3043,13 +3043,15 @@ MonoBehaviour:
   - numberOfResult: 6
     result: {fileID: 1792034240844456, guid: 8ebb0db183774124bb9cf4e6fa8709aa, type: 2}
   isPolishable: 1
-  polishResult: {fileID: 0}
   polishScale: {x: 0.1, y: 0.1, z: 0.1}
+  polishResult: {fileID: 1842924873793050, guid: 9aeb6b4db40d84146827c0f6807a95ea,
+    type: 2}
+  polishResultScale: {x: 0.14, y: 0.14, z: 0.14}
   isBubblable: 0
   myBubble: {fileID: 0}
   inBubble: 0
   hasJustBeenThrown: 0
-  maxSpeed: 15
+  maxSpeed: 3
   pitchAcceleration: 3
   speedAcceleration: 3
   radius: 3
