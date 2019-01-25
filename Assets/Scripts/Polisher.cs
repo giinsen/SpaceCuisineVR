@@ -17,7 +17,7 @@ public class Polisher : MonoBehaviour {
 
     private bool isPolishing = false;
 
-
+    private Vector3[] expulsionArray = new[] { new Vector3(0f, 0f, 1f), new Vector3(-0.5f, 0f, -0.4f), new Vector3(0.5f, 0f, -0.4f) };
 
     private void OnTriggerStay(Collider other)
     {
@@ -41,14 +41,14 @@ public class Polisher : MonoBehaviour {
         StartCoroutine(ScaleAnim(ingredient.gameObject, ingredient.polishScale));
         yield return MoveToPhase(ingredient.transform, ingredient.transform.position, phase1.transform.position, 1f);
         yield return MoveToPhase(ingredient.transform, ingredient.transform.position, phase2.transform.position, 1f);
-        ingredient.Stase();
+        ingredient.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        ingredient.GetComponent<Rigidbody>().isKinematic = true;
 
-        
         GameObject go1 = Instantiate(particleCircle,phase2.transform.position,Quaternion.identity, this.gameObject.transform);
         GameObject go2 = Instantiate(particleCircle,phase2.transform.position,Quaternion.identity, this.gameObject.transform);
         GameObject go3 = Instantiate(particleBase, phase2.transform.position,Quaternion.identity, this.gameObject.transform);
 
-        yield return RotatePrefabQuickly(ingredient.transform, 80f, 2.5f);
+        yield return RotatePrefabQuickly();
         Destroy(go1); Destroy(go2); Destroy(go3);
         GameObject polishResult = Instantiate(ingredient.polishResult, phase2.transform.position, Quaternion.identity);
         Vector3 polishResultNormalScale = polishResult.transform.localScale;
@@ -59,14 +59,14 @@ public class Polisher : MonoBehaviour {
 
         polishResult.GetComponent<Rigidbody>().isKinematic = true;
         polishResult.GetComponent<Collider>().enabled = false;
-        StartCoroutine(RotatePrefabQuickly(polishResult.transform, 25f, 3f));
+        StartCoroutine(RotatePrefabPolishQuickly(polishResult));
 
         yield return new WaitForSeconds(3f);
 
         StartCoroutine(ScaleAnim(polishResult.gameObject, polishResultNormalScale));
-        polishResult.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0) * 150f, ForceMode.Impulse);
         polishResult.GetComponent<Rigidbody>().isKinematic = false;
         polishResult.GetComponent<Collider>().enabled = true;
+        polishResult.GetComponent<Rigidbody>().AddForce(expulsionArray[Random.Range(0,2)] * 5f, ForceMode.Impulse);       
         isPolishing = false;
     }
 
@@ -95,15 +95,28 @@ public class Polisher : MonoBehaviour {
         objectToMove.position = b;
     }
 
-    IEnumerator RotatePrefabQuickly(Transform tr, float speed, float seconds)
+    IEnumerator RotatePrefabQuickly()
     {       
         float t = 0;
 
-        while (t <= seconds)
+        while (t <= 2.5f)
         {
             Debug.Log("ok");
             t += Time.fixedDeltaTime;
-            tr.Rotate(Vector3.up, speed);
+            ingredient.transform.Rotate(Vector3.up, 80f);
+            yield return new WaitForSeconds(0.01f);
+        }
+    }
+
+    IEnumerator RotatePrefabPolishQuickly(GameObject go)
+    {
+        float t = 0;
+
+        while (t <= 3f)
+        {
+            Debug.Log("ok");
+            t += Time.fixedDeltaTime;
+            go.transform.Rotate(Vector3.up, 15f);
             yield return new WaitForSeconds(0.01f);
         }
     }
