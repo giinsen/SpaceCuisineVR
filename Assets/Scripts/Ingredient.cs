@@ -65,7 +65,7 @@ public class Ingredient : Item
         hasJustSpawned = false;
     }
 
-	public void Cut()
+	public virtual void Cut()
     {
         //Debug.Log("enter function");
 		if (isCutable && !hasJustSpawned)

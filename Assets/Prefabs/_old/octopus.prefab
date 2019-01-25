@@ -1989,8 +1989,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1260676272740784}
-  m_LocalRotation: {x: 0, y: 0, z: -0.078728765, w: 0.9968961}
-  m_LocalPosition: {x: -2.567, y: 0.329, z: -0.011}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10.97}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4523777498894186}
@@ -3031,6 +3031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a768f6ce7c114aa6f77b90b2ff6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/INGREDIENTS/OCTOPUS/OCTO REBOND
   isAttractable: 1
   ingredientName: octopus
   isCutable: 1

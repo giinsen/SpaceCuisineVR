@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Shaders/Hologram V2 X.shader.meta
 guid: 7c8cff73bd089c440a39180a0fb1f5fa
+=======
+guid: 9e41a677177323a40ab66ce21bf35e6c
+>>>>>>> 896370724fc52743e94cb4bf9a05afe49ab79680:Assets/Shaders/Hologram V2 X.shader.meta
 ShaderImporter:
   externalObjects: {}
   defaultTextures: []

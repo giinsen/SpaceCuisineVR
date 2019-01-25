@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
 
 public class ChaoticFollowerIngredient : Ingredient
 {
@@ -12,6 +15,16 @@ public class ChaoticFollowerIngredient : Ingredient
     public float speedAcceleration;
     public float radius;
     public float pushForce = 15.0f;
+
+    [EventRef]
+    public string octopusCut = "event:/INGREDIENTS/OCTOPUS/OCTO CUT";
+    private EventInstance cutInst;
+    [EventRef]
+    public string octopusMove = "event:/INGREDIENTS/OCTOPUS/OCTO MOVING";
+    private EventInstance moveInst;
+    [EventRef]
+    public string octopusStase = "event:/INGREDIENTS/OCTOPUS/OCTO STASTE";
+    private EventInstance staseInst;
 
     private Transform target;
     private bool stased = false;
@@ -23,6 +36,17 @@ public class ChaoticFollowerIngredient : Ingredient
         {
             StartCoroutine(Idle());
         }
+        cutInst = RuntimeManager.CreateInstance(octopusCut);
+        moveInst = RuntimeManager.CreateInstance(octopusMove);
+        staseInst = RuntimeManager.CreateInstance(octopusStase);
+
+        moveInst.start();
+    }
+
+
+    private void OnDestroy()
+    {
+        moveInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
 
     private void MoveTowardTarget()
@@ -94,5 +118,11 @@ public class ChaoticFollowerIngredient : Ingredient
         {
             yield return new WaitForSeconds(5.0f);
         }
+    }
+
+    public override void Cut()
+    {
+        base.Cut();
+
     }
 }

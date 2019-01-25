@@ -2,12 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using MeshDistortLite;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
 
 public class Staser : Tool
 {
-    public GameObject distortObject; 
+    public GameObject distortObject;
 
-	protected override void ActiveAction()
+    [Header("FMOD")]
+    [EventRef]
+    public string staserOn = "event:/TOOLS/STASER/STASER ON";
+    [EventRef]
+    public string staserOff = "event:/TOOLS/STASER/SATSER OFF";
+
+    private EventInstance onInst;
+    private EventInstance offInst;
+
+    protected override void Start()
+    {
+        base.Start();
+        onInst = RuntimeManager.CreateInstance(staserOn);
+        offInst = RuntimeManager.CreateInstance(staserOff);
+    }
+
+    protected override void ActiveAction()
 	{
 		foreach(Ingredient ing in ingredients)
         {
@@ -46,5 +65,17 @@ public class Staser : Tool
         //Destroy(go.GetComponent<AnimatedDistort>());
         //Destroy(go.GetComponent<Distort>());
         yield break;
+    }
+
+    protected override void OnActivate()
+    {
+        base.OnActivate();
+        onInst.start();
+    }
+
+    protected override void OnDesactivate()
+    {
+        base.OnDesactivate();
+        offInst.start();
     }
 }
