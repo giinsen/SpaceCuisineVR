@@ -10,19 +10,17 @@ public class Vacuum : Tool
 	public GameObject attractPoint;
     public Renderer coneRenderer;
 
-    private Throwable throwable;
 
     protected override void Start()
     {
         base.Start();
-        throwable = GetComponent<Throwable>();
-        throwable.onPickUp.AddListener(OnPickup);
         throwable.onDetachFromHand.AddListener(OnDrop);
         coneRenderer.enabled = false;
     }
 
-    private void OnPickup()
+    protected override void OnPickup()
     {
+        base.OnPickUp();
         coneRenderer.enabled = true;
     }
 
