@@ -48,20 +48,26 @@ public class Polisher : MonoBehaviour {
         GameObject go2 = Instantiate(particleCircle,phase2.transform.position,Quaternion.identity, this.gameObject.transform);
         GameObject go3 = Instantiate(particleBase, phase2.transform.position,Quaternion.identity, this.gameObject.transform);
 
-        yield return RotatePrefabQuickly();
+        yield return RotatePrefabQuickly(ingredient.transform, 80f, 2.5f);
         Destroy(go1); Destroy(go2); Destroy(go3);
         GameObject polishResult = Instantiate(ingredient.polishResult, phase2.transform.position, Quaternion.identity);
+        Vector3 polishResultNormalScale = polishResult.transform.localScale;
         polishResult.transform.localScale = ingredient.polishResultScale;            
         Instantiate(particleFinish, phase2.transform.position, Quaternion.identity);
 
         Destroy(ingredient.gameObject);
 
         polishResult.GetComponent<Rigidbody>().isKinematic = true;
-        polishResult.GetComponent<Collider>().enabled = false;    
-        yield return new WaitForSeconds(8f);
-        polishResult.GetComponent<Rigidbody>().AddForce(new Vector3(0, 25, 0));
+        polishResult.GetComponent<Collider>().enabled = false;
+        StartCoroutine(RotatePrefabQuickly(polishResult.transform, 25f, 3f));
+
+        yield return new WaitForSeconds(3f);
+
+        StartCoroutine(ScaleAnim(polishResult.gameObject, polishResultNormalScale));
+        polishResult.GetComponent<Rigidbody>().AddForce(new Vector3(0, 1, 0) * 150f, ForceMode.Impulse);
         polishResult.GetComponent<Rigidbody>().isKinematic = false;
         polishResult.GetComponent<Collider>().enabled = true;
+        isPolishing = false;
     }
 
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)
@@ -89,15 +95,15 @@ public class Polisher : MonoBehaviour {
         objectToMove.position = b;
     }
 
-    IEnumerator RotatePrefabQuickly()
+    IEnumerator RotatePrefabQuickly(Transform tr, float speed, float seconds)
     {       
         float t = 0;
 
-        while (t <= 2.5f)
+        while (t <= seconds)
         {
             Debug.Log("ok");
             t += Time.fixedDeltaTime;
-            ingredient.transform.Rotate(Vector3.up, 80f);
+            tr.Rotate(Vector3.up, speed);
             yield return new WaitForSeconds(0.01f);
         }
     }
