@@ -1810,7 +1810,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1273290976933606}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.748383, y: -50.416634, z: -30.773636}
+  m_LocalPosition: {x: -3.2504601, y: 0.696, z: -0.976}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4157985219894068}
@@ -3432,6 +3432,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a768f6ce7c114aa6f77b90b2ff6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
   ingredientName: Octopus
   isCutable: 1
@@ -3457,6 +3459,9 @@ MonoBehaviour:
   speedAcceleration: 3
   radius: 3
   pushForce: 15
+  octopusCut: event:/INGREDIENTS/OCTOPUS/OCTO CUT
+  octopusMove: event:/INGREDIENTS/OCTOPUS/OCTO MOVING
+  octopusStase: event:/INGREDIENTS/OCTOPUS/OCTO STASTE
 --- !u!114 &114706901228104202
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3504,8 +3509,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.43
-  m_Center: {x: 0, y: 0.02, z: 0}
+  m_Radius: 1.64
+  m_Center: {x: 0, y: -0.01, z: 0}
 --- !u!137 &137078473649751442
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

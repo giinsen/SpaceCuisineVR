@@ -33,9 +33,9 @@ public class Polisher : MonoBehaviour {
 
     private bool isPolishing = false;
 
-<<<<<<< HEAD
+
     private Vector3[] expulsionArray = new[] { new Vector3(0f, 0f, 1f), new Vector3(-0.5f, 0f, -0.4f), new Vector3(0.5f, 0f, -0.4f) };
-=======
+
     private void Start()
     {
         enterInst = RuntimeManager.CreateInstance(objectEnter);
@@ -68,7 +68,7 @@ public class Polisher : MonoBehaviour {
         }
         polishingInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
->>>>>>> 896370724fc52743e94cb4bf9a05afe49ab79680
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -119,12 +119,12 @@ public class Polisher : MonoBehaviour {
         StartCoroutine(ScaleAnim(polishResult.gameObject, polishResultNormalScale));
         polishResult.GetComponent<Rigidbody>().isKinematic = false;
         polishResult.GetComponent<Collider>().enabled = true;
-<<<<<<< HEAD
-        polishResult.GetComponent<Rigidbody>().AddForce(expulsionArray[Random.Range(0,2)] * 5f, ForceMode.Impulse);       
+
+        polishResult.GetComponent<Rigidbody>().AddForce(expulsionArray[Random.Range(0,2)] * 3f, ForceMode.Impulse);       
         isPolishing = false;
-=======
+
         exitInst.start();
->>>>>>> 896370724fc52743e94cb4bf9a05afe49ab79680
+
     }
 
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)

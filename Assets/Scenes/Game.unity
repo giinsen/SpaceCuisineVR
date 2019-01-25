@@ -436,6 +436,9 @@ MonoBehaviour:
   alienPivot: {fileID: 1711931823}
   hublotPivot: {fileID: 1952576803}
   alienAnimator: {fileID: 1980663258}
+  orderBad: event:/ENVIRONMENT/ORDER/ORDER BAD
+  orderGood: event:/ENVIRONMENT/ORDER/ORDER GOOD
+  orderStarting: event:/ENVIRONMENT/ORDER/ORDER STARTING
 --- !u!4 &189412049
 Transform:
   m_ObjectHideFlags: 0
@@ -677,7 +680,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 286917542}
   m_LocalRotation: {x: -0, y: 0.6760648, z: -0, w: -0.7368422}
-  m_LocalPosition: {x: 0.885, y: 0.522, z: 0.187}
+  m_LocalPosition: {x: 0.885, y: 0, z: 0.187}
   m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 1345880532}
@@ -1717,6 +1720,7 @@ GameObject:
   - component: {fileID: 653507856}
   - component: {fileID: 653507855}
   - component: {fileID: 653507859}
+  - component: {fileID: 653507860}
   m_Layer: 0
   m_Name: VRCamera
   m_TagString: MainCamera
@@ -1866,6 +1870,18 @@ MonoBehaviour:
   m_BeforeTransparentBundles: []
   m_BeforeStackBundles: []
   m_AfterStackBundles: []
+--- !u!114 &653507860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 653507853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1 &666758423
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,6 +5133,7 @@ MonoBehaviour:
   minVelocityToFusion: 6
   minVelocityFusionNice: 0.1
   minSpeedToGetThroughHolowalls: 3
+  fusion: event:/INGREDIENTS/FUSION/FUSION
   cutParticle: {fileID: 1209723248525436, guid: 1cb2f46f5cfaef745895674ff057d112,
     type: 2}
   fusionParticle: {fileID: 1347155797118404, guid: 2f58aaa6eac7ad843a81cb39b3e46b2f,
