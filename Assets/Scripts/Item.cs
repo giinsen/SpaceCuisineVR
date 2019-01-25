@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Item : MonoBehaviour {
 
@@ -9,10 +11,22 @@ public class Item : MonoBehaviour {
     private float attractableSpeed = 3f;
 
     protected Rigidbody rb;
+    protected Throwable throwable;
+
+    private Coroutine staseAnim;
+    private Vector3 baseScale;
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
+        throwable = GetComponent<Throwable>();
+        throwable.onPickUp.AddListener(OnPickup);
+        baseScale = transform.localScale;
+    }
+
+    protected virtual void OnPickup()
+    {
+        throwable.interactable.attachedToHand.TriggerHapticPulse(1500);
     }
 
     public void Attract(GameObject attractPoint)
@@ -32,5 +46,33 @@ public class Item : MonoBehaviour {
     {
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
+
+        if (staseAnim != null)
+        {
+            StopCoroutine(staseAnim);
+            transform.localScale = baseScale;
+        }
+        staseAnim = StartCoroutine(StaseAnimation());
+    }
+
+    private IEnumerator StaseAnimation()
+    {
+        float timer = 0;
+        float timerDuration = 0.1f;
+        Vector3 targetScale = transform.localScale * 0.7f;
+        while (timer < timerDuration)
+        {
+            transform.localScale = Vector3.Lerp(baseScale, targetScale, timer / timerDuration);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        timer = 0.0f;
+        while (timer < timerDuration)
+        {
+            transform.localScale = Vector3.Lerp(targetScale, baseScale, timer / timerDuration);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        transform.localScale = baseScale;
     }
 }

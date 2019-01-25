@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 54871732181452666}
   - component: {fileID: 114666325773619436}
   - component: {fileID: 114763912673919576}
-  - component: {fileID: 65258132002185130}
   - component: {fileID: 114180322275306506}
+  - component: {fileID: 136481871743326506}
   m_Layer: 0
   m_Name: sliced_bread
   m_TagString: Ingredient
@@ -99,8 +99,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1295068668069164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4287243, y: 0.29, z: 0.81}
-  m_LocalScale: {x: 0.4214909, y: 0.4214909, z: 0.4214909}
+  m_LocalPosition: {x: -0.5032582, y: 0.102, z: -0.13497876}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4037501441064718}
   - {fileID: 4414731119975912}
@@ -206,18 +206,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65258132002185130
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1295068668069164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.9731829, y: 0.7758205, z: 0.6215725}
-  m_Center: {x: 0.02313435, y: 0.33339775, z: -0.040402412}
 --- !u!114 &114180322275306506
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -238,9 +226,11 @@ MonoBehaviour:
   cutResults: []
   isPolishable: 0
   polishResult: {fileID: 0}
-  isBubbling: 0
+  polishScale: {x: 0, y: 0, z: 0}
+  isBubblable: 1
   myBubble: {fileID: 0}
   inBubble: 0
+  hasJustBeenThrown: 0
 --- !u!114 &114340233684322970
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -334,3 +324,16 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   snapAttachEaseInCompleted: 0
   interactable: {fileID: 0}
+--- !u!136 &136481871743326506
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1295068668069164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.45
+  m_Height: 2.06
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.3, z: 0}

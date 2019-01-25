@@ -149,7 +149,7 @@ namespace Valve.VR.InteractionSystem
 
                 for (int materialIndex = 0; materialIndex < materials.Length; materialIndex++)
                 {
-                    if (existingFilter.gameObject.tag == "Tool" || existingFilter.gameObject.transform.parent.gameObject.tag == "Tool")
+                    if (existingFilter.gameObject.tag == "Tool" || existingFilter.transform.parent.gameObject.tag == "Tool")
                         highlightMat.SetColor("g_vOutlineColor", new Color32(255, 128, 0, 255)); //orange
                     else if (existingFilter.gameObject.tag == "Ingredient")// || existingFilter.gameObject.transform.parent.gameObject.tag == "Ingredient")
                         highlightMat.SetColor("g_vOutlineColor", new Color32(0, 200, 85, 255)); //vert

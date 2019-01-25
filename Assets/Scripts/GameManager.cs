@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [Header("Global Parameters")]
     public RecipeList recipeList;
     public float minVelocityToFusion = 10.0f;
+    public float minVelocityFusionNice = 2.0f;
     public static GameManager instance;
     public float minSpeedToGetThroughHolowalls = 3.0f;
 
@@ -69,6 +70,11 @@ public class GameManager : MonoBehaviour
 
             requests.RemoveAt(0);
             requests.RemoveAt(0);
+        }
+        else if (requests.Count == 1)
+        {
+            RecipeSpawn(requests[0], -requests[0].velocity);
+            requests.Clear();
         }
     }
 

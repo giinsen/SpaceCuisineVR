@@ -18,10 +18,13 @@ public class Ingredient : Item
 
     [Header("Polishing options")]
     public bool isPolishable = false;
+    public Vector3 polishScale;
     public GameObject polishResult;
+    public Vector3 polishResultScale;
+    
 
     [Header("Bubble options")]
-    public bool isBubbling = true;
+    public bool isBubblable = true;
     public GameObject myBubble;
     public bool inBubble = false;
 
@@ -29,7 +32,7 @@ public class Ingredient : Item
     protected Collider col;
     protected Interactable interactable;
 
-    private bool hasJustBeenThrown = false;
+    public bool hasJustBeenThrown = false;
     
 
     [System.Serializable]
@@ -42,10 +45,10 @@ public class Ingredient : Item
     protected override void Start()
     {
         base.Start();
-        //GetComponent<Throwable>().onDetachFromHand += OnDetachFromHand();
+        throwable.onDetachFromHand.AddListener(OnDetachFromHand);
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponentInChildren<Collider>();
-        interactable = GetComponent<Interactable>();
+        interactable = throwable.interactable;
     }
 
     private void Update()
@@ -54,8 +57,6 @@ public class Ingredient : Item
         {
             transform.position = myBubble.transform.position;
         }
-
-        Debug.Log("hasJustBeenThrown  : "+hasJustBeenThrown);
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -66,12 +67,12 @@ public class Ingredient : Item
 
 	public void Cut()
     {
-        Debug.Log("enter function");
+        //Debug.Log("enter function");
 		if (isCutable && !hasJustSpawned)
         {
             if (alternativeCut)
             {
-                Debug.Log("enter function alter :" + gameObject.name + "  " + cutResults.Length);
+                //Debug.Log("enter function alter :" + gameObject.name + "  " + cutResults.Length);
 
                 Split(cutResults);
             }
@@ -82,15 +83,16 @@ public class Ingredient : Item
         }
 	}
 
-    public void OnPickUp()
+    protected override void OnPickup()
     {
+        base.OnPickup();
         if (hasJustBeenThrown)
         {
             StopAllCoroutines();
             hasJustBeenThrown = false;
             gameObject.layer = 0;
         }
-        if (isBubbling && myBubble != null)
+        if (isBubblable && myBubble != null)
         {
             myBubble.GetComponent<Bubble>().ingredientsInBubble.Remove(GetComponent<Ingredient>());
             inBubble = false;
@@ -100,7 +102,7 @@ public class Ingredient : Item
 
     public void OnDetachFromHand()
     {
-        if (isBubbling && myBubble != null)
+        if (isBubblable && myBubble != null)
         {
             transform.position = myBubble.transform.position;
             //transform.parent = myBubble.transform;
@@ -108,7 +110,8 @@ public class Ingredient : Item
             inBubble = true;
             gameObject.layer = 9; //IngredientInBubble
         }
-        else
+        
+        if (myBubble == null)
         {
             StartCoroutine(HolowallLayer());
         }
@@ -130,7 +133,8 @@ public class Ingredient : Item
 
     protected virtual void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Ingredient" && other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
+        if (other.gameObject.tag == "Ingredient" && ((other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
+            || (hasJustBeenThrown && other.relativeVelocity.magnitude > GameManager.instance.minVelocityFusionNice)))
         {
             Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
             Recipe recipeToTest = new Recipe(ingredientName, otherIng.ingredientName);
