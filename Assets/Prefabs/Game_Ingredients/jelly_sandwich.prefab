@@ -2055,7 +2055,7 @@ Transform:
   m_GameObject: {fileID: 1432403386693418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.51, y: 0.29, z: 1.76}
-  m_LocalScale: {x: 0.4214909, y: 0.4214909, z: 0.4214909}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 4917733991216106}
   - {fileID: 4857618424060174}
@@ -3158,9 +3158,11 @@ MonoBehaviour:
   cutResults: []
   isPolishable: 0
   polishResult: {fileID: 0}
+  polishScale: {x: 0, y: 0, z: 0}
   isBubblable: 1
   myBubble: {fileID: 0}
   inBubble: 0
+  hasJustBeenThrown: 0
 --- !u!114 &114351279578583940
 MonoBehaviour:
   m_ObjectHideFlags: 1
