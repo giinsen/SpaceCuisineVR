@@ -12,13 +12,11 @@ public class Bag : Tool
     public float spawnForce = 5.0f;
     public float spawnTimerDuration = 0.5f;
 
-    private Interactable interactable;
     private float timer = 0.0f;
 
     protected override void Start()
     {
         base.Start();
-        interactable = GetComponent<Interactable>();
     }
 
     protected override void OnDesactivate()

@@ -45,11 +45,10 @@ public class Ingredient : Item
     protected override void Start()
     {
         base.Start();
-        GetComponent<Throwable>().onDetachFromHand.AddListener(OnDetachFromHand);
-        GetComponent<Throwable>().onPickUp.AddListener(OnPickUp);
+        throwable.onDetachFromHand.AddListener(OnDetachFromHand);
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponentInChildren<Collider>();
-        interactable = GetComponent<Interactable>();
+        interactable = throwable.interactable;
     }
 
     private void Update()
@@ -84,8 +83,9 @@ public class Ingredient : Item
         }
 	}
 
-    public void OnPickUp()
+    protected override void OnPickup()
     {
+        base.OnPickup();
         if (hasJustBeenThrown)
         {
             StopAllCoroutines();

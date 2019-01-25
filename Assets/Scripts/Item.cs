@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Item : MonoBehaviour {
 
@@ -9,10 +11,18 @@ public class Item : MonoBehaviour {
     private float attractableSpeed = 3f;
 
     protected Rigidbody rb;
+    protected Throwable throwable;
 
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
+        throwable = GetComponent<Throwable>();
+        throwable.onPickUp.AddListener(OnPickup);
+    }
+
+    protected virtual void OnPickup()
+    {
+        throwable.interactable.attachedToHand.TriggerHapticPulse(15);
     }
 
     public void Attract(GameObject attractPoint)
