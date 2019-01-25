@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using Valve.VR;
 
 public class Polisher : MonoBehaviour {
 
@@ -17,7 +19,7 @@ public class Polisher : MonoBehaviour {
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (!isPolishing)
         {
@@ -41,20 +43,22 @@ public class Polisher : MonoBehaviour {
         yield return MoveToPhase(ingredient.transform, ingredient.transform.position, phase2.transform.position, 1f);
         ingredient.Stase();
 
-        GameObject go;
-        go = Instantiate(particleCircle, this.gameObject.transform);
-        go.transform.position = new Vector3(0, 1.6f, 0);
-        go = Instantiate(particleCircle, this.gameObject.transform);
-        go.transform.position = new Vector3(0, 1.6f, 0);
-        go = Instantiate(particleBase, this.gameObject.transform);
-        go.transform.position = new Vector3(0, 1.2f, 0);
+        
+        GameObject go1 = Instantiate(particleCircle,phase2.transform.position,Quaternion.identity, this.gameObject.transform);
+        GameObject go2 = Instantiate(particleCircle,phase2.transform.position,Quaternion.identity, this.gameObject.transform);
+        GameObject go3 = Instantiate(particleBase, phase2.transform.position,Quaternion.identity, this.gameObject.transform);
 
         yield return RotatePrefabQuickly();
+        Destroy(go1); Destroy(go2); Destroy(go3);
+        GameObject polishResult = Instantiate(ingredient.polishResult, phase2.transform.position, Quaternion.identity);
+        Destroy(ingredient.gameObject);       
+        Instantiate(particleFinish, phase2.transform.position, Quaternion.identity);
 
-        go = ingredient.polishResult;
-        Destroy(ingredient.gameObject);
-        Instantiate(go);
-        Instantiate(particleFinish);
+        polishResult.GetComponent<Rigidbody>().isKinematic = true;
+        polishResult.GetComponent<Collider>().enabled = false;    
+        yield return new WaitForSeconds(8f);
+        polishResult.GetComponent<Rigidbody>().isKinematic = false;
+        polishResult.GetComponent<Collider>().enabled = true;
     }
 
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)
@@ -90,7 +94,7 @@ public class Polisher : MonoBehaviour {
         {
             Debug.Log("ok");
             t += Time.fixedDeltaTime;
-            ingredient.transform.Rotate(Vector3.up, 40f);
+            ingredient.transform.Rotate(Vector3.up, 80f);
             yield return new WaitForSeconds(0.01f);
         }
     }

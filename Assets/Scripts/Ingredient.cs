@@ -18,8 +18,10 @@ public class Ingredient : Item
 
     [Header("Polishing options")]
     public bool isPolishable = false;
-    public GameObject polishResult;
     public Vector3 polishScale;
+    public GameObject polishResult;
+    public Vector3 polishResultScale;
+    
 
     [Header("Bubble options")]
     public bool isBubblable = true;
@@ -56,8 +58,6 @@ public class Ingredient : Item
         {
             transform.position = myBubble.transform.position;
         }
-
-        //Debug.Log("hasJustBeenThrown  : "+hasJustBeenThrown);
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -136,7 +136,6 @@ public class Ingredient : Item
         if (other.gameObject.tag == "Ingredient" && ((other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
             || (hasJustBeenThrown && other.relativeVelocity.magnitude > GameManager.instance.minVelocityFusionNice)))
         {
-            Debug.Log("bwahah" + other.relativeVelocity.magnitude);
             Ingredient otherIng = other.gameObject.GetComponent<Ingredient>();
             Recipe recipeToTest = new Recipe(ingredientName, otherIng.ingredientName);
             Recipe result;
