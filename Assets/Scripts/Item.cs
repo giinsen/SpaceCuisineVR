@@ -54,5 +54,6 @@ public class Item : MonoBehaviour {
             timer += Time.deltaTime;
             yield return new WaitForEndOfFrame();
         }
+        transform.localScale = baseScale;
     }
 }

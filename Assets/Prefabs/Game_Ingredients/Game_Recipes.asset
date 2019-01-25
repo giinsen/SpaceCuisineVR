@@ -20,3 +20,11 @@ MonoBehaviour:
     ingredientB: sliced_bread
     result: {fileID: 1166152412049288, guid: 85b03bb7a6ceb044eb500a7227434b22, type: 2}
     velocityOnSpawn: 1
+  - ingredientA: jelly
+    ingredientB: bread
+    result: {fileID: 1805243889130852, guid: 2cdbd3e19f63f194f90bf1357951d869, type: 2}
+    velocityOnSpawn: 1
+  - ingredientA: jelly
+    ingredientB: sliced_bread
+    result: {fileID: 1432403386693418, guid: cca07cde931c29b4698e3f12cdb758e0, type: 2}
+    velocityOnSpawn: 1
