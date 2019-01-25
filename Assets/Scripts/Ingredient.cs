@@ -83,7 +83,7 @@ public class Ingredient : Item
         }
 	}
 
-    protected override void OnPickUp()
+    protected override void OnPickup()
     {
         base.OnPickup();
         if (hasJustBeenThrown)
