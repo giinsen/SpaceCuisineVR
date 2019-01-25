@@ -1,8 +1,8 @@
-// Upgrade NOTE: upgraded instancing buffer 'Customholo' to new syntax.
+// Upgrade NOTE: upgraded instancing buffer 'HologramV2X' to new syntax.
 
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "Hologram V2"
+Shader "Hologram V2 X"
 {
 	Properties
 	{
@@ -30,24 +30,24 @@ Shader "Hologram V2"
 			float3 worldNormal;
 		};
 
-		UNITY_INSTANCING_BUFFER_START(Customholo)
+		UNITY_INSTANCING_BUFFER_START(HologramV2X)
 			UNITY_DEFINE_INSTANCED_PROP(float4, _FresnelColor)
-#define _FresnelColor_arr Customholo
+#define _FresnelColor_arr HologramV2X
 			UNITY_DEFINE_INSTANCED_PROP(float4, _Color)
-#define _Color_arr Customholo
+#define _Color_arr HologramV2X
 			UNITY_DEFINE_INSTANCED_PROP(float, _Scnaline2Amount)
-#define _Scnaline2Amount_arr Customholo
+#define _Scnaline2Amount_arr HologramV2X
 			UNITY_DEFINE_INSTANCED_PROP(float, _Scanline1Amount)
-#define _Scanline1Amount_arr Customholo
+#define _Scanline1Amount_arr HologramV2X
 			UNITY_DEFINE_INSTANCED_PROP(float, _Scanline1Speed)
-#define _Scanline1Speed_arr Customholo
-		UNITY_INSTANCING_BUFFER_END(Customholo)
+#define _Scanline1Speed_arr HologramV2X
+		UNITY_INSTANCING_BUFFER_END(HologramV2X)
 
 		void vertexDataFunc( inout appdata_full v, out Input o )
 		{
 			UNITY_INITIALIZE_OUTPUT( Input, o );
 			float3 ase_vertex3Pos = v.vertex.xyz;
-			float temp_output_7_0 = ( ase_vertex3Pos.y + _SinTime.y );
+			float temp_output_7_0 = ( ase_vertex3Pos.x + _SinTime.y );
 			float mulTime19 = _Time.y * 3.0;
 			float3 appendResult37 = (float3(( 0.0 + ( ( ( ( ( step( 0.0 , temp_output_7_0 ) * step( temp_output_7_0 , 0.2 ) ) * 0.1 ) * step( 0.98 , sin( mulTime19 ) ) ) * _SinTime.w ) * 2.5 ) ) , 0.0 , 0.0));
 			v.vertex.xyz += appendResult37;
@@ -60,9 +60,9 @@ Shader "Hologram V2"
 			float _Scanline1Amount_Instance = UNITY_ACCESS_INSTANCED_PROP(_Scanline1Amount_arr, _Scanline1Amount);
 			float _Scanline1Speed_Instance = UNITY_ACCESS_INSTANCED_PROP(_Scanline1Speed_arr, _Scanline1Speed);
 			float mulTime43 = _Time.y * _Scanline1Speed_Instance;
-			float temp_output_45_0 = frac( ( ( ase_vertex3Pos.y * _Scanline1Amount_Instance ) + mulTime43 ) );
+			float temp_output_45_0 = frac( ( ( ase_vertex3Pos.x * _Scanline1Amount_Instance ) + mulTime43 ) );
 			float _Scnaline2Amount_Instance = UNITY_ACCESS_INSTANCED_PROP(_Scnaline2Amount_arr, _Scnaline2Amount);
-			float temp_output_52_0 = frac( ( ( ase_vertex3Pos.y * _Scnaline2Amount_Instance ) - ( _Time.y * 0.19 ) ) );
+			float temp_output_52_0 = frac( ( ( ase_vertex3Pos.x * _Scnaline2Amount_Instance ) - ( _Time.y * 0.19 ) ) );
 			float2 temp_cast_0 = (unity_DeltaTime.x).xx;
 			float dotResult4_g1 = dot( temp_cast_0 , float2( 12.9898,78.233 ) );
 			float lerpResult10_g1 = lerp( 0.0 , 1.0 , frac( ( sin( dotResult4_g1 ) * 43758.55 ) ));
@@ -157,7 +157,7 @@ Shader "Hologram V2"
 }
 /*ASEBEGIN
 Version=15401
-273.6;92.8;646;589;-327.8275;1050.264;2.297823;False;False
+273.6;92.8;646;589;1366.967;795.2767;3.133466;True;False
 Node;AmplifyShaderEditor.PosVertexDataNode;6;-1904.995,-760.1989;Float;True;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.SinTimeNode;14;-1890.545,-521.2711;Float;False;0;5;FLOAT4;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.RangedFloatNode;20;-1715.783,-46.08331;Float;False;Constant;_Float3;Float 3;0;0;Create;True;0;0;False;0;3;0;0;0;0;1;FLOAT;0
@@ -218,8 +218,8 @@ Node;AmplifyShaderEditor.RangedFloatNode;35;80.6776,-844.813;Float;False;Constan
 Node;AmplifyShaderEditor.PosVertexDataNode;29;-245.6286,-986.3059;Float;True;0;0;5;FLOAT3;0;FLOAT;1;FLOAT;2;FLOAT;3;FLOAT;4
 Node;AmplifyShaderEditor.DynamicAppendNode;37;1471.791,-588.8301;Float;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0
 Node;AmplifyShaderEditor.DynamicAppendNode;34;282.8101,-903.5543;Float;False;FLOAT3;4;0;FLOAT;0;False;1;FLOAT;0;False;2;FLOAT;0;False;3;FLOAT;0;False;1;FLOAT3;0
-Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;1793.543,-462.4417;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;Custom holo;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Off;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;False;Transparent;;Transparent;All;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;2;5;False;-1;10;False;-1;-1;False;-1;-1;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
-WireConnection;7;0;6;2
+Node;AmplifyShaderEditor.StandardSurfaceOutputNode;0;1793.543,-462.4417;Float;False;True;2;Float;ASEMaterialInspector;0;0;Standard;Hologram V2 X;False;False;False;False;False;False;False;False;False;False;False;False;False;False;True;False;False;False;False;False;Off;0;False;-1;0;False;-1;False;0;False;-1;0;False;-1;False;0;Transparent;0.5;True;True;0;False;Transparent;;Transparent;All;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;True;0;False;-1;False;0;False;-1;255;False;-1;255;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;0;False;-1;False;2;15;10;25;False;0.5;True;2;5;False;-1;10;False;-1;2;5;False;-1;10;False;-1;-1;False;-1;-1;False;-1;0;False;0;0,0,0,0;VertexOffset;True;False;Cylindrical;False;Relative;0;;-1;-1;-1;-1;0;False;0;0;False;-1;-1;0;False;-1;0;0;16;0;FLOAT3;0,0,0;False;1;FLOAT3;0,0,0;False;2;FLOAT3;0,0,0;False;3;FLOAT;0;False;4;FLOAT;0;False;5;FLOAT;0;False;6;FLOAT3;0,0,0;False;7;FLOAT3;0,0,0;False;8;FLOAT;0;False;9;FLOAT;0;False;10;FLOAT;0;False;13;FLOAT3;0,0,0;False;11;FLOAT3;0,0,0;False;12;FLOAT3;0,0,0;False;14;FLOAT4;0,0,0,0;False;15;FLOAT3;0,0,0;False;0
+WireConnection;7;0;6;1
 WireConnection;7;1;14;2
 WireConnection;8;0;7;0
 WireConnection;8;1;9;0
@@ -234,9 +234,9 @@ WireConnection;16;1;17;0
 WireConnection;22;0;24;0
 WireConnection;22;1;21;0
 WireConnection;43;0;44;0
-WireConnection;47;0;46;2
+WireConnection;47;0;46;1
 WireConnection;47;1;48;0
-WireConnection;40;0;39;2
+WireConnection;40;0;39;1
 WireConnection;40;1;41;0
 WireConnection;25;0;16;0
 WireConnection;25;1;22;0
@@ -289,4 +289,4 @@ WireConnection;0;2;68;0
 WireConnection;0;9;74;0
 WireConnection;0;11;37;0
 ASEEND*/
-//CHKSM=D77EDD387A4B0CD85B2DCC9700F8D4869723F156
+//CHKSM=64FF51BA4EFE004DBC9C36AA81B1744A0426737D
