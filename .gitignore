@@ -45,6 +45,5 @@ Corridor/Library/ShaderCache/
 Corridor/Library/metadata/
 ProjectSettings/ProjectVersion\.txt
 
-Assets/Unexported/
+/[Aa]ssets/Unexported/
 
-Assets/Unexported\.meta
