@@ -796,10 +796,13 @@ MonoBehaviour:
   alternativeCut: 1
   cutResults: []
   isPolishable: 0
+  polishScale: {x: 0, y: 0, z: 0}
   polishResult: {fileID: 0}
+  polishResultScale: {x: 0, y: 0, z: 0}
   isBubblable: 1
   myBubble: {fileID: 0}
   inBubble: 0
+  hasJustBeenThrown: 0
 --- !u!114 &114666523792299904
 MonoBehaviour:
   m_ObjectHideFlags: 1
