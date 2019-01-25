@@ -2,7 +2,7 @@
 
 // Made with Amplify Shader Editor
 // Available at the Unity Asset Store - http://u3d.as/y3X 
-Shader "Hologram"
+Shader "Hologram V2"
 {
 	Properties
 	{
