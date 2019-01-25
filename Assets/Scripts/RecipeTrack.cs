@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
+using Debug = UnityEngine.Debug;
 
 public class RecipeTrack : MonoBehaviour
 {
@@ -15,6 +19,15 @@ public class RecipeTrack : MonoBehaviour
     public Transform hublotPivot;
     public Animator alienAnimator;
 
+    [Header("Sound parameters")]
+    public string orderBad = "event:/ENVIRONMENT/ORDER/ORDER BAD";
+    public string orderGood = "event:/ENVIRONMENT/ORDER/ORDER GOOD";
+    public string orderStarting = "event:/ENVIRONMENT/ORDER/ORDER STARTING";
+
+    private EventInstance orderBadInst;
+    private EventInstance orderGoodInst;
+    private EventInstance orderStartingInst;
+
     private int choosenOrderIdx;
     private bool waitForOrder = false;
     private Animator animator;
@@ -24,6 +37,10 @@ public class RecipeTrack : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         StartCoroutine(SelectOrder());
+
+        orderBadInst = RuntimeManager.CreateInstance(orderBad);
+        orderGoodInst = RuntimeManager.CreateInstance(orderGood);
+        orderStartingInst = RuntimeManager.CreateInstance(orderStarting);
     }
 
     private IEnumerator SelectOrder()
@@ -34,6 +51,7 @@ public class RecipeTrack : MonoBehaviour
         //orderVisualizer.material.SetTexture(0, possibleOrders[choosenOrderIdx].orderVisual);
         orderVisualizer.material.SetTexture("_MainTex", possibleOrders[choosenOrderIdx].orderVisual);
         waitForOrder = true;
+        orderStartingInst.start();
         animator.SetBool("order", true);
     }
 
@@ -62,6 +80,7 @@ public class RecipeTrack : MonoBehaviour
 
     private IEnumerator Success(GameObject objectToDestroy)
     {
+        orderGoodInst.start();
         alienAnimator.SetTrigger("Hit");
         Destroy(objectToDestroy);
         alienAnimator.SetTrigger("SendBack");
@@ -74,6 +93,7 @@ public class RecipeTrack : MonoBehaviour
 
     private IEnumerator Failure(GameObject objectToDestroy)
     {
+        orderBadInst.start();
         alienAnimator.SetTrigger("Hit");
         Destroy(objectToDestroy);
         alienAnimator.SetTrigger("SendBack");

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
+using Debug = UnityEngine.Debug;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,6 +16,12 @@ public class GameManager : MonoBehaviour
     public float minVelocityFusionNice = 2.0f;
     public static GameManager instance;
     public float minSpeedToGetThroughHolowalls = 3.0f;
+
+    [Header("Sound Parameters")]
+    [EventRef]
+    public string fusion = "event:/INGREDIENTS/FUSION/FUSION";
+
+    private EventInstance fusionInst;
 
     private List<GameObject> blacklist = new List<GameObject>();
 
@@ -50,6 +60,8 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
 
+        fusionInst = RuntimeManager.CreateInstance(fusion);
+
         //SteamVR_Utils.Event.Send("hide_render_models", !visible);
     }
 
@@ -80,6 +92,8 @@ public class GameManager : MonoBehaviour
 
     private void RecipeSpawn(Request r, Vector3 velocity)
     {
+        transform.position = r.position;
+        fusionInst.start();
         GameObject go = Instantiate(r.recipe.result, r.position, Quaternion.identity);
         Destroy(GameObject.Find("Highlighter"));
         if (r.recipe.velocityOnSpawn)

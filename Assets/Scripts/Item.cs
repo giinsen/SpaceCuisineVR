@@ -3,12 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
 
-public class Item : MonoBehaviour {
+
+public class Item : MonoBehaviour
+{
+    [Header("Sound parameters")]
+    [EventRef]
+    public string collisionEvent = "event:/ENVIRONMENT/CONTACT/CONTACT WALL";
+    [EventRef]
+    public string staseSound = "event:/TOOLS/STASER/OBJECT STASING";
 
     [Header("Attractable options")]
     public bool isAttractable = true;
     private float attractableSpeed = 3f;
+    
 
     protected Rigidbody rb;
     protected Throwable throwable;
@@ -16,12 +27,17 @@ public class Item : MonoBehaviour {
     private Coroutine staseAnim;
     private Vector3 baseScale;
 
+    private EventInstance collisionSoundInstance;
+    private EventInstance staseInst;
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody>();
         throwable = GetComponent<Throwable>();
         throwable.onPickUp.AddListener(OnPickup);
         baseScale = transform.localScale;
+        collisionSoundInstance = RuntimeManager.CreateInstance(collisionEvent);
+        staseInst = RuntimeManager.CreateInstance(staseSound);
     }
 
     protected virtual void OnPickup()
@@ -44,6 +60,7 @@ public class Item : MonoBehaviour {
 
     public virtual void Stase()
     {
+        staseInst.start();
         rb.angularVelocity = Vector3.zero;
         rb.velocity = Vector3.zero;
 
@@ -54,6 +71,15 @@ public class Item : MonoBehaviour {
         }
         staseAnim = StartCoroutine(StaseAnimation());
     }
+
+    protected virtual void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag != "Ingredient" && col.gameObject.tag != "Tool")
+        {
+            collisionSoundInstance.start();
+        }
+    }
+
 
     private IEnumerator StaseAnimation()
     {

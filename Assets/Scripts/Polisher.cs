@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
+using Debug = UnityEngine.Debug;
 
 public class Polisher : MonoBehaviour {
 
@@ -13,11 +17,54 @@ public class Polisher : MonoBehaviour {
     public GameObject particleBase;
     public GameObject particleFinish;
 
+    [Header("FMOD bullshit")]
+    [EventRef]
+    public string objectEnter = "event:/TOOLS/POLISHER/OBJECT ENTER";
+    [EventRef]
+    public string objectExit = "event:/TOOLS/POLISHER/OBJECT EJECT";
+    [EventRef]
+    public string polishing = "event:/TOOLS/POLISHER/POLISHING";
+
+    private EventInstance enterInst;
+    private EventInstance exitInst;
+    private EventInstance polishingInst;
+
     private Ingredient ingredient;
 
     private bool isPolishing = false;
 
+    private void Start()
+    {
+        enterInst = RuntimeManager.CreateInstance(objectEnter);
+        exitInst = RuntimeManager.CreateInstance(objectExit);
+        polishingInst = RuntimeManager.CreateInstance(polishing);
+    }
 
+    private IEnumerator PolishingSound()
+    {
+        polishingInst.start();
+        polishingInst.setParameterValueByIndex(0, 1.0f);
+        float timer = 0.0f;
+        float t;
+        float timerDuration = 5.0f;
+        while (timer < timerDuration)
+        {
+            t = Mathf.Lerp(1.0f, 0f, timer / timerDuration);
+            polishingInst.setParameterValueByIndex(0, t);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        timer = 0.0f;
+        yield return new WaitForSeconds(1.0f);
+        while (timer < timerDuration)
+        {
+            t = Mathf.Lerp(0f, 1.0f, timer / timerDuration);
+            polishingInst.setParameterValueByIndex(0, t);
+            timer += Time.deltaTime;
+            yield return new WaitForEndOfFrame();
+        }
+        polishingInst.stop(STOP_MODE.ALLOWFADEOUT);
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -37,6 +84,8 @@ public class Polisher : MonoBehaviour {
 
     private IEnumerator StartPolishing()
     {
+        enterInst.start();
+        StartCoroutine(PolishingSound());
         ingredient.GetComponent<Collider>().enabled = false;
         StartCoroutine(ScaleAnim(ingredient.gameObject, ingredient.polishScale));
         yield return MoveToPhase(ingredient.transform, ingredient.transform.position, phase1.transform.position, 1f);
@@ -62,6 +111,7 @@ public class Polisher : MonoBehaviour {
         polishResult.GetComponent<Rigidbody>().AddForce(new Vector3(0, 25, 0));
         polishResult.GetComponent<Rigidbody>().isKinematic = false;
         polishResult.GetComponent<Collider>().enabled = true;
+        exitInst.start();
     }
 
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)

@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using FMOD;
+using FMODUnity;
+using FMOD.Studio;
+using Debug = UnityEngine.Debug;
 
 public class Vacuum : Tool
 {
@@ -10,12 +14,18 @@ public class Vacuum : Tool
 	public GameObject attractPoint;
     public Renderer coneRenderer;
 
+    [Header("FMOD")]
+    [EventRef]
+    public string vacuumOn = "event:/TOOLS/VACUUM/VACUUM ON";
+
+    private EventInstance onInst;
 
     protected override void Start()
     {
         base.Start();
         throwable.onDetachFromHand.AddListener(OnDrop);
         coneRenderer.enabled = false;
+        onInst = RuntimeManager.CreateInstance(vacuumOn);
     }
 
     protected override void OnPickup()
@@ -70,4 +80,17 @@ public class Vacuum : Tool
         ingredients.Clear();
         otherItems.Clear();
 	}
+
+
+    protected override void OnActivate()
+    {
+        base.OnActivate();
+        onInst.start();
+    }
+
+    protected override void OnDesactivate()
+    {
+        base.OnDesactivate();
+        onInst.stop(STOP_MODE.ALLOWFADEOUT);
+    }
 }
