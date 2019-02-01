@@ -7,28 +7,51 @@ ModelImporter:
     100002: Bag
     100004: Button
     100006: Trap
+    100008: Drone
+    100010: GeoSphere002
+    100012: Drone 1
+    100014: Drone 2
     400000: //RootNode
     400002: Bag
     400004: Button
     400006: Trap
+    400008: Drone
+    400010: GeoSphere002
+    400012: Drone 1
+    400014: Drone 2
     2100000: 02 - Default
     2100002: 01 - Default
     2100004: 03 - Default
     2100006: 07 - Default
     2100008: 09 - Default
     2100010: 08 - Default
+    2100012: 13 - Default
+    2100014: 15 - Default
+    2100016: 14 - Default
     2300000: //RootNode
     2300002: Bag
     2300004: Button
     2300006: Trap
+    2300008: Drone
+    2300010: GeoSphere002
+    2300012: Drone 1
+    2300014: Drone 2
     3300000: //RootNode
     3300002: Bag
     3300004: Button
     3300006: Trap
+    3300008: Drone
+    3300010: GeoSphere002
+    3300012: Drone 1
+    3300014: Drone 2
     4300000: Sphere001
     4300002: Bag
     4300004: Trap
     4300006: Button
+    4300008: GeoSphere002
+    4300010: Drone
+    4300012: Drone 1
+    4300014: Drone 2
   externalObjects: {}
   materials:
     importMaterials: 1

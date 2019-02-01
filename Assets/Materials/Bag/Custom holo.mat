@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Custom holo
-  m_Shader: {fileID: 4800000, guid: d978b0462c27b6d4380414f2497f51be, type: 3}
+  m_Shader: {fileID: 4800000, guid: 05896450c9b42d44b9f3d2e1e9454c1b, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
@@ -90,7 +90,7 @@ Material:
     m_Colors:
     - Color_B98D6D5F: {r: 0.85882354, g: 0.3529412, b: 0, a: 1}
     - Color_BEE651E4: {r: 0, g: 7.179145, b: 12.318657, a: 1}
-    - _Color: {r: 0, g: 0.14822207, b: 0.1792453, a: 0.57254905}
+    - _Color: {r: 0.06220094, g: 0.9042607, b: 1, a: 0.05882353}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FresnelColor: {r: 0, g: 0.3962264, b: 0.5283019, a: 0}
+    - _FresnelColor: {r: 0, g: 1.2006853, b: 1.6048764, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

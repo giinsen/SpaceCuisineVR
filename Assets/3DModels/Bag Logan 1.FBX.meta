@@ -1,49 +1,34 @@
 fileFormatVersion: 2
-guid: ca8d66a1e4eb2d044b7f4dd0aba1411f
+guid: 9491ad82cb7d10b4491a429384d0fa60
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Button
-    100004: Drone
-    100006: GeoSphere002
-    100008: Torus001
-    100010: Trap
+    100002: Bag
+    100004: Button
+    100006: Trap
     400000: //RootNode
-    400002: Button
-    400004: Drone
-    400006: GeoSphere002
-    400008: Torus001
-    400010: Trap
-    2100000: No Name
-    2100002: 02 - Default
-    2100004: 01 - Default
-    2100006: 03 - Default
+    400002: Bag
+    400004: Button
+    400006: Trap
+    2100000: 02 - Default
+    2100002: 01 - Default
+    2100004: 03 - Default
+    2100006: 07 - Default
     2100008: 09 - Default
-    2100010: 07 - Default
-    2100012: 08 - Default
-    2100014: 13 - Default
-    2100016: 15 - Default
-    2100018: 14 - Default
+    2100010: 08 - Default
     2300000: //RootNode
-    2300002: Button
-    2300004: Drone
-    2300006: GeoSphere002
-    2300008: Torus001
-    2300010: Trap
+    2300002: Bag
+    2300004: Button
+    2300006: Trap
     3300000: //RootNode
-    3300002: Button
-    3300004: Drone
-    3300006: GeoSphere002
-    3300008: Torus001
-    3300010: Trap
-    4300000: SacLow
-    4300002: SacHigh
-    4300004: Torus001
-    4300006: GeoSphere002
-    4300008: Trap
-    4300010: Button
-    4300012: Drone
+    3300002: Bag
+    3300004: Button
+    3300006: Trap
+    4300000: Sphere001
+    4300002: Bag
+    4300004: Trap
+    4300006: Button
   externalObjects: {}
   materials:
     importMaterials: 1
