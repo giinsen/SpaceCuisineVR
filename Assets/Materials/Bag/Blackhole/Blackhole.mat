@@ -22,5 +22,5 @@ Material:
     - _DistortionStrength: 1.42
     - _HoleEdgeSmoothness: 0.0226
     - _HoleSize: 0.535
-    - _ObjectEdgeArtifactFix: 1
+    - _ObjectEdgeArtifactFix: 1.51
     m_Colors: []
