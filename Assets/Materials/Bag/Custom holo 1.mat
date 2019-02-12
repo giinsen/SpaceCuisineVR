@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: White hole
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _EMISSION
+  m_Name: Custom holo 1
+  m_Shader: {fileID: 4800000, guid: 90b296c13033ca34881c731b181b3345, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -54,8 +54,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_14F0A6F9: 1
+    - Vector1_7B1FC8C8: 10
+    - Vector1_848BCB66: 1.25
+    - Vector1_F2E8BD97: 0.19
+    - _AlphaClip: 0
+    - _Blend: 0
     - _BumpScale: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -63,14 +74,27 @@ Material:
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
-    - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _PulseDirection: -1
+    - _PulseLength: -1
+    - _Scanline1Amount: 4.17
+    - _Scanline1Speed: -2
+    - _Scanline2Speed: 0.19
+    - _Scnaline2Amount: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Surface: 0
     - _UVSec: 0
+    - _WorkflowMode: 1
     - _ZWrite: 1
+    - __dirty: 0
     m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 5.2164755, g: 5.2164755, b: 5.2164755, a: 1}
+    - Color_B98D6D5F: {r: 0.85882354, g: 0.3529412, b: 0, a: 1}
+    - Color_BEE651E4: {r: 0, g: 7.179145, b: 12.318657, a: 1}
+    - _Color: {r: 1, g: 0.8151965, b: 0.06274503, a: 0.13725491}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FresnelColor: {r: 9.722629, g: 10.147661, b: 1.4876153, a: 0}
+    - _PulseColor: {r: 294.06674, g: 109.312775, b: 0, a: 0.25882354}
+    - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
