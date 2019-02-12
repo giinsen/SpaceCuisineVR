@@ -133,6 +133,7 @@ public class Ingredient : Item
 
     protected override void OnCollisionEnter(Collision other)
     {
+        base.OnCollisionEnter(other);
         if (other.gameObject.tag == "Ingredient" && ((other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
             || (hasJustBeenThrown && other.relativeVelocity.magnitude > GameManager.instance.minVelocityFusionNice)))
         {
