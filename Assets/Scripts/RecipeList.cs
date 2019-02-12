@@ -20,6 +20,23 @@ public class RecipeList : ScriptableObject
         }
         return false;
     }
+
+    public Recipe GetRandom(Recipe.RecipeComplexity complexity)
+    {
+        List<Recipe> resultList = new List<Recipe>();
+        foreach (Recipe r in recipeList)
+        {
+            if (r.complexity == complexity)
+            {
+                resultList.Add(r);
+            }
+        }
+        if (resultList.Count == 0) 
+            return null;
+
+        int idx = Random.Range(0, resultList.Count);
+        return resultList[idx];
+    }
 }
 
 [System.Serializable]
@@ -29,10 +46,16 @@ public class Recipe
     public string ingredientB;
     public GameObject result;
     public bool velocityOnSpawn = true;
+    public enum RecipeComplexity
+    {
+        Easy, Medium, Hard, None
+    }
+    public RecipeComplexity complexity;
 
     public Recipe(string ingredientA, string ingredientB)
     {
         result = null;
+        complexity = RecipeComplexity.None; //inactive by default
         this.ingredientA = ingredientA;
         this.ingredientB = ingredientB;
     }
@@ -44,5 +67,10 @@ public class Recipe
         bool b3 = a.ingredientA == b.ingredientB;
         bool b4 = a.ingredientB == b.ingredientA;
         return (b1 && b2) ^ (b3 && b4);
+    }
+
+    public string GetResultName()
+    {
+        return result.GetComponent<Ingredient>().ingredientName;
     }
 }

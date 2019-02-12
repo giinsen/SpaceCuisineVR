@@ -40,6 +40,12 @@ public class Ingredient : Item
     {
         public int numberOfResult;
         public GameObject result;
+
+        public CutableOption(int numberOfResult, GameObject result)
+        {
+            this.numberOfResult = numberOfResult;
+            this.result = result;
+        }
     }
 
     protected override void Start()

@@ -35,8 +35,9 @@ public class EvilBouncerBox : Item
         rb.AddForce(direction * 5.0f, ForceMode.Impulse);
     }
 
-    private void OnCollisionEnter(Collision col)
+    protected override void OnCollisionEnter(Collision col)
     {
+        base.OnCollisionEnter(col);
         if (col.relativeVelocity.magnitude > triggerVelocity)
         {
             Instantiate(bouncingBallPrefab, transform.position, Quaternion.identity);
