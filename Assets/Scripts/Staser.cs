@@ -23,7 +23,9 @@ public class Staser : Tool
     {
         base.Start();
         onInst = RuntimeManager.CreateInstance(staserOn);
+        onInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         offInst = RuntimeManager.CreateInstance(staserOff);
+        offInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 
     protected override void ActiveAction()

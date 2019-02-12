@@ -37,7 +37,9 @@ public class Item : MonoBehaviour
         throwable.onPickUp.AddListener(OnPickup);
         baseScale = transform.localScale;
         collisionSoundInstance = RuntimeManager.CreateInstance(collisionEvent);
+        collisionSoundInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         staseInst = RuntimeManager.CreateInstance(staseSound);
+        staseInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 
     protected virtual void OnPickup()

@@ -39,8 +39,11 @@ public class Polisher : MonoBehaviour {
     private void Start()
     {
         enterInst = RuntimeManager.CreateInstance(objectEnter);
+        enterInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         exitInst = RuntimeManager.CreateInstance(objectExit);
+        exitInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         polishingInst = RuntimeManager.CreateInstance(polishing);
+        polishingInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 
     private IEnumerator PolishingSound()

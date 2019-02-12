@@ -39,8 +39,12 @@ public class RecipeTrack : MonoBehaviour
         StartCoroutine(SelectOrder());
 
         orderBadInst = RuntimeManager.CreateInstance(orderBad);
+        orderBadInst.set3DAttributes(RuntimeUtils.To3DAttributes(hublotPivot));
         orderGoodInst = RuntimeManager.CreateInstance(orderGood);
+        orderGoodInst.set3DAttributes(RuntimeUtils.To3DAttributes(hublotPivot));
         orderStartingInst = RuntimeManager.CreateInstance(orderStarting);
+        orderStartingInst.set3DAttributes(RuntimeUtils.To3DAttributes(hublotPivot));
+
     }
 
     private IEnumerator SelectOrder()

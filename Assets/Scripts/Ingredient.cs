@@ -131,7 +131,7 @@ public class Ingredient : Item
         hasJustBeenThrown = false;
     }
 
-    protected virtual void OnCollisionEnter(Collision other)
+    protected override void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Ingredient" && ((other.relativeVelocity.magnitude > GameManager.instance.minVelocityToFusion)
             || (hasJustBeenThrown && other.relativeVelocity.magnitude > GameManager.instance.minVelocityFusionNice)))

@@ -26,6 +26,7 @@ public class Vacuum : Tool
         throwable.onDetachFromHand.AddListener(OnDrop);
         coneRenderer.enabled = false;
         onInst = RuntimeManager.CreateInstance(vacuumOn);
+        onInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 
     protected override void OnPickup()

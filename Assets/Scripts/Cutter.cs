@@ -24,8 +24,11 @@ public class Cutter : Tool
     {
         base.Start();
         cutInst = RuntimeManager.CreateInstance(laserCut);
+        cutInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         offInst = RuntimeManager.CreateInstance(laserOff);
+        offInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         onInst = RuntimeManager.CreateInstance(laserOn);
+        onInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
     }
 
     protected override void OnActivate()

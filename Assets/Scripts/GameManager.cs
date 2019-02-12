@@ -94,6 +94,7 @@ public class GameManager : MonoBehaviour
     {
         transform.position = r.position;
         fusionInst.start();
+        fusionInst.set3DAttributes(RuntimeUtils.To3DAttributes(r.position));
         GameObject go = Instantiate(r.recipe.result, r.position, Quaternion.identity);
         Destroy(GameObject.Find("Highlighter"));
         if (r.recipe.velocityOnSpawn)
