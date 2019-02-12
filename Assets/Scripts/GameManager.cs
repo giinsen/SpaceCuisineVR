@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
         }
 
         fusionInst = RuntimeManager.CreateInstance(fusion);
-
+        fusionInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         //SteamVR_Utils.Event.Send("hide_render_models", !visible);
     }
 
