@@ -136,6 +136,7 @@ public class RecipeTrack : MonoBehaviour
         float hardProba = DifficultyManager.difficultyScore - 15;
         hardProba *= 0.01f;
         float value = 0.0f;
+
         if (hardProba > 0.0f)
         {
             value = Random.value;
@@ -144,26 +145,19 @@ public class RecipeTrack : MonoBehaviour
                 return recipeList.GetRandom(Recipe.RecipeComplexity.Hard);
             }
         }
+
+        value = Random.value;
+        if (value <= mediumProba)
+        {
+            return recipeList.GetRandom(Recipe.RecipeComplexity.Medium);
+        }
         else
         {
-            value = Random.value;
-            if (value <= mediumProba)
-            {
-                return recipeList.GetRandom(Recipe.RecipeComplexity.Medium);
-            }
-            else
-            {
-                return recipeList.GetRandom(Recipe.RecipeComplexity.Easy);
-            }
+            return recipeList.GetRandom(Recipe.RecipeComplexity.Easy);
         }
-        Debug.LogWarning("Unable to choose order!");
-        return null;
     }
 
 }
-
-
-
 
 [System.Serializable]
 public struct Order

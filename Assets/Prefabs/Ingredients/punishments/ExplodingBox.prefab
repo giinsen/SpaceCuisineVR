@@ -195,9 +195,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf3101f21134d2740a3baa87ff810052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
-  explosionTimer: 5
-  explosionRadius: 5
+  explosionTimer: 25
+  explosionRadius: 20
   explosionForce: 15
   explosionForceMode: 1
 --- !u!114 &114985693055949836
