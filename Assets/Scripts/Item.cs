@@ -25,7 +25,8 @@ public class Item : MonoBehaviour
     protected Throwable throwable;
 
     private Coroutine staseAnim;
-    private Vector3 baseScale;
+    [HideInInspector]
+    public Vector3 baseScale;
 
     private EventInstance collisionSoundInstance;
     private EventInstance staseInst;

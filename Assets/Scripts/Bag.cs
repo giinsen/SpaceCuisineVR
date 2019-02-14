@@ -40,6 +40,7 @@ public class Bag : Tool
     {
         GameObject go = Instantiate(ChooseObjectToSpawn(), spawnPosition.position, Quaternion.identity);
         Vector3 originalScale = go.transform.localScale;
+        go.GetComponent<Item>().baseScale = originalScale;
         go.transform.localScale = Vector3.zero;
         Vector3 pushForce = spawnPosition.forward * spawnForce;
         go.GetComponent<Rigidbody>().AddForce(pushForce);
@@ -58,6 +59,7 @@ public class Bag : Tool
             yield return new WaitForEndOfFrame();
         }
         target.GetComponent<Collider>().enabled = true;
+
     }
 
     private GameObject ChooseObjectToSpawn()

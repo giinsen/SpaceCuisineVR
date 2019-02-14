@@ -28,6 +28,7 @@ public class ChaoticFollowerIngredient : Ingredient
 
     private Transform target;
     private bool stased = false;
+    private bool canBeUnstased = true;
 
     protected override void Start()
     {
@@ -103,6 +104,12 @@ public class ChaoticFollowerIngredient : Ingredient
                 StartCoroutine(Idle());
             }
         }
+    }
+
+    private IEnumerator UnstaseCD()
+    {
+        yield return new WaitForSeconds(0.5f);
+        canBeUnstased = true;
     }
 
     public override void Stase()
