@@ -50,6 +50,8 @@ public class Bag : Tool
     private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)
     {
         target.GetComponent<Collider>().enabled = false;
+        yield return new WaitForEndOfFrame();
+        Vector3 originalScale = go.transform.localScale;
         float timer = 0.0f;
         float timerDuration = 1.0f;
         while (timer < timerDuration)
