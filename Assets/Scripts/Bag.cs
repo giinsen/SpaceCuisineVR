@@ -38,20 +38,21 @@ public class Bag : Tool
 
     private void SpawnBag()
     {
-        GameObject go = Instantiate(ChooseObjectToSpawn(), spawnPosition.position, Quaternion.identity);
+        GameObject prefab = ChooseObjectToSpawn();
+        GameObject go = Instantiate(prefab, spawnPosition.position, Quaternion.identity);
         Vector3 originalScale = go.transform.localScale;
         go.GetComponent<Item>().baseScale = originalScale;
         go.transform.localScale = Vector3.zero;
         Vector3 pushForce = spawnPosition.forward * spawnForce;
         go.GetComponent<Rigidbody>().AddForce(pushForce);
-        StartCoroutine(ScaleAnim(go, originalScale));
+        StartCoroutine(ScaleAnim(go, originalScale, prefab));
     }
 
-    private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget)
+    private IEnumerator ScaleAnim(GameObject target, Vector3 scaleTarget, GameObject prefab)
     {
         target.GetComponent<Collider>().enabled = false;
         yield return new WaitForEndOfFrame();
-        Vector3 originalScale = go.transform.localScale;
+        Vector3 originalScale = prefab.transform.localScale;
         float timer = 0.0f;
         float timerDuration = 1.0f;
         while (timer < timerDuration)
