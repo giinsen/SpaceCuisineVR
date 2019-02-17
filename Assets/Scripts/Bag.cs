@@ -40,7 +40,8 @@ public class Bag : Tool
     {
         GameObject prefab = ChooseObjectToSpawn();
         GameObject go = Instantiate(prefab, spawnPosition.position, Quaternion.identity);
-        Vector3 originalScale = go.transform.localScale;
+        Vector3 originalScale = prefab.transform.localScale;
+        Debug.Log(originalScale);
         go.GetComponent<Item>().baseScale = originalScale;
         go.transform.localScale = Vector3.zero;
         Vector3 pushForce = spawnPosition.forward * spawnForce;
@@ -53,6 +54,7 @@ public class Bag : Tool
         target.GetComponent<Collider>().enabled = false;
         yield return new WaitForEndOfFrame();
         Vector3 originalScale = prefab.transform.localScale;
+        target.GetComponent<Item>().baseScale = prefab.transform.localScale;
         float timer = 0.0f;
         float timerDuration = 1.0f;
         while (timer < timerDuration)

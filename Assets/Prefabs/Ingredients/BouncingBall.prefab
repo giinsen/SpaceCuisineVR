@@ -716,12 +716,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa43caee7ea25f449c64c26f371262d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
-  ingredientName: BouncingBall
+  ingredientName: Bouncer
   isCutable: 1
-  numberOfCutResult: 2
+  numberOfCutResult: 0
   cutResult: {fileID: 0}
-  alternativeCut: 1
+  alternativeCut: 0
   cutResults: []
   isPolishable: 0
   polishScale: {x: 0, y: 0, z: 0}
@@ -732,7 +734,7 @@ MonoBehaviour:
   inBubble: 0
   hasJustBeenThrown: 0
   acceleration: 0.5
-  maximumVelocity: 15
+  maximumVelocity: 8
 --- !u!114 &114849238883197976
 MonoBehaviour:
   m_ObjectHideFlags: 1

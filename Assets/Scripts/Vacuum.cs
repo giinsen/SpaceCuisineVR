@@ -87,11 +87,13 @@ public class Vacuum : Tool
     {
         base.OnActivate();
         onInst.start();
+        coneRenderer.material.SetFloat("_Scanline1Speed", -5.0f);
     }
 
     protected override void OnDesactivate()
     {
         base.OnDesactivate();
         onInst.stop(STOP_MODE.ALLOWFADEOUT);
+        coneRenderer.material.SetFloat("_Scanline1Speed", -0.1f);
     }
 }

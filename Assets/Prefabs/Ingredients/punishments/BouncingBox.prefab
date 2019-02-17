@@ -237,9 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c052f665c746048965ea88682c9770, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
-  triggerVelocity: 5
-  bouncingBallPrefab: {fileID: 1351595089429494, guid: c964cc1a04366d244b62d8c94bd8ae8b,
+  baseScale: {x: 0, y: 0, z: 0}
+  triggerVelocity: 6
+  bouncingBallPrefab: {fileID: 1286853623556296, guid: 4e9e944f9a28cc249845b98f8e447475,
     type: 2}
   rangeTimer: {x: 0.5, y: 35}
 --- !u!114 &114842503274475336

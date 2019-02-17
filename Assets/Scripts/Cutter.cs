@@ -46,7 +46,7 @@ public class Cutter : Tool
     protected override void OnTriggerEnter(Collider other)
     {
         base.OnTriggerEnter(other);
-        if (other.tag == "Ingredient")
+        if (other.tag == "Ingredient" && other.GetComponent<Ingredient>().isCutable)
         {
             cutInst.start();
         }

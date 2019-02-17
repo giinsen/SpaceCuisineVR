@@ -47,7 +47,7 @@ public class RewardBox : Ingredient
             int idx = Random.Range(0, possibleRewards.Length);
             result[i] = possibleRewards[idx];
         }
-        result[numberOfIngredients +1] = new CutableOption(1, dollar);
+        result[numberOfIngredients] = new CutableOption(1, dollar);
         return result;
     }
 }

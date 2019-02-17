@@ -78,6 +78,7 @@ public class Staser : Tool
     protected override void OnDesactivate()
     {
         base.OnDesactivate();
+        onInst.stop(STOP_MODE.ALLOWFADEOUT);
         offInst.start();
     }
 }

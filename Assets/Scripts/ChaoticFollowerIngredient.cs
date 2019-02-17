@@ -41,7 +41,12 @@ public class ChaoticFollowerIngredient : Ingredient
         moveInst = RuntimeManager.CreateInstance(octopusMove);
         staseInst = RuntimeManager.CreateInstance(octopusStase);
 
-        moveInst.start();
+        cutInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+        moveInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+        staseInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
+
+        if (this.ingredientName.Contains("Octopus")) 
+            moveInst.start();
     }
 
 
@@ -89,6 +94,8 @@ public class ChaoticFollowerIngredient : Ingredient
         base.OnCollisionEnter(col);
         if (stased)
         {
+            if (this.ingredientName.Contains("Octopus"))
+                moveInst.start();
             stased = false;
             if (FindTarget(out target) == false)
             {
@@ -116,6 +123,9 @@ public class ChaoticFollowerIngredient : Ingredient
     {
         base.Stase();
         stased = true;
+        staseInst.start();
+        if (this.ingredientName.Contains("Octopus"))
+            moveInst.stop(STOP_MODE.ALLOWFADEOUT);
     }
 
     private IEnumerator Idle()
@@ -130,6 +140,6 @@ public class ChaoticFollowerIngredient : Ingredient
     public override void Cut()
     {
         base.Cut();
-
+        cutInst.start();
     }
 }

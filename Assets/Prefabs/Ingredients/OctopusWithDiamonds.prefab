@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 33938508917393786}
   - component: {fileID: 23488691165574214}
   m_Layer: 0
-  m_Name: Diamond
+  m_Name: Diamond (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2003,6 +2003,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1758725957469432
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4897318570548110}
+  - component: {fileID: 33131074032643674}
+  - component: {fileID: 23240271883058310}
+  m_Layer: 0
+  m_Name: Diamond
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1765163565391060
 GameObject:
   m_ObjectHideFlags: 1
@@ -3489,13 +3506,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1012395645055714}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 2.162, z: -0}
-  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
+  m_LocalRotation: {x: 0.0075349524, y: -0.70706695, z: 0.70706624, w: -0.0075351405}
+  m_LocalPosition: {x: -0.012, y: 0.667, z: 0.062}
+  m_LocalScale: {x: 235.26, y: 235.26018, z: 235.26018}
   m_Children: []
   m_Father: {fileID: 4732770023345066}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 91.22101, y: -89.99701, z: 90.003}
 --- !u!4 &4418862457442088
 Transform:
   m_ObjectHideFlags: 1
@@ -4102,7 +4119,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: -1.211178}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4417979208342154}
+  - {fileID: 4897318570548110}
   - {fileID: 4785651634900436}
   - {fileID: 4943906460634562}
   - {fileID: 4968143026861034}
@@ -4115,6 +4132,7 @@ Transform:
   - {fileID: 4333558452743378}
   - {fileID: 4333263459632432}
   - {fileID: 4795469416482928}
+  - {fileID: 4417979208342154}
   m_Father: {fileID: 4961182539499486}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4530,6 +4548,19 @@ Transform:
   m_Father: {fileID: 4325824611446026}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -0.06254302, y: 2.4298875, z: 2.9297478}
+--- !u!4 &4897318570548110
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758725957469432}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: 0, y: 2.162, z: -0}
+  m_LocalScale: {x: 100, y: 99.99997, z: 99.99997}
+  m_Children: []
+  m_Father: {fileID: 4732770023345066}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4916313592554436
 Transform:
   m_ObjectHideFlags: 1
@@ -4701,7 +4732,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1619164689657048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.129795, y: -55.358982, z: -34.42772}
+  m_LocalPosition: {x: -13.299692, y: -0.5265224, z: -1.4635062}
   m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
   m_Children:
   - {fileID: 4961182539499486}
@@ -5185,6 +5216,41 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231905479078750}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 14cd0d273d02bba48af8a0c9af19f013, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23240271883058310
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758725957469432}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -6698,6 +6764,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1378368613093328}
   m_Mesh: {fileID: 4300018, guid: 1075d5af712edc64c914174f37e17a56, type: 3}
+--- !u!33 &33131074032643674
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1758725957469432}
+  m_Mesh: {fileID: 4300000, guid: cd194efcca35f5f48b4ae32e0f9f3a90, type: 3}
 --- !u!33 &33147900748277540
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -7150,7 +7223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4a768f6ce7c114aa6f77b90b2ff6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
+  baseScale: {x: 0, y: 0, z: 0}
   ingredientName: OctopusWithDiamonds
   isCutable: 1
   numberOfCutResult: 2
@@ -7158,10 +7234,10 @@ MonoBehaviour:
   alternativeCut: 1
   cutResults:
   - numberOfResult: 1
-    result: {fileID: 1571606831561516, guid: 8bc76e546b0677040a68a7f352ed7f8a, type: 2}
+    result: {fileID: 1641300822729370, guid: fa411363382619a4a86ea15ac4c0049a, type: 2}
   - numberOfResult: 6
-    result: {fileID: 1807801981165866, guid: aa7d3f68e18556b4797e88f9f28415b7, type: 2}
-  isPolishable: 1
+    result: {fileID: 1729741783449240, guid: 7b1bd48a2e09bcb4d97b4f42aa22175a, type: 2}
+  isPolishable: 0
   polishScale: {x: 0.1, y: 0.1, z: 0.1}
   polishResult: {fileID: 1356177330440492, guid: f269cf48d94f7ef4fa1c2d9b6139e893,
     type: 2}
@@ -7175,6 +7251,9 @@ MonoBehaviour:
   speedAcceleration: 3
   radius: 3
   pushForce: 15
+  octopusCut: event:/INGREDIENTS/OCTOPUS/OCTO CUT
+  octopusMove: event:/INGREDIENTS/OCTOPUS/OCTO MOVING
+  octopusStase: event:/INGREDIENTS/OCTOPUS/OCTO STASTE
 --- !u!135 &135906816384537402
 SphereCollider:
   m_ObjectHideFlags: 1

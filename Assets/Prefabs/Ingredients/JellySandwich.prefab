@@ -3961,9 +3961,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
-  ingredientName: Bread
-  isCutable: 1
+  ingredientName: JellySandwich
+  isCutable: 0
   numberOfCutResult: 1
   cutResult: {fileID: 1757087250121186, guid: 173a9908397f09e4c948ee2c371f9331, type: 2}
   alternativeCut: 0

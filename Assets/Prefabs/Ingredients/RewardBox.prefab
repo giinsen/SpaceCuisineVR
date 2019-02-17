@@ -1,0 +1,313 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1986865981001400}
+  m_IsPrefabAsset: 1
+--- !u!1 &1092540844301880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4766388860990392}
+  - component: {fileID: 33975400031799948}
+  - component: {fileID: 23640698575513778}
+  - component: {fileID: 64163748576040984}
+  m_Layer: 0
+  m_Name: mesh
+  m_TagString: Tool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1986865981001400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4450526319371206}
+  - component: {fileID: 114149088722941192}
+  - component: {fileID: 54774202666836310}
+  - component: {fileID: 114276944403493608}
+  - component: {fileID: 114340507772352838}
+  - component: {fileID: 114501694825466496}
+  m_Layer: 0
+  m_Name: RewardBox
+  m_TagString: Tool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4450526319371206
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  m_LocalRotation: {x: -0, y: -0, z: 0.0000000037252903, w: 1}
+  m_LocalPosition: {x: -7.3522754, y: 1.2072392, z: 9.721917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4766388860990392}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4766388860990392
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092540844301880}
+  m_LocalRotation: {x: -0.70399004, y: -0.06631656, z: -0.06631656, w: 0.7039902}
+  m_LocalPosition: {x: 0.134, y: -0.047, z: 0.246}
+  m_LocalScale: {x: 1, y: 1.0000002, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4450526319371206}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -10.7630005}
+--- !u!23 &23640698575513778
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092540844301880}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 209c40b82ed34194abf4fbaa05a41b6b, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &33975400031799948
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092540844301880}
+  m_Mesh: {fileID: 4300004, guid: 1cb9b014d5c442f4ba45f61cf46282c8, type: 3}
+--- !u!54 &54774202666836310
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &64163748576040984
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1092540844301880}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300004, guid: 1cb9b014d5c442f4ba45f61cf46282c8, type: 3}
+--- !u!114 &114149088722941192
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocityAverageFrames: 5
+  angularVelocityAverageFrames: 11
+  estimateOnAwake: 0
+--- !u!114 &114276944403493608
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateActionSetOnAttach: {fileID: 0}
+  hideHandOnAttach: 1
+  hideSkeletonOnAttach: 0
+  hideControllerOnAttach: 0
+  handAnimationOnPickup: 0
+  setRangeOfMotionOnPickup: -1
+  useHandObjectAttachmentPoint: 1
+  handFollowTransform: {fileID: 0}
+  handFollowTransformPosition: 1
+  handFollowTransformRotation: 1
+  highlightOnHover: 1
+  hideHighlight: []
+--- !u!114 &114340507772352838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attachmentFlags: 44
+  attachmentOffset: {fileID: 0}
+  catchingSpeedThreshold: -1
+  releaseVelocityStyle: 1
+  releaseVelocityTimeOffset: -0.011
+  scaleReleaseVelocity: 1.1
+  restoreOriginalParent: 0
+  attachEaseIn: 0
+  snapAttachEaseInCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  snapAttachEaseInTime: 0.15
+  onPickUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onDetachFromHand:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  snapAttachEaseInCompleted: 0
+  interactable: {fileID: 0}
+--- !u!114 &114501694825466496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1986865981001400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ca52fe7dd217a741aa722fbaaa2ad7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
+  isAttractable: 1
+  baseScale: {x: 1, y: 1, z: 1}
+  ingredientName: Ingredient
+  isCutable: 0
+  numberOfCutResult: 2
+  cutResult: {fileID: 0}
+  alternativeCut: 0
+  cutResults: []
+  isPolishable: 0
+  polishScale: {x: 0, y: 0, z: 0}
+  polishResult: {fileID: 0}
+  polishResultScale: {x: 0, y: 0, z: 0}
+  isBubblable: 0
+  myBubble: {fileID: 0}
+  inBubble: 0
+  hasJustBeenThrown: 0
+  easyRewards:
+  - numberOfResult: 1
+    result: {fileID: 1944292701233472, guid: 4523fb8aeb852594abf083f8f57da48a, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1273290976933606, guid: fd3cd5e0f3bdee0459705545d4f4cffc, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1178067607480048, guid: 8ca21ae41c8c1de4ba2d3f783611cb47, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1807801981165866, guid: aa7d3f68e18556b4797e88f9f28415b7, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1571606831561516, guid: 8bc76e546b0677040a68a7f352ed7f8a, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1757087250121186, guid: 173a9908397f09e4c948ee2c371f9331, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1356177330440492, guid: f269cf48d94f7ef4fa1c2d9b6139e893, type: 2}
+  mediumRewards:
+  - numberOfResult: 1
+    result: {fileID: 1367762482659050, guid: c9c4eee1a4531644891ce8269309772c, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1042113972776154, guid: 0219207531a3f2447a997b4c14584a77, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1580816088340660, guid: 4ef5749dca727e74eb73005aa0c9e2ff, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1102190071484904, guid: 12040109d8127c346abc55a5610cfc43, type: 2}
+  hardRewards:
+  - numberOfResult: 1
+    result: {fileID: 1271243024798474, guid: 2ae00aae8432fad4c91c17d3e500215e, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1538156989163388, guid: 185db5ffc69428f4b9a03351ded41cae, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1493598622077284, guid: f38edfbdde48abe4da4bcf8dbe3306a1, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1729741783449240, guid: 7b1bd48a2e09bcb4d97b4f42aa22175a, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1641300822729370, guid: fa411363382619a4a86ea15ac4c0049a, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1271243024798474, guid: 2ae00aae8432fad4c91c17d3e500215e, type: 2}
+  - numberOfResult: 1
+    result: {fileID: 1334806878098876, guid: 343642fa5014d1d4b951298852452aac, type: 2}
+  dollar: {fileID: 1766174322725172, guid: 801aa19d569fa1846bd2f5563ead11fb, type: 2}
+  rewardTier: 0
+  triggerVelocity: 5

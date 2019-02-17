@@ -10,8 +10,7 @@ public class RecipeTrack : MonoBehaviour
 {
     [Header("Gameplay parameters")]
     public RecipeList recipeList;
-    public Order[] possibleOrders;
-    public GameObject[] rewards;
+    public GameObject reward;
     public GameObject[] punishments;
 
     [Header("Integration parameters")]
@@ -63,6 +62,11 @@ public class RecipeTrack : MonoBehaviour
 
     public void RequestOrder()
     {
+        if (waitForOrder)
+        {
+            Debug.LogWarning("Unsuspected behavior");
+            return;
+        }
         StartCoroutine(FailureTimer());
         orderedRecipe = ChooseOrder();
         //Spawn on render texture
@@ -70,7 +74,7 @@ public class RecipeTrack : MonoBehaviour
         renderedObject.GetComponent<Rigidbody>().isKinematic = true;
         waitForOrder = true;
         orderStartingInst.start();
-        animator.SetBool("order", true);
+        animator.SetTrigger("order");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -91,34 +95,41 @@ public class RecipeTrack : MonoBehaviour
                 {
                     StartCoroutine(Failure(other.gameObject));
                 }
-                Destroy(renderedObject);
-                waitForOrder = false;
+
             }
         }
     }
 
     private IEnumerator Success(GameObject objectToDestroy)
     {
+        animator.SetTrigger("success");
+        Destroy(renderedObject);
         DifficultyManager.RegisterSuccess();
         orderGoodInst.start();
-        alienAnimator.SetTrigger("Hit");
+        alienAnimator.SetTrigger("success");
         Destroy(objectToDestroy);
-        alienAnimator.SetTrigger("SendBack");
+        yield return new WaitForSeconds(2.0f);
+        alienAnimator.SetTrigger("order");
         yield return new WaitForSeconds(3.0f);
-        int idx = Random.Range(0, rewards.Length);
-        SendBack(rewards[idx]);
+        reward.GetComponent<RewardBox>().rewardTier = orderedRecipe.complexity;
+        SendBack(reward);
+        waitForOrder = false;
     }
 
     private IEnumerator Failure(GameObject objectToDestroy)
     {
+        animator.SetTrigger("failure");
+        Destroy(renderedObject);
         DifficultyManager.RegisterFailure();
         orderBadInst.start();
-        alienAnimator.SetTrigger("Hit");
+        alienAnimator.SetTrigger("failure");
         Destroy(objectToDestroy);
-        alienAnimator.SetTrigger("SendBack");
+        yield return new WaitForSeconds(2.0f);
+        alienAnimator.SetTrigger("order");
         yield return new WaitForSeconds(3.0f);
         int idx = Random.Range(0, punishments.Length);
         SendBack(punishments[idx]);
+        waitForOrder = false;
     }
 
     private void SendBack(GameObject objectToSend)
@@ -136,7 +147,6 @@ public class RecipeTrack : MonoBehaviour
         float hardProba = DifficultyManager.difficultyScore - 15;
         hardProba *= 0.01f;
         float value = 0.0f;
-
         if (hardProba > 0.0f)
         {
             value = Random.value;
@@ -155,13 +165,9 @@ public class RecipeTrack : MonoBehaviour
         {
             return recipeList.GetRandom(Recipe.RecipeComplexity.Easy);
         }
+
+        Debug.LogWarning("Unable to choose order!");
+        return null;
     }
 
-}
-
-[System.Serializable]
-public struct Order
-{
-    public string orderName;
-    public UnityEngine.Texture2D orderVisual;
 }

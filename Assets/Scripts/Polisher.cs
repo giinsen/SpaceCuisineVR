@@ -161,7 +161,6 @@ public class Polisher : MonoBehaviour {
 
         while (t <= 2.5f)
         {
-            Debug.Log("ok");
             t += Time.fixedDeltaTime;
             ingredient.transform.Rotate(Vector3.up, 80f);
             yield return new WaitForSeconds(0.01f);
@@ -174,7 +173,6 @@ public class Polisher : MonoBehaviour {
 
         while (t <= 3f)
         {
-            Debug.Log("ok");
             t += Time.fixedDeltaTime;
             go.transform.Rotate(Vector3.up, 15f);
             yield return new WaitForSeconds(0.01f);

@@ -254,8 +254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
-  ingredientName: Ingredient
+  ingredientName: Geode
   isCutable: 1
   numberOfCutResult: 1
   cutResult: {fileID: 1911626169036008, guid: b2355036c3863ad4aa438e720a439ac7, type: 2}

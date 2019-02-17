@@ -1361,12 +1361,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cd1b63fbcc2f6f438c8640b7a3744d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
+  staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
   ingredientName: BreadWithDiamonds
-  isCutable: 0
-  numberOfCutResult: 2
-  cutResult: {fileID: 0}
-  alternativeCut: 1
+  isCutable: 1
+  numberOfCutResult: 1
+  cutResult: {fileID: 1334806878098876, guid: 343642fa5014d1d4b951298852452aac, type: 2}
+  alternativeCut: 0
   cutResults: []
   isPolishable: 0
   polishScale: {x: 0, y: 0, z: 0}

@@ -43,8 +43,6 @@ public class DifficultyManager : MonoBehaviour
 					yield return new WaitForEndOfFrame();
 				}
 			}
-
-
 		}
 	}
 

@@ -16,35 +16,104 @@ MonoBehaviour:
     ingredientB: SlicedBread
     result: {fileID: 1400989920223446, guid: 76a5c543bdfee47429dd8708bea464b8, type: 2}
     velocityOnSpawn: 1
+    complexity: 0
   - ingredientA: Head
     ingredientB: SlicedBread
     result: {fileID: 1289588037700454, guid: d4d6ee2a2781a254a99b41eaa002f165, type: 2}
     velocityOnSpawn: 1
-  - ingredientA: Jelly
-    ingredientB: Bread
-    result: {fileID: 1898155689052542, guid: eeb9c15802cabf14285f3727a642b796, type: 2}
-    velocityOnSpawn: 1
-  - ingredientA: Diamond
-    ingredientB: Octopus
-    result: {fileID: 1271243024798474, guid: 2ae00aae8432fad4c91c17d3e500215e, type: 2}
-    velocityOnSpawn: 1
-  - ingredientA: Octopus
-    ingredientB: SlicedBread
-    result: {fileID: 1286853623556296, guid: 4e9e944f9a28cc249845b98f8e447475, type: 2}
-    velocityOnSpawn: 1
-  - ingredientA: Diamond
-    ingredientB: Bread
-    result: {fileID: 1493598622077284, guid: f38edfbdde48abe4da4bcf8dbe3306a1, type: 2}
-    velocityOnSpawn: 1
-  - ingredientA: TentaculesWithDiamond
-    ingredientB: SlicedBread
-    result: {fileID: 1252808035555164, guid: 8c56527372b66c4458206e3ffd0809ec, type: 2}
-    velocityOnSpawn: 1
-  - ingredientA: HeadWithDiamond
-    ingredientB: SlicedBread
-    result: {fileID: 1113044680669026, guid: 6b8e787b19af63840882d3fd84967c29, type: 2}
-    velocityOnSpawn: 1
+    complexity: 0
   - ingredientA: Jelly
     ingredientB: SlicedBread
     result: {fileID: 1143884692834500, guid: 9e89888ee1cd12c478fcccb0d61ea1cc, type: 2}
     velocityOnSpawn: 1
+    complexity: 1
+  - ingredientA: TentacleWithDiamonds
+    ingredientB: SlicedBread
+    result: {fileID: 1252808035555164, guid: 8c56527372b66c4458206e3ffd0809ec, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: HeadWithDiamonds
+    ingredientB: SlicedBread
+    result: {fileID: 1496304437571498, guid: 6b8e787b19af63840882d3fd84967c29, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Tentacle
+    ingredientB: SlicedJellyBread
+    result: {fileID: 1026184025249232, guid: e3bcd210558f15e41a764f9d744b2db3, type: 2}
+    velocityOnSpawn: 1
+    complexity: 1
+  - ingredientA: Head
+    ingredientB: SlicedJellyBread
+    result: {fileID: 1622638959294864, guid: b01bf656685b88645abac9989cd33a5c, type: 2}
+    velocityOnSpawn: 1
+    complexity: 1
+  - ingredientA: Jelly
+    ingredientB: SlicedJellyBread
+    result: {fileID: 1332200377904852, guid: 8d18785c953caf446a6bbdba9b7969e6, type: 2}
+    velocityOnSpawn: 1
+    complexity: 1
+  - ingredientA: TentacleWithDiamonds
+    ingredientB: SlicedJellyBread
+    result: {fileID: 1889300318962942, guid: 1c60fd300c1787043b12766603702f8a, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: HeadWithDiamonds
+    ingredientB: SlicedJellyBread
+    result: {fileID: 1010511217997856, guid: 1293678c01a3dca47b7106028202fa68, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Bread
+    ingredientB: Jelly
+    result: {fileID: 1367762482659050, guid: c9c4eee1a4531644891ce8269309772c, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
+  - ingredientA: Tentacle
+    ingredientB: SlicedBreadWithDiamonds
+    result: {fileID: 1146775579028524, guid: bfdf57c9851c2d947b528146c42920ed, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Head
+    ingredientB: SlicedBreadWithDiamonds
+    result: {fileID: 1188024807965310, guid: 226eec2e0d268a941968e7f697ed767b, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Jelly
+    ingredientB: SlicedBreadWithDiamonds
+    result: {fileID: 1091809834521662, guid: 1a4da34e7dc56fd449ffa5294d02de4f, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: TentacleWithDiamonds
+    ingredientB: SlicedBreadWithDiamonds
+    result: {fileID: 1146775579028524, guid: bfdf57c9851c2d947b528146c42920ed, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Octopus
+    ingredientB: SlicedGeode
+    result: {fileID: 1619164689657048, guid: 8d0dc5aaed6745440a389c5b26d63cf4, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
+  - ingredientA: HeadWithDiamonds
+    ingredientB: SlicedBreadWithDiamonds
+    result: {fileID: 1243293592406938, guid: f759d6d8fe659f442a02b05be9494287, type: 2}
+    velocityOnSpawn: 1
+    complexity: 2
+  - ingredientA: Bread
+    ingredientB: SlicedGeode
+    result: {fileID: 1538156989163388, guid: 185db5ffc69428f4b9a03351ded41cae, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
+  - ingredientA: Octopus
+    ingredientB: Geode
+    result: {fileID: 1286853623556296, guid: 4e9e944f9a28cc249845b98f8e447475, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
+  - ingredientA: Octopus
+    ingredientB: Diamond
+    result: {fileID: 1271243024798474, guid: 2ae00aae8432fad4c91c17d3e500215e, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
+  - ingredientA: Bread
+    ingredientB: Diamond
+    result: {fileID: 1493598622077284, guid: f38edfbdde48abe4da4bcf8dbe3306a1, type: 2}
+    velocityOnSpawn: 1
+    complexity: 3
