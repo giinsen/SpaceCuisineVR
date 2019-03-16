@@ -1045,6 +1045,7 @@ MonoBehaviour:
   speedAcceleration: 3
   radius: 3
   pushForce: 15
+  killOnStase: 1
   octopusCut: event:/INGREDIENTS/OCTOPUS/OCTO CUT
   octopusMove: event:/INGREDIENTS/OCTOPUS/OCTO MOVING
   octopusStase: event:/INGREDIENTS/OCTOPUS/OCTO STASTE

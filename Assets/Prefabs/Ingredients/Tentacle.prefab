@@ -624,6 +624,7 @@ MonoBehaviour:
   collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
   staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
+  baseScale: {x: 0, y: 0, z: 0}
   ingredientName: Tentacle
   isCutable: 0
   numberOfCutResult: 2
@@ -643,6 +644,7 @@ MonoBehaviour:
   speedAcceleration: 3
   radius: 3
   pushForce: 15
+  killOnStase: 1
   octopusCut: event:/INGREDIENTS/OCTOPUS/OCTO CUT
   octopusMove: event:/INGREDIENTS/OCTOPUS/OCTO MOVING
   octopusStase: event:/INGREDIENTS/OCTOPUS/OCTO STASTE

@@ -15,6 +15,7 @@ public class ChaoticFollowerIngredient : Ingredient
     public float speedAcceleration;
     public float radius;
     public float pushForce = 15.0f;
+    public bool killOnStase = false;
 
     [EventRef]
     public string octopusCut = "event:/INGREDIENTS/OCTOPUS/OCTO CUT";
@@ -29,6 +30,7 @@ public class ChaoticFollowerIngredient : Ingredient
     private Transform target;
     private bool stased = false;
     private bool canBeUnstased = true;
+    private bool killed = false;
 
     protected override void Start()
     {
@@ -67,7 +69,7 @@ public class ChaoticFollowerIngredient : Ingredient
 
     private void Update()
     {
-        if (stased == false && target != null)
+        if (killed == false && stased == false && target != null)
             MoveTowardTarget();
     }
 
@@ -126,6 +128,8 @@ public class ChaoticFollowerIngredient : Ingredient
         staseInst.start();
         if (this.ingredientName.Contains("Octopus"))
             moveInst.stop(STOP_MODE.ALLOWFADEOUT);
+        if (killOnStase)
+            killed = true;
     }
 
     private IEnumerator Idle()
