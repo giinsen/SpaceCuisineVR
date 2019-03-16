@@ -37,6 +37,18 @@ public class RecipeList : ScriptableObject
         int idx = Random.Range(0, resultList.Count);
         return resultList[idx];
     }
+
+    public Recipe GetFromResultName(string resultName)
+    {
+        foreach(Recipe r in recipeList)
+        {
+            if (r.GetResultName() == resultName)
+            {
+                return r;
+            }
+        }
+        return null;
+    }
 }
 
 [System.Serializable]

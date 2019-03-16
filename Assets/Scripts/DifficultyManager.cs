@@ -24,6 +24,11 @@ public class DifficultyManager : MonoBehaviour
 
 	private void Start()
 	{
+		//StartCoroutine(Process());
+	}
+
+	public void BeginGame()
+	{
 		StartCoroutine(Process());
 	}
 

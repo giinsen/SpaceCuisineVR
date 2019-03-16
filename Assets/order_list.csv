@@ -1,0 +1,4 @@
+Note pour les GD : la premiŠre colonne correspond … l'index de la track sur laquelle la commande va ˆtre envoy‚e. A droite il faut mettre le nom du r‚sultat de la commande (faire trŠs attention … l'orthographe). Quand une track n'a plus d'order, elle r‚pŠte la derniŠre en boucle. Ne pas ‚crire sur cette ligne.;XXXX;XXXX
+0;HeadSandwich;
+1;HeadSandwich;
+2;HeadSandwich;
