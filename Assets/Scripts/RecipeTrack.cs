@@ -64,9 +64,11 @@ public class RecipeTrack : MonoBehaviour
 
     private IEnumerator Tutorial()
     {
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(2.0f);
 
         RequestOrderTutorial("HeadSandwich");
+
+        yield return new WaitForEndOfFrame();
 
         while (IngredientExists("HeadSandwich") == false)
         {
@@ -89,6 +91,8 @@ public class RecipeTrack : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        ActivatePolisher();
+
         tutorialProgress ++;
 
         RequestOrderTutorial("HeadSandwich");
@@ -98,7 +102,10 @@ public class RecipeTrack : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
+        ActivatePanicButton();
+
         FindObjectOfType<DifficultyManager>().BeginGame();
+        tutorial = false;
         OpenAllGates();
     }
 
@@ -107,7 +114,7 @@ public class RecipeTrack : MonoBehaviour
         Ingredient[] all = FindObjectsOfType<Ingredient>();
         foreach(Ingredient ing in all)
         {
-            if (ing.name == name)
+            if (ing.ingredientName == name)
             {
                 return true;
             }
@@ -117,12 +124,26 @@ public class RecipeTrack : MonoBehaviour
 
     private void OpenGate()
     {
-
+        GameObject go = GameObject.Find("Gaytes");
+        go.GetComponent<Animator>().SetTrigger("open");
     }
 
     private void OpenAllGates()
     {
+        GameObject go = GameObject.Find("Gaytes");
+        go.GetComponent<Animator>().SetTrigger("open");
+    }
 
+    private void ActivatePanicButton()
+    {
+        GameObject go = GameObject.Find("Panic_Button");
+        go.GetComponent<Animator>().SetTrigger("active");
+    }
+
+    private void ActivatePolisher()
+    {
+        GameObject go = GameObject.Find("Polisher");
+        go.GetComponent<Animator>().SetTrigger("active");
     }
 
     private IEnumerator FailureTimer()
@@ -150,6 +171,7 @@ public class RecipeTrack : MonoBehaviour
         //Spawn on render texture
         renderedObject = Instantiate(orderedRecipe.result, renderPivot.position, Quaternion.identity, renderPivot);
         renderedObject.GetComponent<Rigidbody>().isKinematic = true;
+        renderedObject.GetComponent<Ingredient>().enabled = false;
         waitForOrder = true;
         orderStartingInst.start();
         animator.SetTrigger("order");
@@ -169,6 +191,8 @@ public class RecipeTrack : MonoBehaviour
         //Spawn on render texture
         renderedObject = Instantiate(orderedRecipe.result, renderPivot.position, Quaternion.identity, renderPivot);
         renderedObject.GetComponent<Rigidbody>().isKinematic = true;
+        renderedObject.GetComponent<Ingredient>().enabled = false;
+        renderedObject.GetComponent<Ingredient>().ingredientName = "DankMemeMasterOfAllPepe";
         waitForOrder = true;
         orderStartingInst.start();
         animator.SetTrigger("order");
@@ -215,7 +239,7 @@ public class RecipeTrack : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         alienAnimator.SetTrigger("order");
         yield return new WaitForSeconds(3.0f);
-        reward.GetComponent<RewardBox>().rewardTier = orderedRecipe.complexity;
+        //reward.GetComponent<RewardBox>().rewardTier = orderedRecipe.complexity;
         SendBack(reward);
         waitForOrder = false;
     }
@@ -256,6 +280,15 @@ public class RecipeTrack : MonoBehaviour
         go.transform.position = alienPivot.position;
         Vector3 direction = hublotPivot.position - go.transform.position;
         go.GetComponent<Rigidbody>().AddForce(direction * 15.0f);
+        StartCoroutine(TempHoloWall(8.0f, go));
+    }
+
+    private IEnumerator TempHoloWall(float duration, GameObject target)
+    {
+        target.layer = LayerMask.NameToLayer("HoloWall");
+        yield return new WaitForSeconds(duration);
+        if (target != null)
+            target.layer = 0;
     }
 
     private Recipe ChooseOrder()
@@ -291,6 +324,7 @@ public class RecipeTrack : MonoBehaviour
     private Recipe GetOrderFromParser()
     {
         string order = RecipeParser.instance.orderLists[trackIndex].GetNext();
+        Debug.Log("Here : " + order);
         return recipeList.GetFromResultName(order);
     }
 

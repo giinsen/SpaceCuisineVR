@@ -65,7 +65,6 @@ public class GameManager : MonoBehaviour
         //SteamVR_Utils.Event.Send("hide_render_models", !visible);
     }
 
-
     private void Update()
     {
         if (requests.Count > 1)
@@ -123,5 +122,14 @@ public class GameManager : MonoBehaviour
     {
         //cutterParticle.Play();
         Instantiate(fusionParticle, t, Quaternion.identity);
+    }
+
+    public void PanicButton()
+    {
+        Ingredient[] gos = FindObjectsOfType<Ingredient>();
+        foreach(Ingredient go in gos)
+        {
+            go.PanicButton();
+        }
     }
 }

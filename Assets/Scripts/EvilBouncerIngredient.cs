@@ -11,8 +11,9 @@ public class EvilBouncerIngredient : Ingredient
     private bool rush = true;
 
 
-    void Update()
+    protected override void Update()
     {
+        base.Update();
         if (rush)
         {
             if (rb.velocity.magnitude < maximumVelocity)

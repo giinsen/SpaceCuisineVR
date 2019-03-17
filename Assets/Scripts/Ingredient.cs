@@ -33,7 +33,11 @@ public class Ingredient : Item
     protected Interactable interactable;
 
     public bool hasJustBeenThrown = false;
-    
+    private bool panicButton1 = false;
+    private bool panicButton2 = false;
+    private bool panicEjected = false;
+    private GameObject panic1;
+
 
     [System.Serializable]
     public struct CutableOption
@@ -55,14 +59,44 @@ public class Ingredient : Item
         StartCoroutine(HasJustSpawnedTimer());
         col = GetComponentInChildren<Collider>();
         interactable = throwable.interactable;
+        panic1 = GameObject.FindGameObjectWithTag("Panic1");
     }
 
-    private void Update()
+    protected virtual void Update()
     {
+        if (panicButton1)
+        {
+            transform.position = Vector3.Lerp(transform.position, panic1.transform.position, Time.deltaTime * 8f);
+            if (Vector3.Distance(transform.position, panic1.transform.position) < 1f)
+            {
+                panicButton1 = false;
+                GetComponent<Rigidbody>().AddForce((panic1.transform.position - transform.position) * 421f + (Vector3.up * 200f), ForceMode.Force);
+                gameObject.tag = "Untagged";
+                Invoke("DestroyMe", 10f);
+            }
+            return;
+        }
+
         if (inBubble)
         {
             transform.position = myBubble.transform.position;
         }
+    }
+
+    public void PanicButton()
+    {
+        if (!panicEjected)
+        {
+            panicButton1 = true;
+            panicEjected = true;
+            GetComponent<Collider>().enabled = false;
+            GetComponent<Interactable>().enabled = false;
+        }
+    }
+
+    private void DestroyMe()
+    {
+        Destroy(gameObject);
     }
 
     private IEnumerator HasJustSpawnedTimer()
@@ -196,7 +230,7 @@ public class Ingredient : Item
     private IEnumerator CutterExplosionForce()
     {
         GameManager.instance.LaunchCutterParticle(transform.position);
-        rb.AddExplosionForce(10f, transform.position, 50f);
+        rb.AddExplosionForce(5f, transform.position, 50f);
         yield return new WaitForEndOfFrame();
         Destroy(this.gameObject);
         yield break;

@@ -25,9 +25,9 @@ public class DifficultyManager : MonoBehaviour
 	private void Start()
 	{
 		//StartCoroutine(Process());
-	}
+    }
 
-	public void BeginGame()
+    public void BeginGame()
 	{
 		StartCoroutine(Process());
 	}
@@ -36,7 +36,7 @@ public class DifficultyManager : MonoBehaviour
 	{
 		while (true)
 		{
-			yield return new WaitForSeconds(30.0f);
+			yield return new WaitForSeconds(15.0f);
 			if (AnyTrackFree())
 			{
 				GetRandomTrack().RequestOrder();

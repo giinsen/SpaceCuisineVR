@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1738151725078586}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.651, y: 0.59, z: 0.26}
+  m_LocalPosition: {x: -11.146576, y: -1.4555464, z: 8.446078}
   m_LocalScale: {x: 0.113, y: 0.113, z: 0.113}
   m_Children:
   - {fileID: 4575472303288968}
@@ -279,7 +279,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1896094398052820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.86, y: 0.5399999, z: -0.14}
+  m_LocalPosition: {x: 2.58, y: 0.54, z: -0.14}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4361210222990068}
@@ -305,8 +305,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1188540761144858}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.41, y: 0.23, z: 0.03}
-  m_LocalScale: {x: 1931.3534, y: 9500.171, z: 4376.577}
+  m_LocalPosition: {x: 0.6, y: 0.2, z: 0.029992}
+  m_LocalScale: {x: 1931.3534, y: 9500.171, z: 5146.8545}
   m_Children: []
   m_Father: {fileID: 4361210222990068}
   m_RootOrder: 2
@@ -794,6 +794,7 @@ MonoBehaviour:
   collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
   staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
+  baseScale: {x: 0, y: 0, z: 0}
   ingredients: []
   toolType: 1
   hasBeenEnabled: 0

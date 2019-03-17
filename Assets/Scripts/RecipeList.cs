@@ -40,6 +40,7 @@ public class RecipeList : ScriptableObject
 
     public Recipe GetFromResultName(string resultName)
     {
+        Debug.Log("Result name" + resultName);
         foreach(Recipe r in recipeList)
         {
             if (r.GetResultName() == resultName)
@@ -47,6 +48,7 @@ public class RecipeList : ScriptableObject
                 return r;
             }
         }
+        Debug.LogError("argh");
         return null;
     }
 }

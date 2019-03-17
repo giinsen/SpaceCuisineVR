@@ -335,7 +335,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1614916131764374}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.577, y: 0.76, z: 0.211}
+  m_LocalPosition: {x: -0.969, y: 0.307, z: 1.091}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4805329171492456}
@@ -810,14 +810,16 @@ MonoBehaviour:
   collisionEvent: event:/ENVIRONMENT/CONTACT/CONTACT WALL
   staseSound: event:/TOOLS/STASER/OBJECT STASING
   isAttractable: 1
+  baseScale: {x: 0, y: 0, z: 0}
   ingredients: []
   toolType: 1
   hasBeenEnabled: 0
   addRot: {x: 0, y: 0, z: 0}
   spawnPosition: {fileID: 4805329171492456}
   objectsToSpawn:
-  - {fileID: 1329908805064456, guid: ae81eb0623e2cac479265fd6fe29b621, type: 2}
-  - {fileID: 1260676272740784, guid: 076c05be0cd5f3848a192b74ee066e1d, type: 2}
+  - {fileID: 1178067607480048, guid: 8ca21ae41c8c1de4ba2d3f783611cb47, type: 2}
+  - {fileID: 1273290976933606, guid: fd3cd5e0f3bdee0459705545d4f4cffc, type: 2}
+  - {fileID: 1944292701233472, guid: 4523fb8aeb852594abf083f8f57da48a, type: 2}
   spawnForce: 75
   spawnTimerDuration: 0.75
 --- !u!114 &114600047852151646

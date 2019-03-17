@@ -47,8 +47,8 @@ public class ChaoticFollowerIngredient : Ingredient
         moveInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
         staseInst.set3DAttributes(RuntimeUtils.To3DAttributes(transform));
 
-        if (this.ingredientName.Contains("Octopus")) 
-            moveInst.start();
+        //if (this.ingredientName.Contains("Octopus")) 
+            //moveInst.start();
     }
 
 
@@ -67,8 +67,9 @@ public class ChaoticFollowerIngredient : Ingredient
         rb.velocity = velocity;
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if (killed == false && stased == false && target != null)
             MoveTowardTarget();
     }
@@ -96,8 +97,8 @@ public class ChaoticFollowerIngredient : Ingredient
         base.OnCollisionEnter(col);
         if (stased)
         {
-            if (this.ingredientName.Contains("Octopus"))
-                moveInst.start();
+            //if (this.ingredientName.Contains("Octopus"))
+                //moveInst.start();
             stased = false;
             if (FindTarget(out target) == false)
             {
@@ -125,11 +126,17 @@ public class ChaoticFollowerIngredient : Ingredient
     {
         base.Stase();
         stased = true;
-        staseInst.start();
+        //staseInst.start();
         if (this.ingredientName.Contains("Octopus"))
             moveInst.stop(STOP_MODE.ALLOWFADEOUT);
         if (killOnStase)
+        {
             killed = true;
+            if (ingredientName.Contains("Tentacle"))
+            {
+                GetComponent<Animator>().enabled = false;
+            }
+        }
     }
 
     private IEnumerator Idle()

@@ -8,6 +8,8 @@ public class SplitOnCollisionIngredient : Ingredient
     public float triggerVelocity;
     public int numberOfSplitResult = 15;
     public GameObject splitResult;
+    public bool useCutableOption = false;
+    public CutableOption[] splitResults;
 
 
     protected override void OnCollisionEnter(Collision col)
@@ -15,7 +17,10 @@ public class SplitOnCollisionIngredient : Ingredient
         base.OnCollisionEnter(col);
         if (col.relativeVelocity.magnitude > triggerVelocity)
         {
-            Split(numberOfSplitResult, splitResult);
+            if (!useCutableOption)
+                Split(numberOfSplitResult, splitResult);
+            else
+                Split(splitResults);
             Destroy(this.gameObject);
         }
     }

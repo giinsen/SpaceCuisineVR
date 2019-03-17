@@ -8,6 +8,8 @@ TagManager:
   - FxTemporaire
   - Ingredient
   - Tool
+  - Panic1
+  - Panic2
   layers:
   - Default
   - TransparentFX

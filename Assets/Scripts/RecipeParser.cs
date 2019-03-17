@@ -23,12 +23,14 @@ public class RecipeParser : MonoBehaviour
 		OrderList[] result = {new OrderList(), new OrderList(), new OrderList()};
 
 		string[] lines = csv.Split("\n"[0]);
-		foreach (string str in lines)
+        char[] charsToTrim = { '*', ' ', '\r'};
+        foreach (string str in lines)
 		{
 			string[] columns = str.Split(';');
 			if (columns.Count() == 2)
 			{
-				result[int.Parse(columns[0])].recipes.Add(columns[1]);
+                columns[1] = columns[1].TrimEnd(charsToTrim);
+				result[int.Parse(columns[0])].recipes.Add(columns[1]);  
 			}
 		}
 		return result;
@@ -55,7 +57,7 @@ public class OrderList
 
 	public bool IsOver()
 	{
-		return idx < recipes.Count;
+		return idx >= recipes.Count;
 	}
 
 	public string GetNext()
@@ -63,7 +65,7 @@ public class OrderList
 		idx++;
 		if (IsOver())
 		{
-			return recipes[recipes.Count];
+			return recipes[recipes.Count - 1];
 		}
 		return recipes[idx];
 	}

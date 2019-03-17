@@ -56,7 +56,7 @@ public class Bag : Tool
         Vector3 originalScale = prefab.transform.localScale;
         target.GetComponent<Item>().baseScale = prefab.transform.localScale;
         float timer = 0.0f;
-        float timerDuration = 1.0f;
+        float timerDuration = 0.5f;
         while (timer < timerDuration)
         {
             timer += Time.deltaTime;

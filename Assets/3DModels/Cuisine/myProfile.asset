@@ -67,25 +67,25 @@ MonoBehaviour:
     value: 1
   temperature:
     overrideState: 1
-    value: -19
+    value: -18
   tint:
     overrideState: 0
-    value: 0
+    value: 32.9
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 1.6037736, g: 0, b: 0.21281458, a: 1}
   hueShift:
     overrideState: 0
-    value: 0
+    value: -88
   saturation:
-    overrideState: 0
-    value: 1.8
+    overrideState: 1
+    value: 34.5
   brightness:
     overrideState: 0
     value: 0
   postExposure:
     overrideState: 1
-    value: 0.67
+    value: 1
   contrast:
     overrideState: 0
     value: 10.8
@@ -1345,10 +1345,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.92
+    value: 0.52
   color:
     overrideState: 1
-    value: {r: 0, g: 0, b: 0, a: 1}
+    value: {r: 0.3962264, g: 0.3962264, b: 0.3962264, a: 1}
   ambientOnly:
     overrideState: 0
     value: 1
@@ -1390,10 +1390,10 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 1.15
+    value: 0.21
   threshold:
     overrideState: 1
-    value: 1.71
+    value: 2.35
   softKnee:
     overrideState: 1
     value: 0.5
@@ -1413,7 +1413,7 @@ MonoBehaviour:
     overrideState: 1
     value: 0
   dirtTexture:
-    overrideState: 0
+    overrideState: 1
     value: {fileID: 2800000, guid: 8416d2df5247d1c4ba8259a7241584e6, type: 3}
     defaultState: 1
   dirtIntensity:
